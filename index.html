@@ -600,7 +600,7 @@ window.ajouterParticipant = function() {
   msgEl.textContent = `Bravo ${prenom} ! Ta présence est confirmée dans le peloton.`;
 
   // Ouverture optionnelle de WhatsApp pour avertir l'organisateur en un clic
-  const waUrl = `https://wa.me/33661307647?text=Salut%2C%20je%20confirme%20ma%20participation%20au%20Tour%20des%20Flandres%20%3A%20${encodeURIComponent(prenom + ' ' + nom)}`;
+  const waUrl = `https://wa.me/33661307623?text=Salut%2C%20je%20confirme%20ma%20participation%20au%20Tour%20des%20Flandres%20%3A%20${encodeURIComponent(prenom + ' ' + nom)}`;
   setTimeout(() => {
     if (confirm("Veux-tu aussi envoyer ta confirmation par WhatsApp à l'organisateur ?")) {
       window.open(waUrl, '_blank');
