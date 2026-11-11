@@ -29,6 +29,18 @@ a{color:#A52E18}a:hover{color:#1C1A16}
   outline: none;
   border-color: #C23B22;
 }
+.badge-star {
+  background: #E2951A;
+  color: #1C1A16;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
 </style>
 </helmet>
 <div style="width: 100%; background: #F1DDA2; color: #1C1A16; font-family: 'Barlow', sans-serif; overflow: hidden">
@@ -36,13 +48,13 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <!-- NAVIGATION -->
 <nav style="background: #C23B22; padding: 10px 24px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 24px">
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: 22px; letter-spacing: 0.04em; color: #FFF6DD; padding: 88px 0; padding-top: 8px; padding-bottom: 8px">RIJSEL &gt; LES BERGS</div>
+<div style="font-family: 'Anton', Impact, sans-serif; font-size: 22px; letter-spacing: 0.04em; color: #FFF6DD; padding: 8px 0">RIJSEL &gt; LES BERGS</div>
 <div style="display: flex; flex-wrap: wrap; gap: 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase">
 <a href="#meteo" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Météo Live</a>
 <a href="#histoire" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Histoire &amp; UCI</a>
 <a href="#mythe" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Mythe</a>
 <a href="#bergs" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Les bergs</a>
-<a href="#voix" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Ils en parlent</a>
+<a href="#seixas" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Vidéo Seixas</a>
 <a href="#estaminets" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Estaminets</a>
 <a href="#lille" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Lille</a>
 <a href="#parcours" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Parcours</a>
@@ -51,7 +63,7 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (Sans la mention "cousins et potes") -->
 <header style="padding: 56px 24px 72px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
 <div style="flex: 1 1 440px; min-width: 0">
@@ -295,22 +307,53 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </div>
 </section>
 
-<!-- CHAPITRE 4 : ILS EN PARLENT (AVEC DEEPFAKE PAUL SEIXAS) -->
+<!-- SECTION SPECIALE : VIDEO DEEPFAKE PAUL SEIXAS -->
+<section id="seixas" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #C23B22">
+<div style="max-width: 1120px; margin: 0 auto">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #C23B22">L'Oeil du Prodige · Vidéo Exclusive</div>
+<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Paul Seixas juge la cyclo</h2>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Le champion du monde junior UCI et pépite de l'équipe Decathlon AG2R La Mondiale réagit au parcours de notre sortie.</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
+<!-- Lecteur Vidéo simulé stylisé avec bouton Play -->
+<div style="flex: 1 1 480px; min-width: 0; background: #2A2720; border: 3px solid #C23B22; position: relative; border-radius: 4px; overflow: hidden; box-shadow: 8px 8px 0 #000">
+  <div style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, #1C1A16 0%, #3D261E 100%); display: flex; align-items: center; justify-content: center">
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: #C23B22; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s; box-shadow: 0 0 16px rgba(194,59,34,0.6)" onclick="alert('Vidéo hommage Deepfake : le script audio complet est disponible ci-contre !')">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFF6DD"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </div>
+      <div style="margin-top: 16px; font-family: 'Anton', Impact, sans-serif; font-size: 22px; letter-spacing: 0.05em; color: #FFF6DD; text-transform: uppercase">Interview Vidéo · Paul Seixas</div>
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; color: #E2951A; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px">Générée en Deepfake Parodique IA</div>
+    </div>
+    <div style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); color: #FFF6DD; padding: 4px 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; border-radius: 3px; letter-spacing: 0.1em; text-transform: uppercase">01:24 · HD</div>
+  </div>
+</div>
+
+<!-- Transcription et Déclaration choc -->
+<div style="flex: 1 1 400px; min-width: 0">
+  <div style="display: inline-block; background: #C23B22; color: #FFF6DD; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 12px">Retranscription de l'interview</div>
+  <blockquote style="margin: 0; padding: 0">
+    <p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.2; color: #F1DDA2">
+      « Partir de Lille pour se farcir 140 bornes et les bergs pavés la veille des pros ? Mais c'est un délire de grands malades ! Le Koppenberg à 22 %, sur un vélo normal sans assistance, tes cuisses hurlent, ta chaîne grince et tu pries pour ne pas poser le pied à terre dans la boue. C'est complètement dément, et c'est exactement pour ça que c'est grandiose. Bon courage à la bande ! »
+    </p>
+  </blockquote>
+  <div style="margin-top: 18px; font-size: 16px; line-height: 1.5; color: #FFF6DD; border-left: 3px solid #E2951A; padding-left: 12px">
+    <strong>Paul Seixas</strong> — Champion du Monde Junior UCI, coureur professionnel chez Decathlon AG2R La Mondiale.<br>
+    <span style="font-size: 13px; color: #A99E8B">Propos parodiques humoristiques générés en hommage amical aux cyclos du 3 avril.</span>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CHAPITRE 4 : ILS EN PARLENT (PAROLES DE CHAMPIONS) -->
 <section id="voix" style="background: #E2951A; padding: 88px 24px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto">
 <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Chapitre 4</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Ils en parlent</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Champions légendaires, observateurs et nouvelle génération du cyclisme mondial face au mythe du Ronde.</p>
+<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Paroles de Légendes</h2>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Champions légendaires, observateurs et UCI face au mythe impitoyable du Ronde.</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px">
-
-<!-- Deepfake Paul Seixas -->
-<figure style="flex: 1 1 100%; margin: 0; background: #1C1A16; color: #FFF6DD; padding: 32px; box-sizing: border-box; border: 4px solid #C23B22">
-<div style="display: inline-block; background: #C23B22; color: #FFF6DD; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 12px">Deepfake / Interview Parodique</div>
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 36px); line-height: 1.15; color: #F1DDA2">« Partir de Lille pour se farcir 140 bornes et les bergs pavés la veille des pros ? Mais c'est un délire de grands malades ! Le Koppenberg à 22 %, sur un vélo normal sans assistance, tes cuisses hurlent, ta chaîne grince et tu pries pour ne pas poser le pied à terre dans la boue. C'est complètement dément, et c'est exactement pour ça que c'est grandiose. »</p></blockquote>
-<figcaption style="margin-top: 16px; font-size: 17px; line-height: 1.5; color: #FFF6DD"><strong>Paul Seixas</strong>, prodige du cyclisme français (Champion du Monde Junior UCI, Decathlon AG2R La Mondiale). <em>Propos parodiques générés en deepfake hommage pour la cyclo.</em></figcaption>
-</figure>
-
 <figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
 <blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« L'enfer tout court. »[cite: 8]</p></blockquote>
 <figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Fabian Cancellara</strong>, triple vainqueur (2010, 2013, 2014), qui juge aussi l'épreuve « la plus spéciale et la plus prestigieuse » des grandes classiques[cite: 8]. Source : Le Temps[cite: 8].</figcaption>
@@ -338,48 +381,79 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 
 <figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
 <blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« Les monts pavés constituent l'âme épique et le patrimoine de l'épreuve. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Rapport Officiel UCI</strong>, <em>The Cobbled Climbs of the Tour of Flanders</em>.</figcaption>
+<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Rapport Officiel UCI</strong>, <em>The Cobbled Climbs of the Tour of Flanders</em>[cite: 8].</figcaption>
 </figure>
-
 </div>
 </div>
 </section>
 
-<!-- NOUVELLE SECTION : ESTAMINETS & HALTES GOURMANDES -->
+<!-- SECTION : GUIDE DES ESTAMINETS AVEC NOTES GOOGLE -->
 <section id="estaminets" style="background: #FAF0CF; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #1C1A16">
 <div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Ravitaillement &amp; Convivialité</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Ravitaillement &amp; Haltes Gourmandes</div>
 <h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Les Estaminets du parcours</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Sur un parcours de 141 km, savoir où trouver un café chaud, une gaufre, une carbonnade ou une bière trappiste est une question de survie sportive.</p>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Sur un tracé exigeant de 141 km, savoir où trouver un bon café, une carbonnade ou une bière d'abbaye est indispensable pour aller au bout[cite: 8].</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px">
 
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #C23B22">Kluisbergen (Sur le mont)</div>
-<h3 style="margin: 6px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">'t Juiste Verzet[cite: 8]</h3>
-<p style="margin: 0 0 10px; font-size: 16px; line-height: 1.5">Le wielercafé authentique d'Annie Vermeulen[cite: 8]. Poêle à bois, bidons historiques et ferveur des bergs[cite: 8]. L'arrêt emblématique du peloton.</p>
-<div style="font-size: 14px; font-weight: 600; color: #4A4437">Spécialité : Café, picon-bière &amp; tarte maison</div>
+<!-- 1. 't Juiste Verzet -->
+<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px">
+    <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #C23B22">Kluisbergen (Kwaremont)</span>
+    <span class="badge-star">★ 4,7 / 5</span>
+  </div>
+  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">'t Juiste Verzet[cite: 8]</h3>
+  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Le wielercafé légendaire d'Annie Vermeulen[cite: 8]. Chauffé au poêle à bois Leuvense stoof[cite: 8], maillots et bidons de champions suspendus[cite: 8]. L'arrêt pèlerinage numéro un.</p>
+</div>
+<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; font-weight: 600; color: #4A4437">
+  Spécialités : Picon-bière, tarte aux pommes maison &amp; café serré
+</div>
 </div>
 
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #2F6B8A">Oudenaarde (Cœur des Flandres)</div>
-<h3 style="margin: 6px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">Brasserie de Pelgrim</h3>
-<p style="margin: 0 0 10px; font-size: 16px; line-height: 1.5">Situé au pied du Centre du Tour des Flandres (CRVV). Le repaire des amoureux des pavés avec terrasse au soleil et vaste choix de bières régionales.</p>
-<div style="font-size: 14px; font-weight: 600; color: #4A4437">Spécialité : Ename triple, frites fraîches &amp; croquettes de crevettes</div>
+<!-- 2. Brasserie De Pelgrim -->
+<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px">
+    <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #2F6B8A">Oudenaarde (Centre)</span>
+    <span class="badge-star">★ 4,3 / 5</span>
+  </div>
+  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">Brasserie De Pelgrim</h3>
+  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Au pied du Centre du Tour des Flandres (CRVV). Idéal pour se poser en terrasse en observant les vélos de passage et reprendre des forces.</p>
+</div>
+<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; font-weight: 600; color: #4A4437">
+  Spécialités : Bière Ename Triple, croquettes de crevettes &amp; frites belges
+</div>
 </div>
 
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #E2951A">Mende / Ronse (Mi-parcours)</div>
-<h3 style="margin: 6px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">In de Rustberg</h3>
-<p style="margin: 0 0 10px; font-size: 16px; line-height: 1.5">Un véritable estaminet traditionnel flamand au pied des crêtes. Ambiance boisée, jeux traditionnels et accueil taillé pour les cyclos éreintés.</p>
-<div style="font-size: 14px; font-weight: 600; color: #4A4437">Spécialité : Tartines au fromage de tête, soupe du jour &amp; Kwaremont pression</div>
+<!-- 3. In de Rustberg -->
+<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px">
+    <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #E2951A">Maarke-Kerkem</span>
+    <span class="badge-star">★ 4,6 / 5</span>
+  </div>
+  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">In de Rustberg</h3>
+  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Estaminet champêtre blotti entre deux bergs. Mobilier en chêne, jeux flamands anciens et ambiance typique des Ardennes flamandes.</p>
+</div>
+<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; font-weight: 600; color: #4A4437">
+  Spécialités : Kwaremont pression, soupe paysanne &amp; tartines rustiques
+</div>
 </div>
 
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #C23B22">Frontière franco-belge</div>
-<h3 style="margin: 6px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">L'Estaminet de la Frontière</h3>
-<p style="margin: 0 0 10px; font-size: 16px; line-height: 1.5">La halte idéale sur le retour vers Marcq-en-Barœul et Lille. Pour refaire la course au chaud avant les derniers kilomètres de plat.</p>
-<div style="font-size: 14px; font-weight: 600; color: #4A4437">Spécialité : Carbonnade flamande au pain d'épices &amp; potjevleesch</div>
+<!-- 4. L'Estaminet de la Frontière -->
+<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px">
+    <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #C23B22">Frontière franco-belge</span>
+    <span class="badge-star">★ 4,5 / 5</span>
+  </div>
+  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-size: 26px; line-height: 1.1; text-transform: uppercase">Estaminet de la Frontière</h3>
+  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">À la frontière du retour vers Lille. Pour se réchauffer et refaire le débriefing de la journée avant le retour à Marcq-en-Barœul[cite: 8].</p>
+</div>
+<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; font-weight: 600; color: #4A4437">
+  Spécialités : Carbonnade flamande au pain d'épices &amp; potjevleesch
+</div>
 </div>
 
 </div>
@@ -391,7 +465,7 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <div style="max-width: 1120px; margin: 0 auto">
 <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Chapitre 5</div>
 <h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Rijsel, Lille, capitale des Flandres</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 16px; max-width: 64ch">Rijsel, c'est Lille en flamand. Avant d'être française, la ville a été flamande, bourguignonne puis espagnole[cite: 8]. Nous ne partons donc pas vraiment à l'étranger : nous remontons vers l'ancienne Flandre[cite: 8].</p>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 16px; max-width: 64ch">Rijsel, c'est Lille en flamand[cite: 8]. Avant d'être française, la ville a été flamande, bourguignonne puis espagnole[cite: 8]. Nous ne partons donc pas vraiment à l'étranger : nous remontons vers l'ancienne Flandre[cite: 8].</p>
 <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 40px">
 <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; border-top: 3px solid #1C1A16">
 <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1066</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Première mention écrite de la ville, appelée Isla, dans une charte de la collégiale Saint-Pierre[cite: 8].</div></div>
