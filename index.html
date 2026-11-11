@@ -41,6 +41,41 @@ a{color:#A52E18}a:hover{color:#1C1A16}
   align-items: center;
   gap: 4px;
 }
+
+/* Animations studio vidéo */
+@keyframes recBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.rec-active {
+  animation: recBlink 1s infinite;
+}
+
+@keyframes mouthTalk {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(3.2); }
+}
+.speaking-mouth {
+  animation: mouthTalk 0.18s infinite ease-in-out;
+  transform-origin: 150px 145px;
+}
+
+@keyframes headBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+.speaking-head {
+  animation: headBob 0.35s infinite ease-in-out;
+}
+
+@keyframes eqBar {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+.eq-active-1 { animation: eqBar 0.4s infinite ease-in-out; }
+.eq-active-2 { animation: eqBar 0.25s infinite ease-in-out 0.1s; }
+.eq-active-3 { animation: eqBar 0.35s infinite ease-in-out 0.2s; }
+.eq-active-4 { animation: eqBar 0.28s infinite ease-in-out 0.05s; }
 </style>
 </helmet>
 <div style="width: 100%; background: #F1DDA2; color: #1C1A16; font-family: 'Barlow', sans-serif; overflow: hidden">
@@ -308,25 +343,91 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </div>
 </section>
 
-<!-- SECTION SPECIALE : VIDEO DEEPFAKE PAUL SEIXAS -->
+<!-- SECTION SPECIALE : STUDIO VIDEO ANIMÉ PAUL SEIXAS -->
 <section id="seixas" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #C23B22">
 <div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #C23B22">L'Oeil du Prodige · Vidéo Exclusive</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #C23B22">Studio Interview · Parodie Animée</div>
 <h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Paul Seixas juge la cyclo</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Le champion du monde junior UCI et pépite de l'équipe Decathlon AG2R La Mondiale réagit au parcours de notre sortie.</p>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Le champion du monde junior UCI réagit en direct au tracé de la cyclo dans ce studio interactif animé.</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
-<!-- Lecteur Vidéo simulé stylisé avec bouton Play -->
-<div style="flex: 1 1 480px; min-width: 0; background: #2A2720; border: 3px solid #C23B22; position: relative; border-radius: 4px; overflow: hidden; box-shadow: 8px 8px 0 #000">
-  <div style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, #1C1A16 0%, #3D261E 100%); display: flex; align-items: center; justify-content: center">
-    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center">
-      <div style="width: 72px; height: 72px; border-radius: 50%; background: #C23B22; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s; box-shadow: 0 0 16px rgba(194,59,34,0.6)" onclick="alert('Vidéo hommage Deepfake : le script audio complet est disponible ci-contre !')">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFF6DD"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-      </div>
-      <div style="margin-top: 16px; font-family: 'Anton', Impact, sans-serif; font-size: 22px; letter-spacing: 0.05em; color: #FFF6DD; text-transform: uppercase">Interview Vidéo · Paul Seixas</div>
-      <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; color: #E2951A; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px">Générée en Deepfake Parodique IA</div>
+<!-- Studio Vidéo Interactif Animé -->
+<div style="flex: 1 1 480px; min-width: 0; background: #141310; border: 3px solid #C23B22; border-radius: 6px; overflow: hidden; box-shadow: 8px 8px 0 #000; position: relative">
+  <!-- Bandeau supérieur studio -->
+  <div style="background: #1C1A16; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2A2720">
+    <div style="display: flex; align-items: center; gap: 8px">
+      <span id="rec-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #555; display: inline-block"></span>
+      <span id="rec-label" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #777">STANDBY</span>
     </div>
-    <div style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); color: #FFF6DD; padding: 4px 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; border-radius: 3px; letter-spacing: 0.1em; text-transform: uppercase">01:24 · HD</div>
+    <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: #E2951A; font-weight: 700; letter-spacing: 0.1em">FLANDRES-TV · LIVE</div>
+  </div>
+
+  <!-- Écran de diffusion avec cycliste animé -->
+  <div style="padding: 24px 20px 16px; background: radial-gradient(circle at center, #2B231D 0%, #12100E 100%); display: flex; flex-direction: column; align-items: center; position: relative">
+    <svg id="seixas-avatar" viewBox="0 0 300 240" style="width: 100%; max-width: 320px; height: auto; display: block">
+      <defs>
+        <!-- Casque cycliste -->
+        <linearGradient id="helmGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#C23B22"/>
+          <stop offset="100%" stop-color="#801C0A"/>
+        </linearGradient>
+      </defs>
+      <!-- Corps / Maillot équipe -->
+      <path d="M70 240 C70 190 100 175 150 175 C200 175 230 190 230 240 Z" fill="#203347" stroke="#1C1A16" stroke-width="3"/>
+      <path d="M110 177 L150 240 L190 177 Z" fill="#C23B22"/>
+      <text x="150" y="215" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="11" fill="#FFF6DD" letter-spacing="1">FRANCE · UCI</text>
+
+      <!-- Cou -->
+      <rect x="135" y="140" width="30" height="40" fill="#E8B48B" stroke="#1C1A16" stroke-width="2.5"/>
+
+      <!-- Tête animable -->
+      <g id="head-group">
+        <!-- Visage -->
+        <ellipse cx="150" cy="115" rx="38" ry="46" fill="#F4C39E" stroke="#1C1A16" stroke-width="3"/>
+        <!-- Oreilles -->
+        <ellipse cx="112" cy="118" rx="6" ry="10" fill="#E8B48B" stroke="#1C1A16" stroke-width="2"/>
+        <ellipse cx="188" cy="118" rx="6" ry="10" fill="#E8B48B" stroke="#1C1A16" stroke-width="2"/>
+        <!-- Yeux motivés -->
+        <ellipse cx="137" cy="108" rx="4" ry="5" fill="#1C1A16"/>
+        <ellipse cx="163" cy="108" rx="4" ry="5" fill="#1C1A16"/>
+        <path d="M130 98 Q137 94 144 98" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
+        <path d="M156 98 Q163 94 170 98" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
+        <!-- Nez -->
+        <path d="M150 110 L146 124 L153 124" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
+
+        <!-- Bouche animée en élocution -->
+        <ellipse id="avatar-mouth" cx="150" cy="142" rx="10" ry="3" fill="#6B1E12" stroke="#1C1A16" stroke-width="2"/>
+
+        <!-- Casque aéro cycliste pro -->
+        <path d="M106 100 C106 50 130 40 150 40 C170 40 194 50 194 100 C194 92 186 78 150 78 C114 78 106 92 106 100 Z" fill="url(#helmGrad)" stroke="#1C1A16" stroke-width="3"/>
+        <path d="M120 78 L124 48 M150 78 L150 40 M180 78 L176 48" stroke="#FFF6DD" stroke-width="2"/>
+        <ellipse cx="150" cy="46" rx="14" ry="5" fill="#E2951A"/>
+        <!-- Sangles casque -->
+        <path d="M116 95 L135 142 M184 95 L165 142" stroke="#1C1A16" stroke-width="2" fill="none"/>
+      </g>
+    </svg>
+
+    <!-- Égaliseur audio visualiseur -->
+    <div id="audio-eq" style="display: flex; gap: 5px; align-items: flex-end; height: 20px; margin-top: 10px; opacity: 0.3">
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #E2951A; border-radius: 2px"></div>
+      <div class="eq-bar" style="width: 6px; height: 4px; background: #C23B22; border-radius: 2px"></div>
+    </div>
+  </div>
+
+  <!-- Barre de commande lecteur -->
+  <div style="background: #1C1A16; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 2px solid #2A2720">
+    <button id="btn-toggle-speech" onclick="window.toggleSpeechSeixas()" style="cursor: pointer; background: #C23B22; color: #FFF6DD; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s">
+      <span id="btn-icon">▶</span>
+      <span id="btn-text">Lancer l'interview vidéo</span>
+    </button>
+    <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: #FFF6DD; text-align: right">
+      <span style="color: #E2951A; font-weight: 700">AUDIO + ANIMATION</span><br>
+      <span id="speech-state">Prêt à diffuser</span>
+    </div>
   </div>
 </div>
 
@@ -340,7 +441,7 @@ a{color:#A52E18}a:hover{color:#1C1A16}
   </blockquote>
   <div style="margin-top: 18px; font-size: 16px; line-height: 1.5; color: #FFF6DD; border-left: 3px solid #E2951A; padding-left: 12px">
     <strong>Paul Seixas</strong> — Champion du Monde Junior UCI, coureur professionnel chez Decathlon AG2R La Mondiale.<br>
-    <span style="font-size: 13px; color: #A99E8B">Propos parodiques humoristiques générés en hommage amical aux cyclos du 3 avril.</span>
+    <span style="font-size: 13px; color: #A99E8B">Animation interactive et propos parodiques générés en hommage amical aux cyclos du 3 avril.</span>
   </div>
 </div>
 </div>
@@ -604,7 +705,7 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </x-dc>
 
 <script>
-// --- METEO EN DIRECT (Kluisbergen / Kwaremont) ---
+// --- SCRIPT 1 : METEO EN DIRECT (Kluisbergen / Kwaremont) ---
 async function fetchMeteoLive() {
   const lat = 50.7833;
   const lon = 3.5167;
@@ -633,7 +734,72 @@ async function fetchMeteoLive() {
   }
 }
 
-// --- GESTION DES PARTICIPANTS ET DU COMPTEUR ---
+// --- SCRIPT 2 : STUDIO VIDEO ET SYNTHESE VOCALE SEIXAS ---
+window.toggleSpeechSeixas = function() {
+  if (!('speechSynthesis' in window)) {
+    alert("Votre navigateur ne supporte pas la synthèse vocale.");
+    return;
+  }
+
+  const mouth = document.getElementById('avatar-mouth');
+  const head = document.getElementById('head-group');
+  const recDot = document.getElementById('rec-dot');
+  const recLabel = document.getElementById('rec-label');
+  const btnIcon = document.getElementById('btn-icon');
+  const btnText = document.getElementById('btn-text');
+  const speechState = document.getElementById('speech-state');
+  const audioEq = document.getElementById('audio-eq');
+  const eqBars = document.querySelectorAll('.eq-bar');
+
+  function startVisuals() {
+    mouth.classList.add('speaking-mouth');
+    head.classList.add('speaking-head');
+    recDot.style.background = '#C23B22';
+    recDot.classList.add('rec-active');
+    recLabel.textContent = 'ON AIR';
+    recLabel.style.color = '#C23B22';
+    btnIcon.textContent = '⏸';
+    btnText.textContent = "Mettre en pause";
+    speechState.textContent = 'Diffusion en cours...';
+    audioEq.style.opacity = '1';
+    eqBars.forEach((b, i) => b.className = 'eq-bar eq-active-' + ((i % 4) + 1));
+  }
+
+  function stopVisuals() {
+    mouth.classList.remove('speaking-mouth');
+    head.classList.remove('speaking-head');
+    recDot.style.background = '#555';
+    recDot.classList.remove('rec-active');
+    recLabel.textContent = 'STANDBY';
+    recLabel.style.color = '#777';
+    btnIcon.textContent = '▶';
+    btnText.textContent = "Relancer l'interview";
+    speechState.textContent = 'Interview terminée';
+    audioEq.style.opacity = '0.3';
+    eqBars.forEach(b => b.className = 'eq-bar');
+  }
+
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    stopVisuals();
+    return;
+  }
+
+  const texte = "Partir de Lille pour se farcir 140 bornes et les bergs pavés la veille des pros ? Mais c'est un délire de grands malades ! Le Koppenberg à 22 %, sur un vélo normal sans assistance, tes cuisses hurlent, ta chaîne grince et tu pries pour ne pas poser le pied à terre dans la boue. C'est complètement dément, et c'est exactement pour ça que c'est grandiose. Bon courage à la bande !";
+
+  const utterance = new SpeechSynthesisUtterance(texte);
+  utterance.lang = 'fr-FR';
+  utterance.rate = 1.05;
+  utterance.pitch = 1.05;
+
+  utterance.onstart = startVisuals;
+  utterance.onend = stopVisuals;
+  utterance.onerror = stopVisuals;
+
+  window.speechSynthesis.speak(utterance);
+};
+
+// --- SCRIPT 3 : GESTION DES PARTICIPANTS ET DU COMPTEUR ---
 const STORAGE_KEY = 'ronde_participants_list';
 
 function getStoredParticipants() {
