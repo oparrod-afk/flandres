@@ -54,4 +54,102 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <header style="padding: 56px 24px 72px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
 <div style="flex: 1 1 440px; min-width: 0">
-<div style="
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase">La sortie · Cousins &amp; potes · Samedi 3 avril 2027</div>
+<h1 style="margin: 12px 0 0; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(54px, 8.5vw, 100px); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase">Tour des Flandres</h1>
+<div style="font-family: 'Anton', Impact, sans-serif; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: 0.04em; color: #C23B22; text-transform: uppercase; margin-top: 6px">Cyclo depuis Lille</div>
+<p style="margin: 28px 0 0; font-size: 22px; line-height: 1.5; max-width: 36ch">À la rencontre des monts diaboliques aux noms terrifiants : Koppenberg, Paterberg, Vieux Quaremont, Taaienberg.</p>
+<p style="margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: #4A4437">Départ de Rijsel, la veille de la course des pros.</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#parcours" style="display: inline-block; background: #1C1A16; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Voir le parcours</a>
+<a href="#participer" style="display: inline-block; background: #C23B22; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Confirmer ma présence</a>
+</div>
+</div>
+<div style="flex: 1 1 400px; min-width: 0">
+<!-- AJUSTEMENT : On appelle l'affiche BD au lieu de l'ancien dessin Koppenberg SVG -->
+<img src="./affiche-flandres.jpg" alt="Tour des Flandres depuis Lille - Ronde van Vlaanderen van Rysel" style="width: 100%; height: auto; display: block; border: 3px solid #1C1A16; box-shadow: 6px 6px 0 #1C1A16">
+</div>
+</div>
+</header>
+
+<!-- BANDEAU METEO EN DIRECT -->
+<section id="meteo" style="background: #2F6B8A; color: #FFF6DD; padding: 36px 24px; box-sizing: border-box; border-top: 4px solid #1C1A16; border-bottom: 4px solid #1C1A16">
+<div style="max-width: 1120px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+<div>
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="display: inline-block; width: 12px; height: 12px; background: #00E676; border-radius: 50%; box-shadow: 0 0 8px #00E676"></span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Météo en direct des Bergs (Kluisbergen / Kwaremont)</span>
+</div>
+<div id="meteo-condition" style="font-family: 'Anton', Impact, sans-serif; font-size: clamp(28px, 4.5vw, 42px); line-height: 1.1; margin-top: 4px; text-transform: uppercase">Chargement en direct...</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px 36px">
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Température</div>
+<div id="meteo-temp" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">--°C</div>
+</div>
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Vent</div>
+<div id="meteo-vent" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- km/h</div>
+</div>
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Pluie</div>
+<div id="meteo-pluie" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- mm</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 14px; font-size: 14px; color: #F1DDA2; opacity: 0.9">Données satellites et stations météo actualisées en temps réel (Open-Meteo API).</div>
+</div>
+</section>
+
+<!-- BANDEAU CHIFFRES -->
+<section style="background: #1C1A16; color: #FFF6DD; padding: 40px 24px; box-sizing: border-box">
+<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 24px; justify-content: space-between">
+<div style="flex: 1 1 200px">
+<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">1913</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">Première édition, gagnée par Paul Deman</div>
+</div>
+<div style="flex: 1 1 200px">
+<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">+1 M</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">de spectateurs au bord du parcours chaque année</div>
+</div>
+<div style="flex: 1 1 200px">
+<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">8</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">coureurs l'ont gagné trois fois</div>
+</div>
+<div style="flex: 1 1 200px">
+<div id="stat-participants-count" style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">0</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">participants confirmés</div>
+</div>
+</div>
+</section>
+
+<!-- CHAPITRE 1 : HISTOIRE -->
+<section id="histoire" style="padding: 88px 24px; box-sizing: border-box">
+<div style="max-width: 1120px; margin: 0 auto">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Chapitre 1</div>
+<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Une course née en 1913</h2>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 16px; max-width: 64ch">En mai 1913, le journal Sportwereld lance une course qui est à la fois une opération commerciale et un manifeste flamand. Elle naît dans l'élan de la victoire belge d'Odile Defraye au Tour de France 1912. Le journaliste Karel Van Wijnendaele en est le père et le promoteur. L'homme d'affaires Leon Van den Haute en dessine le parcours. Départ et arrivée à Gand, et un premier vainqueur : Paul Deman, 25 ans.</p>
+<div style="margin-top: 48px; display: flex; flex-direction: column; border-top: 3px solid #1C1A16">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1919</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le train de Van Lerberghe.</strong> Henri Van Lerberghe aurait pris son vélo sur l'épaule pour passer sous un train bloqué à un passage à niveau, avant de gagner avec 15 minutes d'avance. La légende lui prête ce mot à l'arrivée : « Je suis en avance d'une demi-journée. Vous pouvez tous rentrer chez vous ! »</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1961</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Tom Simpson, seule victoire britannique.</strong> Une arrivée contestée par l'Italien Nino Defilippis, après une banderole d'arrivée tombée à cause du vent. Elle reste controversée.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1976</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le Koppenberg entre en scène.</strong> Seuls cinq coureurs le franchissent en selle. Eddy Merckx doit marcher dans la partie la plus raide.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1987</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le Koppenberg est rayé de la carte.</strong> Après l'incident impliquant Jesper Skibby, la côte quitte le parcours. Elle y revient en 2002.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">2012</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Arrivée à Oudenaarde.</strong> Depuis cette année-là, la course se conclut dans la ville des bergs. Les éditions récentes alignent de 17 à 19 côtes, pavées ou asphaltées, sur environ 265 km.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 3px solid #1C1A16">
+<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">3 fois</div>
+<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line
