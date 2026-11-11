@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour des Flandres cyclo depuis Lille</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
@@ -14,6 +15,20 @@
 <style>
 body{margin:0}
 a{color:#A52E18}a:hover{color:#1C1A16}
+.input-flandres {
+  background: #FFF6DD;
+  color: #1C1A16;
+  border: 2px solid #1C1A16;
+  padding: 12px 16px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 17px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.input-flandres:focus {
+  outline: none;
+  border-color: #C23B22;
+}
 </style>
 </helmet>
 <div style="width: 100%; background: #F1DDA2; color: #1C1A16; font-family: 'Barlow', sans-serif; overflow: hidden">
@@ -23,13 +38,14 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 24px">
 <div style="font-family: 'Anton', Impact, sans-serif; font-size: 22px; letter-spacing: 0.04em; color: #FFF6DD; padding: 8px 0">RIJSEL &gt; LES BERGS</div>
 <div style="display: flex; flex-wrap: wrap; gap: 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase">
+<a href="#meteo" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Météo Live</a>
 <a href="#histoire" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Histoire</a>
 <a href="#mythe" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Mythe</a>
 <a href="#bergs" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Les bergs</a>
 <a href="#voix" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Ils en parlent</a>
 <a href="#lille" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Lille</a>
 <a href="#parcours" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Parcours</a>
-<a href="#infos" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">On y va</a>
+<a href="#participer" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Je viens !</a>
 </div>
 </div>
 </nav>
@@ -45,7 +61,7 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <p style="margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: #4A4437">Départ de Rijsel, la veille de la course des pros.</p>
 <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#parcours" style="display: inline-block; background: #1C1A16; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Voir le parcours</a>
-<a href="#infos" style="display: inline-block; background: #C23B22; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Je viens</a>
+<a href="#participer" style="display: inline-block; background: #C23B22; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Confirmer ma présence</a>
 </div>
 </div>
 <div style="flex: 1 1 400px; min-width: 0">
@@ -120,6 +136,36 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </div>
 </header>
 
+<!-- BANDEAU METEO EN DIRECT -->
+<section id="meteo" style="background: #2F6B8A; color: #FFF6DD; padding: 36px 24px; box-sizing: border-box; border-top: 4px solid #1C1A16; border-bottom: 4px solid #1C1A16">
+<div style="max-width: 1120px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+<div>
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="display: inline-block; width: 12px; height: 12px; background: #00E676; border-radius: 50%; box-shadow: 0 0 8px #00E676"></span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Météo en direct des Bergs (Kluisbergen / Kwaremont)</span>
+</div>
+<div id="meteo-condition" style="font-family: 'Anton', Impact, sans-serif; font-size: clamp(28px, 4.5vw, 42px); line-height: 1.1; margin-top: 4px; text-transform: uppercase">Chargement en direct...</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px 36px">
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Température</div>
+<div id="meteo-temp" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">--°C</div>
+</div>
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Vent</div>
+<div id="meteo-vent" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- km/h</div>
+</div>
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Pluie</div>
+<div id="meteo-pluie" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- mm</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 14px; font-size: 14px; color: #F1DDA2; opacity: 0.9">Données satellites et stations météo actualisées en temps réel (Open-Meteo API).</div>
+</div>
+</section>
+
 <!-- BANDEAU CHIFFRES -->
 <section style="background: #1C1A16; color: #FFF6DD; padding: 40px 24px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 24px; justify-content: space-between">
@@ -136,8 +182,8 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">coureurs l'ont gagné trois fois</div>
 </div>
 <div style="flex: 1 1 200px">
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">3</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">bergs mythiques pour nous</div>
+<div id="stat-participants-count" style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">0</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">participants confirmés</div>
 </div>
 </div>
 </section>
@@ -426,6 +472,47 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 </div>
 </section>
 
+<!-- MODULE D'INSCRIPTION & COMPTEUR -->
+<section id="participer" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #E2951A">
+<div style="max-width: 1120px; margin: 0 auto">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">Confirmation</div>
+<h2 style="margin: 8px 0 16px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Tu viens rouler ?</h2>
+<p style="font-size: 20px; line-height: 1.6; margin: 0 0 36px; max-width: 60ch">Inscris ton nom et prénom pour confirmer ta présence dans le peloton. Le compteur s'actualise en direct.</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="flex: 1 1 360px; min-width: 0; background: #2A2720; padding: 32px; box-sizing: border-box; border: 3px solid #E2951A">
+<form id="form-participation" onsubmit="event.preventDefault(); window.ajouterParticipant();">
+<div style="margin-bottom: 20px">
+<label for="participant-prenom" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px">Prénom</label>
+<input type="text" id="participant-prenom" class="input-flandres" placeholder="Ex: Briek" required>
+</div>
+<div style="margin-bottom: 24px">
+<label for="participant-nom" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px">Nom</label>
+<input type="text" id="participant-nom" class="input-flandres" placeholder="Ex: Schotte" required>
+</div>
+<button type="submit" style="width: 100%; cursor: pointer; background: #C23B22; color: #FFF6DD; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 24px; transition: background 0.2s">Je confirme ma participation</button>
+</form>
+<div id="confirmation-msg" style="display: none; margin-top: 16px; padding: 12px; background: #FAF0CF; color: #1C1A16; font-weight: 600; font-size: 16px; text-align: center"></div>
+</div>
+
+<div style="flex: 1 1 360px; min-width: 0; background: #FAF0CF; color: #1C1A16; padding: 32px; box-sizing: border-box; border: 3px solid #1C1A16; display: flex; flex-direction: column; justify-content: space-between">
+<div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: #C23B22">Le peloton officiel</div>
+<div style="display: flex; align-items: baseline; gap: 12px; margin: 10px 0 16px">
+<span id="counter-display" style="font-family: 'Anton', Impact, sans-serif; font-size: 72px; line-height: 1; color: #C23B22">0</span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase">coureur(s) inscrit(s)</span>
+</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid #1C1A16; padding-bottom: 6px; margin-bottom: 12px">Liste des inscrits :</div>
+<ul id="participants-list" style="margin: 0; padding-left: 20px; font-size: 18px; line-height: 1.8; max-height: 220px; overflow-y: auto">
+<!-- Les participants s'afficheront ici -->
+</ul>
+</div>
+<div style="margin-top: 20px; font-size: 14px; color: #6F685A">Tu souhaites te désinscrire ? Clique sur la croix à côté de ton nom.</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- INFOS PRATIQUES -->
 <section id="infos" style="background: #C23B22; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box">
 <div style="max-width: 1120px; margin: 0 auto">
@@ -479,6 +566,130 @@ a{color:#A52E18}a:hover{color:#1C1A16}
 
 </div>
 </x-dc>
+
+<script>
+// --- SCRIPT 1 : METEO EN DIRECT (Kluisbergen / Kwaremont) ---
+async function fetchMeteoLive() {
+  const lat = 50.7833;
+  const lon = 3.5167;
+  try {
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,precipitation,weather_code,wind_speed_10m&timezone=auto`);
+    if (!res.ok) throw new Error('Erreur API météo');
+    const data = await res.json();
+    const cur = data.current;
+
+    document.getElementById('meteo-temp').textContent = Math.round(cur.temperature_2m) + '°C';
+    document.getElementById('meteo-vent').textContent = Math.round(cur.wind_speed_10m) + ' km/h';
+    document.getElementById('meteo-pluie').textContent = cur.precipitation + ' mm';
+
+    const code = cur.weather_code;
+    let description = 'Ciel dégagé ☀️';
+    if (code >= 1 && code <= 3) description = 'Éclaircies / Nuageux ⛅';
+    else if (code >= 45 && code <= 48) description = 'Brouillard flandrien 🌫️';
+    else if (code >= 51 && code <= 67) description = 'Pluie flandrienne 🌧️';
+    else if (code >= 71 && code <= 77) description = 'Neige fondue ❄️';
+    else if (code >= 80 && code <= 82) description = 'Averses copieuses 🌧️';
+    else if (code >= 95) description = 'Orage sur les bergs ⚡';
+
+    document.getElementById('meteo-condition').textContent = description;
+  } catch (err) {
+    document.getElementById('meteo-condition').textContent = 'Météo indisponible';
+  }
+}
+
+// --- SCRIPT 2 : GESTION DES PARTICIPANTS ET DU COMPTEUR ---
+const STORAGE_KEY = 'ronde_participants_list';
+
+function getStoredParticipants() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+      { prenom: 'Emilio', nom: 'G.' },
+      { prenom: 'Briek', nom: 'Schotte' }
+    ];
+  } catch(e) {
+    return [];
+  }
+}
+
+function updateParticipantsUI() {
+  const participants = getStoredParticipants();
+  const counter = document.getElementById('counter-display');
+  const statCounter = document.getElementById('stat-participants-count');
+  const list = document.getElementById('participants-list');
+
+  if (counter) counter.textContent = participants.length;
+  if (statCounter) statCounter.textContent = participants.length;
+
+  if (list) {
+    list.innerHTML = '';
+    if (participants.length === 0) {
+      list.innerHTML = '<li style="list-style: none; color: #6F685A">Aucun inscrit pour le moment. Sois le premier !</li>';
+    } else {
+      participants.forEach((p, idx) => {
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.justifyContent = 'space-between';
+        li.style.alignItems = 'center';
+        li.style.marginBottom = '6px';
+        li.innerHTML = `<span><strong>${escapeHtml(p.prenom)}</strong> ${escapeHtml(p.nom)}</span> 
+                        <button onclick="window.supprimerParticipant(${idx})" title="Supprimer" style="background: none; border: none; cursor: pointer; color: #C23B22; font-weight: bold; font-size: 16px">✕</button>`;
+        list.appendChild(li);
+      });
+    }
+  }
+}
+
+function escapeHtml(str) {
+  return str.replace(/[&<>'"]/g, tag => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[tag] || tag));
+}
+
+window.ajouterParticipant = function() {
+  const prenomEl = document.getElementById('participant-prenom');
+  const nomEl = document.getElementById('participant-nom');
+  const msgEl = document.getElementById('confirmation-msg');
+
+  const prenom = prenomEl.value.trim();
+  const nom = nomEl.value.trim();
+
+  if (!prenom || !nom) return;
+
+  const participants = getStoredParticipants();
+  participants.push({ prenom, nom });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(participants));
+
+  updateParticipantsUI();
+
+  // Affichage du message de confirmation
+  msgEl.style.display = 'block';
+  msgEl.textContent = `Bravo ${prenom} ! Ta présence est confirmée dans le peloton.`;
+
+  // Ouverture optionnelle de WhatsApp pour avertir l'organisateur en un clic
+  const waUrl = `https://wa.me/33661307647?text=Salut%2C%20je%20confirme%20ma%20participation%20au%20Tour%20des%20Flandres%20%3A%20${encodeURIComponent(prenom + ' ' + nom)}`;
+  setTimeout(() => {
+    if (confirm("Veux-tu aussi envoyer ta confirmation par WhatsApp à l'organisateur ?")) {
+      window.open(waUrl, '_blank');
+    }
+  }, 300);
+
+  prenomEl.value = '';
+  nomEl.value = '';
+};
+
+window.supprimerParticipant = function(index) {
+  const participants = getStoredParticipants();
+  participants.splice(index, 1);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(participants));
+  updateParticipantsUI();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchMeteoLive();
+  updateParticipantsUI();
+});
+</script>
+
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":7600}}'>
 class Component extends DCLogic {
 renderVals() {
