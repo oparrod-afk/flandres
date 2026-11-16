@@ -3,875 +3,781 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tour des Flandres cyclo depuis Lille</title>
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
+<title>Tour des Flandres cyclo depuis Lille · 3 avril 2027</title>
+<meta name="description" content="Sortie cyclo de 141 km au départ de Lille, 10 bergs pavés des Ardennes flamandes, la veille du Ronde van Vlaanderen. Samedi 3 avril 2027.">
+<meta property="og:title" content="Tour des Flandres cyclo depuis Lille · 3 avril 2027">
+<meta property="og:description" content="141 km, 10 bergs, Koppenberg, Paterberg, Vieux Quaremont. Rejoins le peloton la veille du Ronde !">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./image1.png">
+<meta name="theme-color" content="#C23B22">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SportsEvent","name":"Tour des Flandres cyclo depuis Lille","startDate":"2027-04-03T09:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Marcq-en-Barœul","address":{"@type":"PostalAddress","addressLocality":"Marcq-en-Barœul","addressCountry":"FR"}},"description":"Sortie cyclo de 141 km avec 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.","sport":"Cyclisme"}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;700&display=swap">
+<style>
+:root{--red:#C23B22;--red-d:#A52E18;--ink:#1C1A16;--cream:#F1DDA2;--paper:#FFF6DD;--paper2:#FAF0CF;--amber:#E2951A;--blue:#2F6B8A;--muted:#4A4437}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Barlow',sans-serif;overflow-x:hidden}
+a{color:var(--red-d)}a:hover{color:var(--ink)}
+.wrap{max-width:1120px;margin:0 auto}
+section{padding:88px 24px}
+.cond{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase}
+.anton{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-d)}
+h2.big{margin:8px 0 24px;font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:clamp(44px,7vw,84px);line-height:.95;text-transform:uppercase}
+.lead{font-size:20px;line-height:1.6;max-width:64ch;margin:0 0 40px}
+.dark{background:var(--ink);color:var(--paper)}
+.dark .eyebrow{color:var(--amber)}
+.btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.12em;text-transform:uppercase;padding:14px 24px;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn-ink{background:var(--ink);color:var(--paper)}.btn-ink:hover{color:var(--paper)}
+.btn-red{background:var(--red);color:var(--paper)}.btn-red:hover{color:var(--paper)}
+.btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{color:var(--ink);box-shadow:4px 4px 0 #000}
+
+/* progress + nav */
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--amber);z-index:100}
+nav{position:sticky;top:0;z-index:90;background:var(--red);padding:6px 16px}
+nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:0 4px}
+nav a{color:var(--paper);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;padding:10px}
+nav a:hover{color:var(--amber)}
+nav a.cta{background:var(--ink);margin-left:8px}
+
+/* hero */
+header.hero{position:relative;padding:56px 24px 0;overflow:hidden;background:
+ radial-gradient(circle at 20% 20%,rgba(255,246,221,.5),transparent 55%),var(--cream)}
+header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-image:radial-gradient(var(--ink) 2px,transparent 2.5px);background-size:22px 22px}
+.hero-grid{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-bottom:40px}
+.hero-grid>div{flex:1 1 420px;min-width:0}
+.hero h1{margin:12px 0 0;font-size:clamp(54px,8.5vw,100px);line-height:.95;letter-spacing:.01em}
+.hero h1 span{display:block;font-size:clamp(34px,5vw,58px);color:var(--red);letter-spacing:.04em;margin-top:6px}
+.hero img{width:100%;height:auto;display:block;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transform:rotate(1.5deg);transition:transform .4s}
+.hero img:hover{transform:rotate(0)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.badge{background:var(--ink);color:var(--paper);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;font-size:16px}
+.badge b{color:var(--amber)}
+.countdown{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.cd{background:var(--ink);color:var(--paper);min-width:78px;padding:10px 12px;text-align:center;border-bottom:4px solid var(--red)}
+.cd .n{font-family:'Anton',sans-serif;font-size:42px;line-height:1}
+.cd .l{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.road{position:relative;height:84px;border-top:6px solid var(--ink);background:repeating-linear-gradient(90deg,#3a352b 0 34px,#2c281f 34px 36px);overflow:hidden}
+.biker{position:absolute;bottom:6px;left:-120px;width:110px;animation:ride 11s linear infinite}
+@keyframes ride{to{left:110%}}
+.wheel{transform-box:fill-box;transform-origin:center;animation:spin .5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ticker */
+.ticker{background:var(--amber);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:10px 0;animation:tick 30s linear infinite;font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.ticker span{margin:0 28px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* weather */
+#meteo{background:var(--blue);color:var(--paper);padding:36px 24px;border-block:4px solid var(--ink)}
+.meteo-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.dot{display:inline-block;width:12px;height:12px;background:#00E676;border-radius:50%;box-shadow:0 0 8px #00E676;margin-right:10px;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.mval{font-family:'Anton',sans-serif;font-size:44px;line-height:1}
+.mlab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
+
+/* stats */
+.stats{background:var(--ink);color:var(--paper);padding:40px 24px}
+.stats .wrap{display:flex;flex-wrap:wrap;gap:32px 24px;justify-content:space-between}
+.stat{flex:1 1 200px}
+.stat .n{font-family:'Anton',sans-serif;font-size:64px;line-height:1;color:var(--amber)}
+.stat .l{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.08em;text-transform:uppercase}
+
+/* why / audience */
+.cards{display:flex;flex-wrap:wrap;gap:24px}
+.card{flex:1 1 300px;min-width:0;background:var(--paper2);border:3px solid var(--ink);padding:28px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.card .ic{font-size:40px;line-height:1}
+.card h3{margin:10px 0 8px;font-family:'Anton',sans-serif;font-weight:400;font-size:30px;text-transform:uppercase}
+.card p{margin:0;font-size:18px;line-height:1.55}
+.dark .card{background:#2A2720;border-color:#2A2720;border-top:6px solid var(--amber)}
+.dark .card:hover{box-shadow:6px 6px 0 #000}
+.dark .card h3{color:var(--amber)}
+
+/* timeline */
+.tl{display:flex;flex-direction:column;border-top:3px solid var(--ink)}
+.tl .row{display:flex;flex-wrap:wrap;gap:8px 32px;padding:22px 0;border-bottom:1px solid var(--ink)}
+.tl .y{flex:0 0 120px;font-family:'Anton',sans-serif;font-size:44px;line-height:1;color:var(--red)}
+.tl .t{flex:1 1 420px;min-width:0;font-size:19px;line-height:1.55}
+.dark .tl,.dark .tl .row{border-color:#5C5649}
+.dark .tl .y{color:var(--amber)}
+
+/* bergs */
+.berg{background:var(--paper2);border:3px solid var(--ink);display:flex;flex-wrap:wrap;margin-bottom:32px}
+.berg .side{flex:1 1 280px;color:var(--paper);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.berg .body{flex:2 1 420px;padding:32px}
+.berg h3{margin:4px 0 0;font-family:'Anton',sans-serif;font-weight:400;font-size:52px;line-height:1;text-transform:uppercase}
+.berg .nums{display:flex;flex-wrap:wrap;gap:16px 28px}
+.berg .nums b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:40px;line-height:1}
+.berg .nums span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase}
+.berg p{margin:0 0 14px;font-size:19px;line-height:1.6}
+.berg q{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:28px;line-height:1.2;quotes:none}
+.berg cite{display:block;margin-top:8px;font-size:16px;color:var(--muted);font-style:normal}
+.bars{background:var(--ink);color:var(--paper);padding:32px;margin-top:16px}
+.bars .cols{display:flex;flex-wrap:wrap;gap:32px}
+.bars .col{flex:1 1 360px;min-width:0}
+.bar{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bar .nm{flex:0 0 130px;font-size:17px}.bar .v{flex:0 0 64px;font-weight:600}
+.bar .tr{flex:1;min-width:0}
+.bar .fill{height:22px;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.reveal.in .bar .fill{width:var(--w)}
+
+/* voix */
+#voix{background:var(--amber)}
+.quote{flex:1 1 320px;min-width:0;margin:0;background:var(--paper2);padding:28px;border:3px solid var(--ink)}
+.quote p{margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1.1}
+.quote figcaption{margin-top:14px;font-size:16px;line-height:1.45}
+
+/* flandrien studio */
+.studio{flex:1 1 480px;min-width:0;background:#141310;border:3px solid var(--red);border-radius:6px;overflow:hidden;box-shadow:8px 8px 0 #000}
+.studio .top{background:var(--ink);padding:10px 16px;display:flex;justify-content:space-between;border-bottom:2px solid #2A2720;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.studio .stage{padding:24px 20px 16px;display:flex;flex-direction:column;align-items:center;background:radial-gradient(circle,#2B231D,#12100E)}
+.studio .bot{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:2px solid #2A2720}
+#rec{width:12px;height:12px;border-radius:50%;background:#555;display:inline-block;margin-right:8px}
+#rec.on{background:var(--red);animation:pulse 1s infinite}
+.mouth{transform-origin:150px 142px}
+.talk .mouth{animation:mouth .18s infinite ease-in-out}
+.talk #head{animation:bob .35s infinite ease-in-out}
+@keyframes mouth{50%{transform:scaleY(3)}}
+@keyframes bob{50%{transform:translateY(-2px)}}
+.eq{display:flex;gap:5px;align-items:flex-end;height:20px;margin-top:10px;opacity:.3}
+.eq i{width:6px;height:4px;background:#00E676;border-radius:2px}
+.talk .eq{opacity:1}
+.talk .eq i{animation:eq .3s infinite ease-in-out}
+.talk .eq i:nth-child(2){animation-delay:.07s}.talk .eq i:nth-child(3){animation-delay:.14s}.talk .eq i:nth-child(4){animation-delay:.21s}
+@keyframes eq{50%{height:18px}}
+
+/* estaminet */
+#estaminets{background:var(--paper2);border-top:4px solid var(--ink)}
+.stop{flex:1 1 320px;background:var(--paper);border:3px solid var(--ink);padding:28px}
+.stop h3{margin:4px 0 10px;font-family:'Anton',sans-serif;font-weight:400;font-size:30px;text-transform:uppercase}
+
+/* program */
+.prog{border-left:4px solid var(--amber);margin-left:8px}
+.prog .step{position:relative;padding:0 0 28px 28px}
+.prog .step::before{content:"";position:absolute;left:-12px;top:6px;width:20px;height:20px;background:var(--red);border:3px solid var(--ink);border-radius:50%}
+.prog .h{font-family:'Anton',sans-serif;font-size:30px;color:var(--amber)}
+.prog .d{font-size:19px;line-height:1.5}
+
+/* checklist */
+.check{columns:2 280px;column-gap:32px;padding:0;margin:0;list-style:none}
+.check li{break-inside:avoid;padding:8px 0 8px 36px;position:relative;font-size:18px;border-bottom:1px dashed #5C5649}
+.check li::before{content:"✓";position:absolute;left:0;top:6px;width:24px;height:24px;background:var(--amber);color:var(--ink);font-weight:700;text-align:center;line-height:24px}
+
+/* faq */
+details{background:var(--paper2);border:3px solid var(--ink);margin-bottom:12px}
+summary{cursor:pointer;padding:18px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-size:28px;line-height:1;color:var(--red)}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 24px 20px;font-size:18px;line-height:1.6}
+
+/* parcours */
+.pgrid{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.pgrid img{width:100%;height:auto;display:block;border:3px solid var(--amber)}
+.kpi{padding:18px 0;border-bottom:1px solid #5C5649}
+.kpi .l{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.kpi .v{font-family:'Anton',sans-serif;font-size:36px;line-height:1.1}
+
+/* register */
+#participer{background:var(--red);color:var(--paper)}
+#participer .eyebrow{color:var(--paper)}
+.form{background:var(--ink);padding:32px;max-width:560px;border:3px solid var(--amber)}
+.form label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+.form .f{margin-bottom:18px}
+.in{background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:12px 16px;font:17px 'Barlow',sans-serif;width:100%}
+.in:focus{outline:none;border-color:var(--red)}
+.reg{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.reg>div{flex:1 1 360px;min-width:0}
+.infos{display:flex;flex-wrap:wrap;gap:24px 40px;margin-top:32px}
+.infos div{flex:1 1 200px}
+.infos .v{font-family:'Anton',sans-serif;font-size:32px;line-height:1.1}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+footer{padding:56px 24px 110px}
+footer ul{padding-left:20px;font-size:16px;line-height:1.8}
+
+/* floating cta */
+#float{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;text-align:center;background:var(--red);color:var(--paper);padding:14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transform:translateY(140%);transition:transform .35s}
+#float.show{transform:none}
+@media(min-width:900px){#float{left:auto;right:24px;width:auto;padding:14px 28px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+ html{scroll-behavior:auto}
+}
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@400;500;600&amp;family=Barlow+Condensed:wght@500;700&amp;display=swap">
-<style>
-body{margin:0}
-a{color:#A52E18}a:hover{color:#1C1A16}
-.input-flandres {
-  background: #FFF6DD;
-  color: #1C1A16;
-  border: 2px solid #1C1A16;
-  padding: 12px 16px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 17px;
-  box-sizing: border-box;
-  width: 100%;
-}
-.input-flandres:focus {
-  outline: none;
-  border-color: #C23B22;
-}
-.badge-star {
-  background: #E2951A;
-  color: #1C1A16;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
+<div id="progress"></div>
 
-@keyframes recBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-.rec-active {
-  animation: recBlink 1s infinite;
-}
-
-@keyframes mouthTalk {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(3.2); }
-}
-.speaking-mouth {
-  animation: mouthTalk 0.18s infinite ease-in-out;
-  transform-origin: 150px 145px;
-}
-
-@keyframes headBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-.speaking-head {
-  animation: headBob 0.35s infinite ease-in-out;
-}
-
-@keyframes eqBar {
-  0%, 100% { height: 4px; }
-  50% { height: 18px; }
-}
-.eq-active-1 { animation: eqBar 0.4s infinite ease-in-out; }
-.eq-active-2 { animation: eqBar 0.25s infinite ease-in-out 0.1s; }
-.eq-active-3 { animation: eqBar 0.35s infinite ease-in-out 0.2s; }
-.eq-active-4 { animation: eqBar 0.28s infinite ease-in-out 0.05s; }
-</style>
-</helmet>
-<div style="width: 100%; background: #F1DDA2; color: #1C1A16; font-family: 'Barlow', sans-serif; overflow: hidden">
-
-<!-- NAVIGATION -->
-<nav style="background: #C23B22; padding: 10px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 24px">
-<div style="display: flex; flex-wrap: wrap; gap: 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase">
-<a href="#meteo" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Météo Live</a>
-<a href="#histoire" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Histoire &amp; UCI</a>
-<a href="#mythe" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Mythe</a>
-<a href="#bergs" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Les bergs</a>
-<a href="#seixas" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Vidéo Seixas</a>
-<a href="#voix" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Ils en parlent</a>
-<a href="#estaminets" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Estaminets</a>
-<a href="#lille" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Lille</a>
-<a href="#parcours" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Parcours</a>
-<a href="#participer" style="color: #FFF6DD; text-decoration: none; padding: 12px 10px">Je viens !</a>
-</div>
-</div>
+<nav>
+  <div class="links">
+    <a href="#pourquoi">Pourquoi</a>
+    <a href="#bergs">Les bergs</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#programme">Programme</a>
+    <a href="#histoire">Histoire</a>
+    <a href="#faq">FAQ</a>
+    <a class="cta" href="#participer">Je viens !</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<header style="padding: 56px 24px 72px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
-<div style="flex: 1 1 440px; min-width: 0">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase">Événement Cyclo · Samedi 3 avril 2027</div>
-<h1 style="margin: 12px 0 0; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(54px, 8.5vw, 100px); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase">Tour des Flandres</h1>
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: 0.04em; color: #C23B22; text-transform: uppercase; margin-top: 6px">Cyclo depuis Lille</div>
-<p style="margin: 28px 0 0; font-size: 22px; line-height: 1.5; max-width: 36ch">À la rencontre des monts diaboliques répertoriés au calendrier UCI WorldTour : Koppenberg, Paterberg, Vieux Quaremont, Taaienberg.</p>
-<p style="margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: #4A4437">Départ de Rijsel, la veille de l'épreuve reine des professionnels.</p>
-<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#parcours" style="display: inline-block; background: #1C1A16; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Voir le parcours</a>
-<a href="#participer" style="display: inline-block; background: #C23B22; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px">Confirmer ma présence</a>
-</div>
-</div>
-<div style="flex: 1 1 400px; min-width: 0">
-<img src="./image1.png" alt="Tour des Flandres depuis Lille - Ronde van Vlaanderen van Rysel" style="width: 100%; height: auto; display: block; border: 3px solid #1C1A16; box-shadow: 6px 6px 0 #1C1A16">
-</div>
-</div>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="cond" style="font-size:20px;letter-spacing:.16em">Événement cyclo · Samedi 3 avril 2027</div>
+      <h1 class="anton">Tour des Flandres<span>Cyclo depuis Lille</span></h1>
+      <p style="margin:24px 0 0;font-size:22px;line-height:1.5;max-width:36ch">Roule les monts pavés du Ronde la veille des pros : Koppenberg, Paterberg, Vieux Quaremont, Taaienberg.</p>
+      <div class="badges">
+        <span class="badge"><b>141</b> km</span>
+        <span class="badge"><b>1 374</b> m D+</span>
+        <span class="badge"><b>10</b> bergs</span>
+        <span class="badge">Départ <b>9 h</b></span>
+      </div>
+      <div class="countdown" id="countdown" aria-label="Compte à rebours avant le départ">
+        <div class="cd"><div class="n" id="cd-d">--</div><div class="l">Jours</div></div>
+        <div class="cd"><div class="n" id="cd-h">--</div><div class="l">Heures</div></div>
+        <div class="cd"><div class="n" id="cd-m">--</div><div class="l">Min</div></div>
+        <div class="cd"><div class="n" id="cd-s">--</div><div class="l">Sec</div></div>
+      </div>
+      <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-red" href="#participer">Je réserve ma place</a>
+        <a class="btn btn-ink" href="#parcours">Voir le parcours</a>
+      </div>
+    </div>
+    <div><img src="./image1.png" alt="Tour des Flandres depuis Lille – Ronde van Vlaanderen van Rijsel"></div>
+  </div>
+  <div class="road" aria-hidden="true">
+    <svg class="biker" viewBox="0 0 110 70">
+      <g fill="none" stroke="#FFF6DD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <g class="wheel"><circle cx="22" cy="48" r="16"/><path d="M22 32v32M6 48h32" stroke-width="1.5"/></g>
+        <g class="wheel"><circle cx="88" cy="48" r="16"/><path d="M88 32v32M72 48h32" stroke-width="1.5"/></g>
+        <path d="M22 48 40 28h26l22 20M40 28l12 20h-30M66 28l-4-8h10"/>
+        <path d="M44 14l8 14" stroke="#E2951A"/>
+      </g>
+      <circle cx="46" cy="9" r="7" fill="#C23B22"/>
+    </svg>
+  </div>
 </header>
 
-<!-- BANDEAU METEO EN DIRECT -->
-<section id="meteo" style="background: #2F6B8A; color: #FFF6DD; padding: 36px 24px; box-sizing: border-box; border-top: 4px solid #1C1A16; border-bottom: 4px solid #1C1A16">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
-<div>
-<div style="display: flex; align-items: center; gap: 10px">
-<span style="display: inline-block; width: 12px; height: 12px; background: #00E676; border-radius: 50%; box-shadow: 0 0 8px #00E676"></span>
-<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Météo en direct des Bergs (Kluisbergen / Kwaremont)</span>
-</div>
-<div id="meteo-condition" style="font-family: 'Anton', Impact, sans-serif; font-size: clamp(28px, 4.5vw, 42px); line-height: 1.1; margin-top: 4px; text-transform: uppercase">Chargement en direct...</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 24px 36px">
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Température</div>
-<div id="meteo-temp" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">--°C</div>
-</div>
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Vent</div>
-<div id="meteo-vent" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- km/h</div>
-</div>
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1DDA2">Pluie</div>
-<div id="meteo-pluie" style="font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1">-- mm</div>
-</div>
-</div>
-</div>
-<div style="margin-top: 14px; font-size: 14px; color: #F1DDA2; opacity: 0.9">Données satellites et stations météo actualisées en temps réel (Open-Meteo API).</div>
-</div>
-</section>
+<div class="ticker" aria-hidden="true"><div>
+  <span>★ Koppenberg 22 %</span><span>★ Paterberg 20,3 %</span><span>★ Vieux Quaremont 2,2 km</span><span>★ 141 km</span><span>★ Frites &amp; bière d'abbaye à l'arrivée</span><span>★ La veille du Ronde</span>
+  <span>★ Koppenberg 22 %</span><span>★ Paterberg 20,3 %</span><span>★ Vieux Quaremont 2,2 km</span><span>★ 141 km</span><span>★ Frites &amp; bière d'abbaye à l'arrivée</span><span>★ La veille du Ronde</span>
+</div></div>
 
-<!-- BANDEAU CHIFFRES -->
-<section style="background: #1C1A16; color: #FFF6DD; padding: 40px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 24px; justify-content: space-between">
-<div style="flex: 1 1 200px">
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">1913</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">Première édition, gagnée par Paul Deman</div>
-</div>
-<div style="flex: 1 1 200px">
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">UCI</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">Monument du calendrier UCI WorldTour</div>
-</div>
-<div style="flex: 1 1 200px">
-<div style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">8</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">coureurs l'ont gagné trois fois</div>
-</div>
-<div style="flex: 1 1 200px">
-<div id="stat-participants-count" style="font-family: 'Anton', Impact, sans-serif; font-size: 64px; line-height: 1; color: #E2951A">0</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">participants confirmés</div>
-</div>
-</div>
-</section>
-
-<!-- CHAPITRE 1 : HISTOIRE & STATUT UCI -->
-<section id="histoire" style="padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Chapitre 1</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Une course née en 1913, Monument UCI</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 16px; max-width: 64ch">En mai 1913, le journal Sportwereld lance une course qui est à la fois une opération commerciale et un manifeste flamand. Reconnue par l'<strong>Union Cycliste Internationale (UCI)</strong> comme le deuxième des cinq prestigieux « Monuments » du cyclisme mondial, l'épreuve trône au sommet de la hiérarchie UCI WorldTour et attribue 800 points au vainqueur, attirant l'élite mondiale du peloton.</p>
-<div style="margin-top: 48px; display: flex; flex-direction: column; border-top: 3px solid #1C1A16">
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1919</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le train de Van Lerberghe.</strong> Henri Van Lerberghe aurait pris son vélo sur l'épaule pour passer sous un train bloqué à un passage à niveau, avant de gagner avec 15 minutes d'avance. La légende lui prête ce mot à l'arrivée : « Je suis en avance d'une demi-journée. Vous pouvez tous rentrer chez vous ! »</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1989</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>L'ancrage dans les classements UCI.</strong> De la Coupe du Monde sur route créée par l'UCI en 1989 jusqu'à l'actuel calendrier UCI WorldTour, le Ronde s'impose comme l'épreuve de référence absolue pour les spécialistes des monts pavés.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1976</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le Koppenberg entre en scène.</strong> Seuls cinq coureurs le franchissent en selle. Eddy Merckx doit marcher dans la partie la plus raide.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">1987</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le Koppenberg est rayé de la carte.</strong> Après l'incident impliquant Jesper Skibby, la côte quitte le parcours. Elle y revient en 2002.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">2012</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Arrivée à Oudenaarde.</strong> Depuis cette année-là, la course se conclut dans la ville des bergs. Les éditions récentes alignent de 17 à 19 côtes, pavées ou asphaltées, sur environ 265 km.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 24px 0; border-bottom: 3px solid #1C1A16">
-<div style="flex: 0 0 120px; font-family: 'Anton', Impact, sans-serif; font-size: 44px; line-height: 1; color: #C23B22">3 fois</div>
-<div style="flex: 1 1 420px; min-width: 0; font-size: 19px; line-height: 1.55"><strong>Le club des huit.</strong> Achiel Buysse, Fiorenzo Magni, Eric Leman, Johan Museeuw, Tom Boonen, Fabian Cancellara, Mathieu van der Poel et Tadej Pogačar ont tous gagné trois fois.</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CHAPITRE 2 : MYTHOLOGIE -->
-<section id="mythe" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">Chapitre 2</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">La mythologie du Ronde</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Une course ne devient pas un monument sur ses seuls pavés. Ici, le mythe se fabrique au bord de la route, sous la pluie que tout le monde espère.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Le Flandrien</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Le mot désignait à l'origine des ouvriers wallons de la sidérurgie. Karel Van Wijnendaele le reprend dans les années 1920 pour qualifier un coureur tenace et généreux. C'est encore l'idéal du Ronde.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Le lion noir</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Dès l'origine, la course est pensée pour promouvoir l'identité flamande. Le long du parcours, le lion noir sur fond jaune flotte partout, bien plus que le drapeau belge.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">La fête</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Plus d'un million de personnes se massent le long du parcours. Sur le Kwaremont, des dizaines de milliers de fans ouvrent leur canette debout dans la boue des champs.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Père et fils</h3>
-<p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">« Au Tour des Flandres, le père amène son fils comme lui-même venait enfant avec son propre père. »</p>
-<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #E8DDB8">Hugo Coorevits, journaliste cyclisme, Het Nieuwsblad</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Le temps qu'il fait</h3>
-<p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">« Tout le monde veut savoir quel temps il fera. Et tout le monde souhaite de la pluie. »</p>
-<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #E8DDB8">Bart Audoore, journaliste, Het Laatste Nieuws</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #2A2720; padding: 28px; box-sizing: border-box; border-top: 6px solid #E2951A">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Briek Schotte</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Né en 1919, il a disputé 20 éditions consécutives, en a remporté deux et a terminé six fois sur le podium. Un monument avant l'heure.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CHAPITRE 3 : LES BERGS (Nettoyé des citations) -->
-<section id="bergs" style="padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Chapitre 3</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Les trois bergs</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Trois montées, trois caractères. Le long, le brutal, le cruel.</p>
-
-<div style="display: flex; flex-direction: column; gap: 32px">
-
-<!-- Oude Kwaremont -->
-<article style="background: #FAF0CF; border: 3px solid #1C1A16; display: flex; flex-wrap: wrap">
-<div style="flex: 1 1 280px; min-width: 0; background: #C23B22; color: #FFF6DD; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Berg n° 1</div>
-<h3 style="margin: 4px 0 0; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 52px; line-height: 1; text-transform: uppercase">Oude Kwaremont</h3>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 20px; margin-top: 6px">Le Vieux Quaremont</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">2,2 km</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Longueur</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">4 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente moy.</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">11 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente max.</div></div>
-</div>
-</div>
-<div style="flex: 2 1 420px; min-width: 0; padding: 32px; box-sizing: border-box">
-<p style="margin: 0 0 14px; font-size: 19px; line-height: 1.6">Des pavés irréguliers, sur le plus long des trois. Les 600 premiers mètres sont plus faciles, les 500 suivants sont plus raides. Le piège : s'y prendre trop fort trop tôt. Peter Sagan y a attaqué en 2016, en maillot arc-en-ciel.</p>
-<blockquote style="margin: 20px 0 0; padding: 0">
-<p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 28px; line-height: 1.2">« C'est incontestablement l'un des efforts les plus douloureux de la saison. »</p>
-<p style="margin: 8px 0 0; font-size: 16px; color: #4A4437">Wout van Aert, coureur (L'Avenir)</p>
-</blockquote>
-</div>
-</article>
-
-<!-- Paterberg -->
-<article style="background: #FAF0CF; border: 3px solid #1C1A16; display: flex; flex-wrap: wrap">
-<div style="flex: 1 1 280px; min-width: 0; background: #2F6B8A; color: #FFF6DD; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Berg n° 2</div>
-<h3 style="margin: 4px 0 0; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 52px; line-height: 1; text-transform: uppercase">Paterberg</h3>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 20px; margin-top: 6px">Court, droit, explosif</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">360 m</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Longueur</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">12,9 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente moy.</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1">20,3 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente max.</div></div>
-</div>
-</div>
-<div style="flex: 2 1 420px; min-width: 0; padding: 32px; box-sizing: border-box">
-<p style="margin: 0 0 14px; font-size: 19px; line-height: 1.6">Jusqu'en 1986, ce n'était qu'un chemin non revêtu, réservé aux tracteurs. La commune de Kluisbergen a voulu l'asphalter. Un agriculteur du coin, grand fan de la course, a proposé de garder et d'utiliser les pavés. C'est à lui qu'on doit l'un des murs les plus célèbres du Ronde.</p>
-<blockquote style="margin: 20px 0 0; padding: 0">
-<p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 28px; line-height: 1.2">« Parfois, je suis juste content d'arriver en haut… »</p>
-<p style="margin: 8px 0 0; font-size: 16px; color: #4A4437">Wout van Aert, coureur (L'Avenir)</p>
-</blockquote>
-</div>
-</article>
-
-<!-- Koppenberg -->
-<article style="background: #FAF0CF; border: 3px solid #1C1A16; display: flex; flex-wrap: wrap">
-<div style="flex: 1 1 280px; min-width: 0; background: #1C1A16; color: #FFF6DD; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">Berg n° 3</div>
-<h3 style="margin: 4px 0 0; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 52px; line-height: 1; text-transform: uppercase">Koppenberg</h3>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 20px; margin-top: 6px">Le plus cruel</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 16px 28px">
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1; color: #E2951A">600 m</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Longueur</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1; color: #E2951A">11,6 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente moy.</div></div>
-<div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 40px; line-height: 1; color: #E2951A">22 %</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase">Pente max.</div></div>
-</div>
-</div>
-<div style="flex: 2 1 420px; min-width: 0; padding: 32px; box-sizing: border-box">
-<p style="margin: 0 0 14px; font-size: 19px; line-height: 1.6">C'est Walter Godefroot qui l'a recommandé à l'organisation, après l'avoir découvert à l'entraînement. Débuts en 1976 : cinq coureurs seulement montent en selle. Quand les pavés sont humides, la montée devient très glissante et ne ressemble à aucune autre.</p>
-<blockquote style="margin: 20px 0 0; padding: 0">
-<p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 28px; line-height: 1.2">« Un cauchemar, l'un des pires de ma vie. »</p>
-<p style="margin: 8px 0 0; font-size: 16px; color: #4A4437">Eddy Merckx, à propos du Koppenberg (UCI, traduit de l'anglais)</p>
-</blockquote>
-</div>
-</article>
-</div>
-
-<!-- COMPARATEUR -->
-<div style="margin-top: 48px; background: #1C1A16; color: #FFF6DD; padding: 32px; box-sizing: border-box">
-<h3 style="margin: 0 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Face à face</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 32px">
-<div style="flex: 1 1 360px; min-width: 0">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px">Longueur</div>
-<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px"><div style="flex: 0 0 130px; font-size: 17px">Oude Kwaremont</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 100%; height: 22px; background: #C23B22"></div></div><div style="flex: 0 0 64px; font-weight: 600">2,2 km</div></div>
-<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px"><div style="flex: 0 0 130px; font-size: 17px">Paterberg</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 16%; height: 22px; background: #2F6B8A"></div></div><div style="flex: 0 0 64px; font-weight: 600">360 m</div></div>
-<div style="display: flex; align-items: center; gap: 12px"><div style="flex: 0 0 130px; font-size: 17px">Koppenberg</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 27%; height: 22px; background: #E2951A"></div></div><div style="flex: 0 0 64px; font-weight: 600">600 m</div></div>
-</div>
-<div style="flex: 1 1 360px; min-width: 0">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px">Pente maximale</div>
-<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px"><div style="flex: 0 0 130px; font-size: 17px">Oude Kwaremont</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 50%; height: 22px; background: #C23B22"></div></div><div style="flex: 0 0 64px; font-weight: 600">11 %</div></div>
-<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px"><div style="flex: 0 0 130px; font-size: 17px">Paterberg</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 92%; height: 22px; background: #2F6B8A"></div></div><div style="flex: 0 0 64px; font-weight: 600">20,3 %</div></div>
-<div style="display: flex; align-items: center; gap: 12px"><div style="flex: 0 0 130px; font-size: 17px">Koppenberg</div><div style="flex: 1 1 0; min-width: 0"><div style="width: 100%; height: 22px; background: #E2951A"></div></div><div style="flex: 0 0 64px; font-weight: 600">22 %</div></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- SECTION SPECIALE : STUDIO VIDEO ANIMÉ PAUL SEIXAS -->
-<section id="seixas" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #C23B22">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #C23B22">Studio Interview · Parodie Animée</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Paul Seixas juge la cyclo</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Le champion du monde junior UCI réagit en direct au tracé de la cyclo dans ce studio interactif animé.</p>
-
-<div style="display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
-<!-- Studio Vidéo Interactif Animé -->
-<div style="flex: 1 1 480px; min-width: 0; background: #141310; border: 3px solid #C23B22; border-radius: 6px; overflow: hidden; box-shadow: 8px 8px 0 #000; position: relative">
-  <div style="background: #1C1A16; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2A2720">
-    <div style="display: flex; align-items: center; gap: 8px">
-      <span id="rec-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #555; display: inline-block"></span>
-      <span id="rec-label" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #777">STANDBY</span>
+<!-- METEO -->
+<section id="meteo" style="padding:36px 24px">
+  <div class="wrap">
+    <div class="meteo-row">
+      <div>
+        <div class="cond" style="font-size:18px;letter-spacing:.16em"><span class="dot"></span>Météo en direct des bergs (Kluisbergen)</div>
+        <div id="meteo-condition" class="anton" style="font-size:clamp(28px,4.5vw,42px);line-height:1.1;margin-top:4px">Chargement…</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px 36px">
+        <div><div class="mlab">Température</div><div class="mval" id="meteo-temp">--°C</div></div>
+        <div><div class="mlab">Vent</div><div class="mval" id="meteo-vent">-- km/h</div></div>
+        <div><div class="mlab">Pluie</div><div class="mval" id="meteo-pluie">-- mm</div></div>
+      </div>
     </div>
-    <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: #E2951A; font-weight: 700; letter-spacing: 0.1em">FLANDRES-TV · LIVE</div>
+    <div id="meteo-jour" style="margin-top:14px;font-size:16px;color:var(--cream)"></div>
+    <div style="margin-top:6px;font-size:14px;color:var(--cream);opacity:.9">Données Open-Meteo. Tout le monde espère de la pluie, mais pas nous.</div>
   </div>
+</section>
 
-  <div style="padding: 24px 20px 16px; background: radial-gradient(circle at center, #2B231D 0%, #12100E 100%); display: flex; flex-direction: column; align-items: center; position: relative">
-    <svg id="seixas-avatar" viewBox="0 0 300 240" style="width: 100%; max-width: 320px; height: auto; display: block">
-      <defs>
-        <linearGradient id="helmGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#C23B22"/>
-          <stop offset="100%" stop-color="#801C0A"/>
-        </linearGradient>
-      </defs>
-      <path d="M70 240 C70 190 100 175 150 175 C200 175 230 190 230 240 Z" fill="#203347" stroke="#1C1A16" stroke-width="3"/>
-      <path d="M110 177 L150 240 L190 177 Z" fill="#C23B22"/>
-      <text x="150" y="215" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="11" fill="#FFF6DD" letter-spacing="1">FRANCE · UCI</text>
+<!-- STATS -->
+<div class="stats"><div class="wrap">
+  <div class="stat"><div class="n" data-count="141">0</div><div class="l">kilomètres depuis Lille</div></div>
+  <div class="stat"><div class="n" data-count="10">0</div><div class="l">bergs au programme</div></div>
+  <div class="stat"><div class="n" data-count="1374">0</div><div class="l">mètres de dénivelé</div></div>
+  <div class="stat"><div class="n" data-count="1913">0</div><div class="l">première édition du Ronde</div></div>
+</div></div>
 
-      <rect x="135" y="140" width="30" height="40" fill="#E8B48B" stroke="#1C1A16" stroke-width="2.5"/>
+<!-- POURQUOI -->
+<section id="pourquoi">
+  <div class="wrap">
+    <div class="eyebrow">Pourquoi venir</div>
+    <h2 class="big">Une sortie qui se raconte</h2>
+    <p class="lead">Rouler sur les pavés que les pros attaqueront le lendemain, entre copains, avec un ravitaillement mythique et des frites à l'arrivée.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ic">🏔️</div><h3>Les vrais bergs</h3><p>Koppenberg, Paterberg, Vieux Quaremont : les mêmes monts que le Ronde, sans le peloton dans la roue.</p></div>
+      <div class="card reveal"><div class="ic">🍺</div><h3>Ravito mythique</h3><p>Arrêt au café 't Juiste Verzet, sur la pente de l'Oude Kwaremont : un pèlerinage pour tout fan de vélo.</p></div>
+      <div class="card reveal"><div class="ic">📺</div><h3>Le Ronde le lendemain</h3><p>Tu auras les jambes lourdes mais tu regarderas la course avec des yeux de connaisseur.</p></div>
+      <div class="card reveal"><div class="ic">🤝</div><h3>Un peloton à taille humaine</h3><p>Pas de dossard ni de chrono : une sortie amicale où personne n'est laissé derrière.</p></div>
+    </div>
 
-      <g id="head-group">
-        <ellipse cx="150" cy="115" rx="38" ry="46" fill="#F4C39E" stroke="#1C1A16" stroke-width="3"/>
-        <ellipse cx="112" cy="118" rx="6" ry="10" fill="#E8B48B" stroke="#1C1A16" stroke-width="2"/>
-        <ellipse cx="188" cy="118" rx="6" ry="10" fill="#E8B48B" stroke="#1C1A16" stroke-width="2"/>
-        <ellipse cx="137" cy="108" rx="4" ry="5" fill="#1C1A16"/>
-        <ellipse cx="163" cy="108" rx="4" ry="5" fill="#1C1A16"/>
-        <path d="M130 98 Q137 94 144 98" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
-        <path d="M156 98 Q163 94 170 98" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
-        <path d="M150 110 L146 124 L153 124" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
-
-        <ellipse id="avatar-mouth" cx="150" cy="142" rx="10" ry="3" fill="#6B1E12" stroke="#1C1A16" stroke-width="2"/>
-
-        <path d="M106 100 C106 50 130 40 150 40 C170 40 194 50 194 100 C194 92 186 78 150 78 C114 78 106 92 106 100 Z" fill="url(#helmGrad)" stroke="#1C1A16" stroke-width="3"/>
-        <path d="M120 78 L124 48 M150 78 L150 40 M180 78 L176 48" stroke="#FFF6DD" stroke-width="2"/>
-        <ellipse cx="150" cy="46" rx="14" ry="5" fill="#E2951A"/>
-        <path d="M116 95 L135 142 M184 95 L165 142" stroke="#1C1A16" stroke-width="2" fill="none"/>
-      </g>
-    </svg>
-
-    <div id="audio-eq" style="display: flex; gap: 5px; align-items: flex-end; height: 20px; margin-top: 10px; opacity: 0.3">
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #00E676; border-radius: 2px"></div>
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #E2951A; border-radius: 2px"></div>
-      <div class="eq-bar" style="width: 6px; height: 4px; background: #C23B22; border-radius: 2px"></div>
+    <h3 class="anton" style="font-size:36px;margin:56px 0 16px">C'est pour toi si…</h3>
+    <div class="cards">
+      <div class="card reveal"><h3>Tu roules régulièrement</h3><p>Tu as déjà fait 100 km et tu aimes les côtes. Allure conviviale, regroupements avant chaque berg.</p></div>
+      <div class="card reveal"><h3>Tu aimes la culture vélo</h3><p>Tu connais Boonen, Cancellara, van der Poel et tu veux voir les lieux de près.</p></div>
+      <div class="card reveal"><h3>Tu es prêt à marcher</h3><p>Pas de honte à poser le pied sur le Koppenberg : même Merckx l'a fait en 1976.</p></div>
     </div>
   </div>
+</section>
 
-  <div style="background: #1C1A16; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 2px solid #2A2720">
-    <button id="btn-toggle-speech" onclick="window.toggleSpeechSeixas()" style="cursor: pointer; background: #C23B22; color: #FFF6DD; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s">
-      <span id="btn-icon">▶</span>
-      <span id="btn-text">Lancer l'interview vidéo</span>
-    </button>
-    <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: #FFF6DD; text-align: right">
-      <span style="color: #E2951A; font-weight: 700">AUDIO + ANIMATION</span><br>
-      <span id="speech-state">Prêt à diffuser</span>
+<!-- BERGS -->
+<section id="bergs" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">Les stars du parcours</div>
+    <h2 class="big">Les trois bergs</h2>
+    <p class="lead">Trois montées, trois caractères. Le long, le brutal, le cruel.</p>
+
+    <article class="berg reveal">
+      <div class="side" style="background:var(--red)">
+        <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 1</div><h3>Oude Kwaremont</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le Vieux Quaremont</div></div>
+        <div class="nums"><div><b>2,2 km</b><span>Longueur</span></div><div><b>4 %</b><span>Pente moy.</span></div><div><b>11 %</b><span>Pente max.</span></div></div>
+      </div>
+      <div class="body">
+        <p>Des pavés irréguliers sur le plus long des trois. Les 600 premiers mètres sont plus faciles, les 500 suivants plus raides. Le piège : s'y prendre trop fort trop tôt. Peter Sagan y a attaqué en 2016, en maillot arc-en-ciel.</p>
+        <blockquote style="margin:20px 0 0"><q>« C'est incontestablement l'un des efforts les plus douloureux de la saison. »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
+      </div>
+    </article>
+
+    <article class="berg reveal">
+      <div class="side" style="background:var(--blue)">
+        <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 2</div><h3>Paterberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Court, droit, explosif</div></div>
+        <div class="nums"><div><b>360 m</b><span>Longueur</span></div><div><b>12,9 %</b><span>Pente moy.</span></div><div><b>20,3 %</b><span>Pente max.</span></div></div>
+      </div>
+      <div class="body">
+        <p>Jusqu'en 1986, ce n'était qu'un chemin non revêtu, réservé aux tracteurs. La commune de Kluisbergen voulait l'asphalter. Un agriculteur du coin, grand fan de la course, a proposé de garder et d'utiliser les pavés. On lui doit l'un des murs les plus célèbres du Ronde.</p>
+        <blockquote style="margin:20px 0 0"><q>« Parfois, je suis juste content d'arriver en haut… »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
+      </div>
+    </article>
+
+    <article class="berg reveal">
+      <div class="side" style="background:var(--ink)">
+        <div><div class="cond" style="font-size:18px;letter-spacing:.16em;color:var(--amber)">Berg n° 3</div><h3>Koppenberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le plus cruel</div></div>
+        <div class="nums" style="color:var(--amber)"><div><b>600 m</b><span>Longueur</span></div><div><b>11,6 %</b><span>Pente moy.</span></div><div><b>22 %</b><span>Pente max.</span></div></div>
+      </div>
+      <div class="body">
+        <p>Walter Godefroot l'a recommandé à l'organisation après l'avoir découvert à l'entraînement. Débuts en 1976 : cinq coureurs seulement montent en selle. Quand les pavés sont humides, la montée devient très glissante et ne ressemble à aucune autre.</p>
+        <blockquote style="margin:20px 0 0"><q>« Un cauchemar, l'un des pires de ma vie. »</q><cite>Eddy Merckx, à propos du Koppenberg (UCI, traduit de l'anglais)</cite></blockquote>
+      </div>
+    </article>
+
+    <div class="bars reveal">
+      <h3 class="anton" style="margin:0 0 24px;font-size:32px;color:var(--amber)">Face à face</h3>
+      <div class="cols">
+        <div class="col">
+          <div class="cond" style="font-size:18px;letter-spacing:.1em;margin-bottom:12px">Longueur</div>
+          <div class="bar"><div class="nm">Oude Kwaremont</div><div class="tr"><div class="fill" style="--w:100%;background:var(--red)"></div></div><div class="v">2,2 km</div></div>
+          <div class="bar"><div class="nm">Paterberg</div><div class="tr"><div class="fill" style="--w:16%;background:var(--blue)"></div></div><div class="v">360 m</div></div>
+          <div class="bar"><div class="nm">Koppenberg</div><div class="tr"><div class="fill" style="--w:27%;background:var(--amber)"></div></div><div class="v">600 m</div></div>
+        </div>
+        <div class="col">
+          <div class="cond" style="font-size:18px;letter-spacing:.1em;margin-bottom:12px">Pente maximale</div>
+          <div class="bar"><div class="nm">Oude Kwaremont</div><div class="tr"><div class="fill" style="--w:50%;background:var(--red)"></div></div><div class="v">11 %</div></div>
+          <div class="bar"><div class="nm">Paterberg</div><div class="tr"><div class="fill" style="--w:92%;background:var(--blue)"></div></div><div class="v">20,3 %</div></div>
+          <div class="bar"><div class="nm">Koppenberg</div><div class="tr"><div class="fill" style="--w:100%;background:var(--amber)"></div></div><div class="v">22 %</div></div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Transcription et Déclaration -->
-<div style="flex: 1 1 400px; min-width: 0">
-  <div style="display: inline-block; background: #C23B22; color: #FFF6DD; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 12px">Retranscription de l'interview</div>
-  <blockquote style="margin: 0; padding: 0">
-    <p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.2; color: #F1DDA2">
-      « Partir de Lille pour se farcir 140 bornes et les bergs pavés la veille des pros ? Mais c'est un délire de grands malades ! Le Koppenberg à 22 %, sur un vélo normal sans assistance, tes cuisses hurlent, ta chaîne grince et tu pries pour ne pas poser le pied à terre dans la boue. C'est complètement dément, et c'est exactement pour ça que c'est grandiose. Bon courage à la bande ! »
-    </p>
-  </blockquote>
-  <div style="margin-top: 18px; font-size: 16px; line-height: 1.5; color: #FFF6DD; border-left: 3px solid #E2951A; padding-left: 12px">
-    <strong>Paul Seixas</strong> — Champion du Monde Junior UCI, coureur professionnel chez Decathlon AG2R La Mondiale.<br>
-    <span style="font-size: 13px; color: #A99E8B">Animation interactive et propos parodiques générés en hommage amical aux cyclos du 3 avril.</span>
+<!-- PARCOURS -->
+<section id="parcours" class="dark">
+  <div class="wrap">
+    <div class="eyebrow">Le tracé</div>
+    <h2 class="big">Le parcours</h2>
+    <p class="lead">De Rijsel jusqu'aux Ardennes flamandes, avec dix bergs au menu. Le tracé complet est sur Strava.</p>
+    <div class="pgrid">
+      <div style="flex:2 1 520px;min-width:0">
+        <img src="./32c19b4e3fd07f2855be5a872f9b4f29.png" alt="Plan du parcours de 141,74 km au départ de Lille avec profil altimétrique">
+        <p style="margin:12px 0 0;font-size:16px;color:#E8DDB8">Plan et profil altimétrique du tracé Strava.</p>
+      </div>
+      <div style="flex:1 1 320px;min-width:0;border-top:3px solid var(--amber)">
+        <div class="kpi"><div class="l">Distance</div><div class="v">141,74 km</div></div>
+        <div class="kpi"><div class="l">Dénivelé</div><div class="v">1 374 m</div></div>
+        <div class="kpi"><div class="l">Bergs</div><div class="v">10</div></div>
+        <div class="kpi"><div class="l">Ravitaillement</div><div class="v">'t Juiste Verzet</div></div>
+        <a class="btn btn-amber" style="margin-top:24px" href="https://www.strava.com/routes/3549816002530168536">Ouvrir le tracé sur Strava</a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
 </section>
 
-<!-- CHAPITRE 4 : ILS EN PARLENT (PAROLES DE CHAMPIONS) -->
-<section id="voix" style="background: #E2951A; padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">Chapitre 4</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Paroles de Légendes &amp; UCI</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Champions légendaires, observateurs et UCI face au mythe impitoyable du Ronde.</p>
-
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« L'enfer tout court. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Fabian Cancellara</strong>, triple vainqueur (2010, 2013, 2014), qui juge aussi l'épreuve « la plus spéciale et la plus prestigieuse » des grandes classiques. Source : Le Temps.</figcaption>
-</figure>
-
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« Pour un Belge, gagner ici compte plus que porter le maillot jaune. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Johan Museeuw</strong>, vainqueur à trois reprises. Source : Le Temps.</figcaption>
-</figure>
-
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« Pour les gens au bord de la route, c'est une fête. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Tom Boonen</strong>, vainqueur en 2005, 2006 et 2012. Source : Rouleur, traduit de l'anglais.</figcaption>
-</figure>
-
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« Il rend le Tour des Flandres unique. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Wout van Aert</strong>, à propos du Koppenberg. Il ajoute qu'« un monument doit présenter un degré de difficulté que l'on ne rencontre pas ailleurs ». Source : L'Avenir.</figcaption>
-</figure>
-
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« C'est une course spéciale, probablement même la meilleure course d'un jour au monde. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>Tadej Pogačar</strong>, vainqueur en 2023. Source : Tour Magazin.</figcaption>
-</figure>
-
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #FAF0CF; padding: 28px; box-sizing: border-box; border: 3px solid #1C1A16">
-<blockquote style="margin: 0; padding: 0"><p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">« Les monts pavés du Tour des Flandres, l'âme épique du Ronde. »</p></blockquote>
-<figcaption style="margin-top: 14px; font-size: 16px; line-height: 1.45"><strong>UCI</strong>, titre de l'article <a href="https://www.uci.org/article/the-cobbled-climbs-of-the-tour-of-flanders-ronde-s-epic-soul/5AbNl6K790vT5yQaj93Rkb"><em>The cobbled climbs of the Tour of Flanders, Ronde's epic soul</em></a> (traduit de l'anglais).</figcaption>
-</figure>
-</div>
-</div>
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="wrap">
+    <div class="eyebrow">Le jour J</div>
+    <h2 class="big">Le programme</h2>
+    <p class="lead">Horaires indicatifs, confirmés quelques jours avant le départ.</p>
+    <div class="prog">
+      <div class="step reveal"><div class="h">8 h 30</div><div class="d"><b>Accueil à Marcq-en-Barœul.</b> Café, contrôle des vélos, photo de groupe.</div></div>
+      <div class="step reveal"><div class="h">9 h</div><div class="d"><b>Départ.</b> Direction la Flandre, groupe compact jusqu'à la frontière.</div></div>
+      <div class="step reveal"><div class="h">Milieu de journée</div><div class="d"><b>Pause ravito à 't Juiste Verzet</b>, sur l'Oude Kwaremont. Regroupement avant les bergs.</div></div>
+      <div class="step reveal"><div class="h">Après-midi</div><div class="d"><b>Paterberg, Koppenberg…</b> Chacun à son rythme, regroupement au sommet de chaque berg.</div></div>
+      <div class="step reveal"><div class="h">Fin de journée</div><div class="d"><b>Retour à Marcq-en-Barœul.</b> Frites fraîches, bière d'abbaye et récits de la journée.</div></div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-ink" onclick="addToCalendar()">📅 Ajouter à mon agenda</button>
+    </div>
+  </div>
 </section>
 
-<!-- SECTION : GUIDE DES ESTAMINETS AVEC NOTES GOOGLE -->
-<section id="estaminets" style="background: #FAF0CF; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #1C1A16">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Ravitaillement &amp; Haltes Gourmandes</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Les Estaminets du parcours</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">Sur un tracé exigeant de 141 km, savoir où trouver un bon café, une carbonnade ou une bière d'abbaye est indispensable pour aller au bout.</p>
-
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-
-<!-- 1. 't Juiste Verzet -->
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
-<div>
-  <div style="margin-bottom: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #A52E18">Kluisbergen (Kwaremont)</span></div>
-  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase"><a href="https://www.vrt.be/vrtnws/nl/2025/04/04/t-juiste-verzet/" target="_blank" rel="noopener" style="color: #1C1A16; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px">'t Juiste Verzet</a></h3>
-  <p style="margin: 0 0 10px; font-size: 16px; line-height: 1.45; font-weight: 600">Sur la pente de l'Oude Kwaremont, 9690 Kluisbergen<br><a href="https://www.google.com/maps/search/?api=1&amp;query=%27t+Juiste+Verzet+Kluisbergen" target="_blank" rel="noopener" style="font-size: 14px">Voir sur la carte</a></p>
-  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Le wielercafé légendaire d'Annie Vermeulen. Chauffé au poêle Leuvense stoof, maillots et bidons de champions suspendus. L'arrêt pèlerinage numéro un.</p>
-</div>
-<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; line-height: 1.45; font-weight: 600; color: #4A4437">
-  Rue et numéro introuvables. Le lien du nom renvoie à un article de la VRT : pas de site officiel trouvé.
-</div>
-</div>
-
-<!-- 2. Brasserie De Pelgrim -->
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
-<div>
-  <div style="margin-bottom: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #2F6B8A">Anvers (Berchem) · hors parcours</span></div>
-  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase"><a href="http://www.brasseriedepelgrim.be/" target="_blank" rel="noopener" style="color: #1C1A16; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px">Brasserie De Pelgrim</a></h3>
-  <p style="margin: 0 0 10px; font-size: 16px; line-height: 1.45; font-weight: 600">Boomgaardstraat 6, 2600 Antwerpen<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Brasserie+De+Pelgrim+Boomgaardstraat+6+2600+Antwerpen" target="_blank" rel="noopener" style="font-size: 14px">Voir sur la carte</a></p>
-  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Brasserie-bar installée en face de la brasserie De Koninck, à Anvers. Cuisine belge traditionnelle : croquettes au fromage, steak tartare, burgers. Réservation conseillée, surtout le vendredi.</p>
-</div>
-<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; line-height: 1.45; font-weight: 600; color: #4A4437">
-  Site officiel : brasseriedepelgrim.be. Très loin du tracé : à garder pour une autre sortie.
-</div>
-</div>
-
-<!-- 3. In de Rustberg -->
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
-<div>
-  <div style="margin-bottom: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #A52E18">Lennik (Brabant flamand) · hors parcours</span></div>
-  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase"><a href="https://www.komoot.com/highlight/945712" target="_blank" rel="noopener" style="color: #1C1A16; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px">Café In de Rustberg</a></h3>
-  <p style="margin: 0 0 10px; font-size: 16px; line-height: 1.45; font-weight: 600">Lieu-dit Rustberg, Lennik (rue et numéro introuvables)<br><a href="https://www.google.com/maps/search/?api=1&amp;query=50.8286,4.1972" target="_blank" rel="noopener" style="font-size: 14px">Voir sur la carte</a></p>
-  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">Un café fréquenté par les cyclistes. D'après les avis des utilisateurs, c'est le repaire du fan-club de Remco Evenepoel, avec une fresque qui vaut le détour.</p>
-</div>
-<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; line-height: 1.45; font-weight: 600; color: #4A4437">
-  Le lien du nom renvoie à une fiche Komoot : pas de site officiel trouvé. Loin du tracé.
-</div>
-</div>
-
-<!-- 4. Estaminet de la Frontière -->
-<div style="flex: 1 1 260px; min-width: 0; background: #FFF6DD; border: 3px solid #1C1A16; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
-<div>
-  <div style="margin-bottom: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #A52E18">Frontière franco-belge</span></div>
-  <h3 style="margin: 4px 0 10px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase">Estaminet de la Frontière</h3>
-  <p style="margin: 0 0 10px; font-size: 16px; line-height: 1.45; font-weight: 600">[ADRESSE ET LIEN À COMPLÉTER]</p>
-  <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.5">À la frontière, sur le chemin du retour vers Lille. Pour se réchauffer et refaire le débriefing de la journée avant le retour à Marcq-en-Barœul.</p>
-</div>
-<div style="border-top: 1px dashed #1C1A16; padding-top: 10px; font-size: 14px; line-height: 1.45; font-weight: 600; color: #4A4437">
-  Aucun établissement de ce nom trouvé : adresse et lien à confirmer.
-</div>
-</div>
-
-</div>
-<p style="margin: 24px 0 0; font-size: 16px; line-height: 1.5; color: #4A4437">Adresses, horaires et réservations à confirmer auprès de chaque établissement avant le 3 avril.</p>
-</div>
+<!-- CHECKLIST -->
+<section class="dark" id="materiel">
+  <div class="wrap">
+    <div class="eyebrow">Avant de partir</div>
+    <h2 class="big">À prévoir</h2>
+    <ul class="check">
+      <li>Vélo de route en parfait état (révision conseillée)</li>
+      <li>Pneus larges (28 mm ou plus) pour amortir les pavés</li>
+      <li>Casque obligatoire</li>
+      <li>2 chambres à air, démonte-pneus, pompe ou CO₂</li>
+      <li>Coupe-vent léger et vêtements adaptés à la météo flandrienne</li>
+      <li>Ravitaillement personnel (barres, gels, 2 bidons)</li>
+      <li>Carte bancaire ou espèces pour le café et les frites</li>
+      <li>Téléphone chargé avec le tracé Strava téléchargé</li>
+    </ul>
+  </div>
 </section>
 
-<!-- CHAPITRE 5 : LILLE -->
-<section id="lille" style="padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #A52E18">Chapitre 5</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Rijsel, Lille, capitale des Flandres</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 16px; max-width: 64ch">Rijsel, c'est Lille en flamand. Avant d'être française, la ville a été flamande, bourguignonne puis espagnole. Nous ne partons donc pas vraiment à l'étranger : nous remontons vers l'ancienne Flandre.</p>
-<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 40px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; border-top: 3px solid #1C1A16">
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1066</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Première mention écrite de la ville, appelée Isla, dans une charte de la collégiale Saint-Pierre.</div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1213-14</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Lille, ville du comté de Flandre, est assiégée par Philippe Auguste. La guerre s'achève à Bouvines, en 1214.</div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1369</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Lille passe au duché de Bourgogne : Marguerite III de Flandre épouse Philippe le Hardi.</div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1500-1667</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Lille partage l'histoire des Pays-Bas espagnols.</div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 3px solid #1C1A16"><div style="flex: 0 0 110px; font-family: 'Anton', Impact, sans-serif; font-size: 32px; line-height: 1.1; color: #C23B22">1667</div><div style="flex: 1 1 260px; min-width: 0; font-size: 18px; line-height: 1.5">Conquête par les armées de Louis XIV, avec Vauban. Il devient gouverneur en 1668 et fait construire la citadelle.</div></div>
-</div>
-<aside style="flex: 1 1 380px; min-width: 0; background: #1C1A16; color: #FFF6DD; padding: 36px; box-sizing: border-box; align-self: flex-start">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">La touche bourguignonne</div>
-<h3 style="margin: 8px 0 16px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 40px; line-height: 1.05; text-transform: uppercase">Le palais Rihour</h3>
-<p style="margin: 0 0 14px; font-size: 18px; line-height: 1.6">En 1450, le duc Philippe le Bon décide de remplacer le vieux palais de la Salle par une nouvelle demeure princière. Les travaux commencent en 1453, sur les plans d'Évrard de Mazières, et s'achèvent vingt ans plus tard sous son fils Charles le Téméraire.</p>
-<p style="margin: 0 0 14px; font-size: 18px; line-height: 1.6">Le 17 février 1454 a lieu le célèbre Banquet du Faisan, dans la Lille des ducs.</p>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Il en reste des pièces gothiques du XVe siècle, où loge l'Office de Tourisme, dans l'ancienne salle du Conclave. Entrée libre, tous les jours de 10 h à 17 h 30, métro Rihour. Un bon endroit pour un dernier café avant de rouler vers la Flandre.</p>
-</aside>
-</div>
-</div>
+<!-- FLANDRIEN -->
+<section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--red)">Studio Flandres-TV · Fiction</div>
+    <h2 class="big">Le briefing du Flandrien</h2>
+    <p class="lead">Notre mascotte fictive te donne ses conseils avant le départ. Clique, mets le son.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:center">
+      <div class="studio" id="studio">
+        <div class="top"><span><i id="rec"></i><span id="rec-label" style="color:#777">STANDBY</span></span><span style="color:var(--amber)">FLANDRES-TV · LIVE</span></div>
+        <div class="stage">
+          <svg viewBox="0 0 300 240" style="width:100%;max-width:320px" aria-hidden="true">
+            <path d="M70 240C70 190 100 175 150 175s80 15 80 65z" fill="#203347" stroke="#1C1A16" stroke-width="3"/>
+            <path d="M110 177l40 63 40-63z" fill="#C23B22"/>
+            <text x="150" y="215" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="11" fill="#FFF6DD" letter-spacing="1">LE FLANDRIEN</text>
+            <rect x="135" y="140" width="30" height="40" fill="#E8B48B" stroke="#1C1A16" stroke-width="2.5"/>
+            <g id="head">
+              <ellipse cx="150" cy="115" rx="38" ry="46" fill="#F4C39E" stroke="#1C1A16" stroke-width="3"/>
+              <ellipse cx="137" cy="108" rx="4" ry="5" fill="#1C1A16"/><ellipse cx="163" cy="108" rx="4" ry="5" fill="#1C1A16"/>
+              <path d="M130 98q7-4 14 0M156 98q7-4 14 0" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
+              <path d="M150 110l-4 14h7" stroke="#1C1A16" stroke-width="2.5" fill="none"/>
+              <path d="M132 126q18 6 36 0q-6 8-18 8t-18-8z" fill="#7a4a2a" opacity=".55"/>
+              <ellipse class="mouth" cx="150" cy="142" rx="10" ry="3" fill="#6B1E12" stroke="#1C1A16" stroke-width="2"/>
+              <path d="M106 100C106 50 130 40 150 40s44 10 44 60c0-8-8-22-44-22s-44 14-44 22z" fill="#C23B22" stroke="#1C1A16" stroke-width="3"/>
+              <ellipse cx="150" cy="46" rx="14" ry="5" fill="#E2951A"/>
+            </g>
+          </svg>
+          <div class="eq"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="bot">
+          <button class="btn btn-red" id="speak-btn" style="padding:10px 20px;font-size:18px;border-radius:4px">▶ Lancer le briefing</button>
+          <div style="font-family:'Barlow Condensed';font-size:14px;text-align:right"><span style="color:var(--amber);font-weight:700">AUDIO + ANIMATION</span><br><span id="speech-state">Prêt à diffuser</span></div>
+        </div>
+      </div>
+      <div style="flex:1 1 400px;min-width:0">
+        <div class="cond" style="display:inline-block;background:var(--red);font-size:14px;letter-spacing:.14em;padding:4px 10px;margin-bottom:12px">Transcription</div>
+        <p style="margin:0;font-family:'Barlow Condensed';font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.2;color:var(--cream)" id="script-text">« Cent quarante kilomètres, dix bergs, des pavés qui secouent jusqu'aux dents… Écoute le Flandrien : au pied du Koppenberg, reste calme, garde ton souffle et ne regarde pas la pente. Si tu dois poser le pied, pose-le avec le sourire. Ici, personne ne juge. À la fin, il y a des frites ! »</p>
+        <p style="margin-top:16px;font-size:14px;color:#A99E8B">Personnage et texte fictifs, créés pour cette page.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CHAPITRE 6 : PARCOURS -->
-<section id="parcours" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">Chapitre 6</div>
-<h2 style="margin: 8px 0 24px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Le parcours</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; max-width: 64ch">De Rijsel jusqu'aux Ardennes flamandes, avec dix bergs au menu. Le tracé complet est sur Strava.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
-<div style="flex: 2 1 520px; min-width: 0">
-<figure style="margin: 0">
-<img src="./32c19b4e3fd07f2855be5a872f9b4f29.png" alt="Plan du parcours de 141,74 km au départ de Lille, avec les bergs repérés dans les Ardennes flamandes, et profil altimétrique sous la carte" style="width: 100%; height: auto; display: block; border: 3px solid #E2951A">
-<figcaption style="margin-top: 12px; font-size: 16px; line-height: 1.5; color: #E8DDB8">Plan et profil altimétrique du tracé Strava.</figcaption>
-</figure>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 0; border-top: 3px solid #E2951A">
-<div style="padding: 18px 0; border-bottom: 1px solid #5C5649"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #E2951A">Distance</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">141,74 km</div></div>
-<div style="padding: 18px 0; border-bottom: 1px solid #5C5649"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #E2951A">Dénivelé</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">1 374 m</div></div>
-<div style="padding: 18px 0; border-bottom: 1px solid #5C5649"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #E2951A">Bergs</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">10</div></div>
-<div style="padding: 18px 0; border-bottom: 1px solid #5C5649"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #E2951A">Ravitaillement</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">'t Juiste Verzet</div></div>
-<a href="https://www.strava.com/routes/3549816002530168536" style="display: inline-block; margin-top: 24px; background: #E2951A; color: #1C1A16; text-decoration: none; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 24px">Ouvrir le tracé sur Strava</a>
-</div>
-</div>
-</div>
+<!-- VOIX -->
+<section id="voix">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--ink)">Ils en parlent</div>
+    <h2 class="big">Paroles de légendes</h2>
+    <p class="lead">Champions et observateurs face au mythe du Ronde.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:24px">
+      <figure class="quote reveal"><p>« L'enfer tout court. »</p><figcaption><strong>Fabian Cancellara</strong>, triple vainqueur (2010, 2013, 2014). Source : Le Temps.</figcaption></figure>
+      <figure class="quote reveal"><p>« Pour un Belge, gagner ici compte plus que porter le maillot jaune. »</p><figcaption><strong>Johan Museeuw</strong>, vainqueur à trois reprises. Source : Le Temps.</figcaption></figure>
+      <figure class="quote reveal"><p>« Pour les gens au bord de la route, c'est une fête. »</p><figcaption><strong>Tom Boonen</strong>, vainqueur en 2005, 2006 et 2012. Source : Rouleur, traduit de l'anglais.</figcaption></figure>
+      <figure class="quote reveal"><p>« Il rend le Tour des Flandres unique. »</p><figcaption><strong>Wout van Aert</strong>, à propos du Koppenberg. Source : L'Avenir.</figcaption></figure>
+      <figure class="quote reveal"><p>« C'est une course spéciale, probablement même la meilleure course d'un jour au monde. »</p><figcaption><strong>Tadej Pogačar</strong>, vainqueur en 2023. Source : Tour Magazin.</figcaption></figure>
+      <figure class="quote reveal"><p>« Tout le monde veut savoir quel temps il fera. Et tout le monde souhaite de la pluie. »</p><figcaption><strong>Bart Audoore</strong>, journaliste, Het Laatste Nieuws.</figcaption></figure>
+    </div>
+  </div>
 </section>
 
-<!-- MODULE D'INSCRIPTION & COMPTEUR -->
-<section id="participer" style="background: #1C1A16; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box; border-top: 4px solid #E2951A">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: #E2951A">Confirmation</div>
-<h2 style="margin: 8px 0 16px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Tu viens rouler ?</h2>
-<p style="font-size: 20px; line-height: 1.6; margin: 0 0 36px; max-width: 60ch">Inscris ton nom et prénom pour confirmer ta présence dans le peloton. Le compteur s'actualise en direct.</p>
-
-<div style="display: flex; flex-wrap: wrap; gap: 32px">
-<div style="flex: 1 1 360px; min-width: 0; background: #2A2720; padding: 32px; box-sizing: border-box; border: 3px solid #E2951A">
-<form id="form-participation" onsubmit="event.preventDefault(); window.ajouterParticipant();">
-<div style="margin-bottom: 20px">
-<label for="participant-prenom" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px">Prénom</label>
-<input type="text" id="participant-prenom" class="input-flandres" placeholder="Ex: Briek" required>
-</div>
-<div style="margin-bottom: 24px">
-<label for="participant-nom" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px">Nom</label>
-<input type="text" id="participant-nom" class="input-flandres" placeholder="Ex: Schotte" required>
-</div>
-<button type="submit" style="width: 100%; cursor: pointer; background: #C23B22; color: #FFF6DD; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 24px; transition: background 0.2s">Je confirme ma participation</button>
-</form>
-<div id="confirmation-msg" style="display: none; margin-top: 16px; padding: 12px; background: #FAF0CF; color: #1C1A16; font-weight: 600; font-size: 16px; text-align: center"></div>
-</div>
-
-<div style="flex: 1 1 360px; min-width: 0; background: #FAF0CF; color: #1C1A16; padding: 32px; box-sizing: border-box; border: 3px solid #1C1A16; display: flex; flex-direction: column; justify-content: space-between">
-<div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: #C23B22">Le peloton officiel</div>
-<div style="display: flex; align-items: baseline; gap: 12px; margin: 10px 0 16px">
-<span id="counter-display" style="font-family: 'Anton', Impact, sans-serif; font-size: 72px; line-height: 1; color: #C23B22">0</span>
-<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase">coureur(s) inscrit(s)</span>
-</div>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid #1C1A16; padding-bottom: 6px; margin-bottom: 12px">Liste des inscrits :</div>
-<ul id="participants-list" style="margin: 0; padding-left: 20px; font-size: 18px; line-height: 1.8; max-height: 220px; overflow-y: auto">
-</ul>
-</div>
-<div style="margin-top: 20px; font-size: 14px; color: #6F685A">Tu souhaites te désinscrire ? Clique sur la croix à côté de ton nom.</div>
-</div>
-</div>
-</div>
+<!-- ESTAMINET -->
+<section id="estaminets">
+  <div class="wrap">
+    <div class="eyebrow">Ravitaillement</div>
+    <h2 class="big">La halte mythique</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px">
+      <div class="stop reveal">
+        <div class="cond" style="font-size:15px;letter-spacing:.12em;color:var(--red-d)">Kluisbergen · sur l'Oude Kwaremont</div>
+        <h3><a href="https://www.vrt.be/vrtnws/nl/2025/04/04/t-juiste-verzet/" target="_blank" rel="noopener" style="color:var(--ink)">'t Juiste Verzet</a></h3>
+        <p style="font-size:17px;line-height:1.55;margin:0 0 12px">Le wielercafé légendaire d'Annie Vermeulen. Poêle à bois, maillots et bidons de champions au mur. Le pèlerinage numéro un des fans de vélo.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=%27t+Juiste+Verzet+Kluisbergen" target="_blank" rel="noopener">Voir sur la carte</a>
+      </div>
+      <div class="stop reveal" style="background:transparent;border-style:dashed">
+        <h3>Bientôt…</h3>
+        <p style="font-size:17px;line-height:1.55;margin:0">D'autres haltes (café du retour, estaminet à la frontière) seront ajoutées une fois les adresses confirmées.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:16px;color:var(--muted)">Horaires et réservations à confirmer auprès de l'établissement avant le 3 avril.</p>
+  </div>
 </section>
 
-<!-- INFOS PRATIQUES -->
-<section id="infos" style="background: #C23B22; color: #FFF6DD; padding: 88px 24px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase">On y va</div>
-<h2 style="margin: 8px 0 32px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 0.95; text-transform: uppercase">Rejoins le peloton</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 24px 40px; margin-bottom: 48px">
-<div style="flex: 1 1 220px"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Date</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">Samedi 3 avril 2027</div></div>
-<div style="flex: 1 1 220px"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Rendez-vous</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">Marcq-en-Barœul</div></div>
-<div style="flex: 1 1 220px"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Départ</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1">9 h</div></div>
-<div style="flex: 1 1 220px"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Inscription</div><div style="font-family: 'Anton', Impact, sans-serif; font-size: 36px; line-height: 1.1"><a href="https://wa.me/33661307647?text=Salut%2C%20je%20viens%20%C3%A0%20la%20sortie%20des%20bergs%20du%203%20avril%20!" style="color: #FFF6DD; text-decoration: underline">06 61 30 76 23</a></div>
-<a href="https://wa.me/33661307647?text=Salut%2C%20je%20viens%20%C3%A0%20la%20sortie%20des%20bergs%20du%203%20avril%20!" style="display: inline-block; margin-top: 14px; background: #1C1A16; color: #FFF6DD; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 20px">Écrire sur WhatsApp</a></div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 320px; min-width: 0; background: #1C1A16; padding: 28px; box-sizing: border-box">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 30px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">À prévoir</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Un vélo de route en parfait état, pneus larges recommandés pour amortir les pavés. Casque obligatoire. Chambres à air, pompe, coupe-vent et ravito personnel.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #1C1A16; padding: 28px; box-sizing: border-box">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 30px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">Le lendemain</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Dimanche 4 avril 2027 : le grand Ronde van Vlaanderen professionnel UCI WorldTour avec un départ de Bruges. On regardera les stars mondiales avec les cuisses lourdes, mais le sourire aux lèvres.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #1C1A16; padding: 28px; box-sizing: border-box">
-<h3 style="margin: 0 0 12px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 30px; letter-spacing: 0.02em; text-transform: uppercase; color: #E2951A">À l'arrivée</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Frites fraîches, bière d'abbaye et partage des anecdotes de la journée.</p>
-</div>
-</div>
-</div>
+<!-- HISTOIRE -->
+<section id="histoire" class="dark">
+  <div class="wrap">
+    <div class="eyebrow">Chapitre 1</div>
+    <h2 class="big">Un Monument né en 1913</h2>
+    <p class="lead">En mai 1913, le journal Sportwereld lance une course à la fois commerciale et flamande. Reconnue par l'UCI comme l'un des cinq Monuments du cyclisme, elle trône au sommet du calendrier UCI WorldTour.</p>
+    <div class="tl">
+      <div class="row reveal"><div class="y">1913</div><div class="t"><strong>Première édition</strong>, gagnée par Paul Deman.</div></div>
+      <div class="row reveal"><div class="y">1919</div><div class="t"><strong>Le train de Van Lerberghe.</strong> Il aurait pris son vélo sur l'épaule pour passer sous un train à un passage à niveau, puis gagné avec 15 minutes d'avance. La légende lui prête un mot à l'arrivée : « Je suis en avance d'une demi-journée. »</div></div>
+      <div class="row reveal"><div class="y">1976</div><div class="t"><strong>Le Koppenberg entre en scène.</strong> Seuls cinq coureurs le franchissent en selle. Eddy Merckx doit marcher dans la partie la plus raide.</div></div>
+      <div class="row reveal"><div class="y">1987</div><div class="t"><strong>Le Koppenberg est rayé de la carte</strong> après l'incident impliquant Jesper Skibby. Il revient en 2002.</div></div>
+      <div class="row reveal"><div class="y">1989</div><div class="t"><strong>L'ancrage dans les classements UCI.</strong> De la Coupe du Monde sur route de 1989 à l'actuel calendrier UCI WorldTour, le Ronde reste l'épreuve de référence des spécialistes des monts pavés.</div></div>
+      <div class="row reveal"><div class="y">2012</div><div class="t"><strong>Arrivée à Oudenaarde.</strong> Les éditions récentes alignent de 17 à 19 côtes sur environ 265 km.</div></div>
+      <div class="row reveal"><div class="y">3 fois</div><div class="t"><strong>Le club des huit.</strong> Buysse, Magni, Leman, Museeuw, Boonen, Cancellara, van der Poel et Pogačar ont tous gagné trois fois.</div></div>
+    </div>
+
+    <h3 class="anton" style="font-size:40px;margin:64px 0 24px;color:var(--amber)">La mythologie</h3>
+    <div class="cards">
+      <div class="card reveal"><h3>Le Flandrien</h3><p>Le mot désignait à l'origine des ouvriers wallons de la sidérurgie. Karel Van Wijnendaele le reprend dans les années 1920 pour qualifier un coureur tenace et généreux.</p></div>
+      <div class="card reveal"><h3>Le lion noir</h3><p>La course est pensée pour promouvoir l'identité flamande : le lion noir sur fond jaune flotte partout le long du parcours.</p></div>
+      <div class="card reveal"><h3>La fête</h3><p>Plus d'un million de personnes se massent le long du parcours, avec des dizaines de milliers de fans sur le Kwaremont.</p></div>
+      <div class="card reveal"><h3>Briek Schotte</h3><p>Né en 1919, il a disputé 20 éditions consécutives, en a remporté deux et terminé six fois sur le podium.</p></div>
+    </div>
+  </div>
 </section>
 
-<!-- SOURCES -->
-<footer style="padding: 56px 24px 72px; box-sizing: border-box">
-<div style="max-width: 1120px; margin: 0 auto">
-<h2 style="margin: 0 0 16px; font-family: 'Anton', Impact, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase">Sources &amp; Références</h2>
-<p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; max-width: 80ch; color: #4A4437">Brochure cyclo commémorative non affiliée aux organisateurs officiels de Flanders Classics. Références historiques, UCI et documentaires issues des archives sportives.</p>
-<ul style="margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.8">
-<li><a href="https://www.uci.org/article/the-cobbled-climbs-of-the-tour-of-flanders-ronde-s-epic-soul/5AbNl6K790vT5yQaj93Rkb">UCI, The cobbled climbs of the Tour of Flanders</a></li>
-<li><a href="https://www.rouleur.cc/blogs/the-rouleur-journal/the-history-of-the-tour-of-flanders-tales-from-de-ronde">Rouleur, The history of the Tour of Flanders</a></li>
-<li><a href="https://www.rouleur.cc/blogs/the-rouleur-journal/tom-boonen-and-the-ronde">Rouleur, Tom Boonen and the Ronde</a></li>
-<li><a href="https://www.lavenir.net/sports/cyclisme/2025/03/27/le-quaremont-en-effort-le-plus-douloureux-de-la-saison-et-son-top-3-des-monts-flandriens-wout-van-aert-vous-emmene-dans-sa-roue-sur-les-paves-PZTHUHZ7ANBSLMUQEOMGLZ5RN4/">L'Avenir, Wout van Aert et le top 3 des monts flandriens</a></li>
-<li><a href="https://www.letemps.ch/sport/tour-flandres-cest-lidentite-flamande-idealisee">Le Temps, Tour des Flandres : l'identité flamande idéalisée</a></li>
-<li><a href="https://www.tour-magazin.de/fr/professionnel-cyclisme/course-du-jour/tour-des-flandres-belgique/le-mythe-du-tour-des-flandres-des-jours-feries-dans-toute-une-region-de-belgique/">Tour Magazin, Le mythe du Tour des Flandres</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Tour_of_Flanders_(men%27s_race)">Wikipedia, Tour of Flanders (men's race)</a></li>
-<li><a href="https://www.pariszigzag.fr/lille-actu/palais-rihour-lille/">Paris ZigZag, Le palais Rihour à Lille</a></li>
-<li><a href="https://fr.vikidia.org/wiki/Histoire_de_Lille">Vikidia, Histoire de Lille</a></li>
-<li><a href="https://www.vrt.be/vrtnws/nl/2025/04/04/t-juiste-verzet/">VRT, 't Juiste Verzet</a></li>
-<li><a href="https://wanderlog.com/place/details/3982732/de-pelgrim">Wanderlog, Brasserie De Pelgrim (Anvers)</a></li>
-<li><a href="https://www.komoot.com/highlight/945712">Komoot, Café in de Rustberg (Lennik)</a></li>
-</ul>
-</div>
+<!-- LILLE -->
+<section id="lille">
+  <div class="wrap">
+    <div class="eyebrow">Le point de départ</div>
+    <h2 class="big">Rijsel, capitale des Flandres</h2>
+    <p class="lead">Rijsel, c'est Lille en flamand. Avant d'être française, la ville a été flamande, bourguignonne puis espagnole : nous ne partons pas à l'étranger, nous remontons vers l'ancienne Flandre.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+      <div class="tl" style="flex:1 1 460px;min-width:0">
+        <div class="row reveal"><div class="y" style="font-size:32px">1066</div><div class="t">Première mention écrite de la ville, appelée Isla, dans une charte de la collégiale Saint-Pierre.</div></div>
+        <div class="row reveal"><div class="y" style="font-size:32px">1369</div><div class="t">Lille passe au duché de Bourgogne : Marguerite III de Flandre épouse Philippe le Hardi.</div></div>
+        <div class="row reveal"><div class="y" style="font-size:32px">1500-1667</div><div class="t">Lille partage l'histoire des Pays-Bas espagnols.</div></div>
+        <div class="row reveal"><div class="y" style="font-size:32px">1667</div><div class="t">Conquête par les armées de Louis XIV, avec Vauban, qui fera construire la citadelle.</div></div>
+      </div>
+      <aside class="dark reveal" style="flex:1 1 380px;min-width:0;padding:36px;align-self:flex-start">
+        <div class="eyebrow">La touche bourguignonne</div>
+        <h3 class="anton" style="margin:8px 0 16px;font-size:40px;line-height:1.05">Le palais Rihour</h3>
+        <p style="font-size:18px;line-height:1.6">En 1450, Philippe le Bon décide de bâtir une nouvelle demeure princière. Les travaux commencent en 1453 et s'achèvent sous Charles le Téméraire. Le Banquet du Faisan s'y tient le 17 février 1454.</p>
+        <p style="font-size:18px;line-height:1.6;margin-bottom:0">Il en reste des pièces gothiques où loge l'Office de Tourisme. Entrée libre, tous les jours de 10 h à 17 h 30, métro Rihour. Un bon endroit pour un café avant de rouler.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--paper)">
+  <div class="wrap" style="max-width:860px">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="big">FAQ</h2>
+    <details><summary>Est-ce payant ?</summary><p>À confirmer avec l'organisateur : écris-lui sur WhatsApp via le bouton « Je viens ».</p></details>
+    <details><summary>Quel niveau faut-il avoir ?</summary><p>Il faut être à l'aise sur 140 km avec du dénivelé et quelques passages pavés raides. L'allure est conviviale et le groupe se regroupe avant chaque berg.</p></details>
+    <details><summary>Puis-je venir en vélo électrique ou gravel ?</summary><p>Un vélo de route avec des pneus larges est recommandé. Pour les autres vélos, préviens l'organisateur à l'inscription.</p></details>
+    <details><summary>Et s'il pleut ?</summary><p>Les pavés mouillés rendent les bergs glissants, c'est le charme du Ronde. Prévois un coupe-vent et des vêtements de rechange. La décision de maintenir ou non la sortie sera communiquée la veille.</p></details>
+    <details><summary>Y a-t-il une voiture suiveuse ou un assistant mécanique ?</summary><p>À confirmer. Prévois dans tous les cas chambres à air, pompe et outils pour être autonome.</p></details>
+    <details><summary>Comment rentrer à Lille ?</summary><p>Le peloton roule dans les deux sens : le point d'arrivée est Marcq-en-Barœul.</p></details>
+  </div>
+</section>
+
+<!-- INSCRIPTION -->
+<section id="participer">
+  <div class="wrap">
+    <div class="eyebrow">Confirmation</div>
+    <h2 class="big">Tu viens rouler ?</h2>
+    <p class="lead">Remplis ce formulaire : il prépare ton message WhatsApp pour l'organisateur, il n'y a plus qu'à envoyer.</p>
+    <div class="reg">
+      <div>
+        <form class="form" id="reg-form">
+          <div class="f"><label for="prenom">Prénom</label><input class="in" id="prenom" required placeholder="Ex : Briek"></div>
+          <div class="f"><label for="nom">Nom</label><input class="in" id="nom" required placeholder="Ex : Schotte"></div>
+          <div class="f"><label for="niveau">Ton niveau</label>
+            <select class="in" id="niveau">
+              <option>Régulier (100 km sans souci)</option>
+              <option>Confirmé (150 km et plus)</option>
+              <option>Je me prépare activement</option>
+            </select></div>
+          <div class="f"><label for="velo">Ton vélo</label>
+            <select class="in" id="velo">
+              <option>Route, pneus 28 mm ou plus</option>
+              <option>Route, pneus 25 mm</option>
+              <option>Gravel</option>
+              <option>Vélo électrique</option>
+            </select></div>
+          <button class="btn btn-red" type="submit" style="width:100%">Je confirme ma participation</button>
+        </form>
+      </div>
+      <div>
+        <div class="infos" style="margin:0">
+          <div><div class="mlab" style="color:var(--paper)">Date</div><div class="v">Samedi 3 avril 2027</div></div>
+          <div><div class="mlab" style="color:var(--paper)">Rendez-vous</div><div class="v">Marcq-en-Barœul</div></div>
+          <div><div class="mlab" style="color:var(--paper)">Départ</div><div class="v">9 h</div></div>
+          <div><div class="mlab" style="color:var(--paper)">Contact</div><div class="v" id="phone-show"></div></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-ink" id="wa-direct" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+          <button class="btn btn-ink" id="share-btn">Partager l'événement</button>
+        </div>
+        <div id="share-msg" style="margin-top:10px;font-size:16px;min-height:22px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 class="anton" style="font-size:32px;margin:0 0 16px">Sources &amp; références</h2>
+    <p style="font-size:16px;line-height:1.6;max-width:80ch;color:var(--muted)">Brochure cyclo commémorative non affiliée aux organisateurs officiels de Flanders Classics.</p>
+    <ul>
+      <li><a href="https://www.uci.org/article/the-cobbled-climbs-of-the-tour-of-flanders-ronde-s-epic-soul/5AbNl6K790vT5yQaj93Rkb">UCI, The cobbled climbs of the Tour of Flanders</a></li>
+      <li><a href="https://www.rouleur.cc/blogs/the-rouleur-journal/the-history-of-the-tour-of-flanders-tales-from-de-ronde">Rouleur, The history of the Tour of Flanders</a></li>
+      <li><a href="https://www.rouleur.cc/blogs/the-rouleur-journal/tom-boonen-and-the-ronde">Rouleur, Tom Boonen and the Ronde</a></li>
+      <li><a href="https://www.lavenir.net/sports/cyclisme/2025/03/27/le-quaremont-en-effort-le-plus-douloureux-de-la-saison-et-son-top-3-des-monts-flandriens-wout-van-aert-vous-emmene-dans-sa-roue-sur-les-paves-PZTHUHZ7ANBSLMUQEOMGLZ5RN4/">L'Avenir, Wout van Aert et le top 3 des monts flandriens</a></li>
+      <li><a href="https://www.letemps.ch/sport/tour-flandres-cest-lidentite-flamande-idealisee">Le Temps, Tour des Flandres : l'identité flamande idéalisée</a></li>
+      <li><a href="https://www.tour-magazin.de/fr/professionnel-cyclisme/course-du-jour/tour-des-flandres-belgique/le-mythe-du-tour-des-flandres-des-jours-feries-dans-toute-une-region-de-belgique/">Tour Magazin, Le mythe du Tour des Flandres</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Tour_of_Flanders_(men%27s_race)">Wikipedia, Tour of Flanders (men's race)</a></li>
+      <li><a href="https://www.pariszigzag.fr/lille-actu/palais-rihour-lille/">Paris ZigZag, Le palais Rihour à Lille</a></li>
+      <li><a href="https://fr.vikidia.org/wiki/Histoire_de_Lille">Vikidia, Histoire de Lille</a></li>
+      <li><a href="https://www.vrt.be/vrtnws/nl/2025/04/04/t-juiste-verzet/">VRT, 't Juiste Verzet</a></li>
+    </ul>
+  </div>
 </footer>
 
-</div>
-</x-dc>
+<a id="float" href="#participer">Je viens rouler 🚴</a>
 
 <script>
-// --- SCRIPT 1 : METEO EN DIRECT (Kluisbergen / Kwaremont) ---
-async function fetchMeteoLive() {
-  const lat = 50.7833;
-  const lon = 3.5167;
+/* ===== CONFIG : à modifier ici uniquement ===== */
+const CFG = {
+  phoneIntl: '33661307647',        // format international sans +
+  phoneShow: '06 61 30 76 47',     // à vérifier (l'ancienne page affichait ...23)
+  start: '2027-04-03T09:00:00+02:00',
+  lat: 50.7833, lon: 3.5167,
+  eventDate: '2027-04-03'
+};
+
+/* Progress bar + floating CTA */
+const bar = document.getElementById('progress'), fl = document.getElementById('float');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  const reg = document.getElementById('participer').getBoundingClientRect();
+  fl.classList.toggle('show', h.scrollTop > 700 && !(reg.top < innerHeight && reg.bottom > 0));
+}, { passive: true });
+
+/* Reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Count-up */
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, to = +el.dataset.count, t0 = performance.now(), dur = 1400;
+  (function tick(t) {
+    const p = Math.min(1, (t - t0) / dur);
+    el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString('fr-FR');
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+  cio.unobserve(el);
+}), { threshold: .6 });
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+/* Countdown */
+function tickCd() {
+  let s = Math.max(0, Math.floor((new Date(CFG.start) - Date.now()) / 1000));
+  const d = Math.floor(s / 86400); s %= 86400;
+  const h = Math.floor(s / 3600); s %= 3600;
+  const m = Math.floor(s / 60); s %= 60;
+  const set = (id, v) => document.getElementById(id).textContent = String(v).padStart(2, '0');
+  document.getElementById('cd-d').textContent = d;
+  set('cd-h', h); set('cd-m', m); set('cd-s', s);
+}
+tickCd(); setInterval(tickCd, 1000);
+
+/* Weather */
+function wlabel(code) {
+  if (code === 0) return 'Ciel dégagé ☀️';
+  if (code <= 3) return 'Éclaircies / nuageux ⛅';
+  if (code <= 48) return 'Brouillard flandrien 🌫️';
+  if (code <= 67) return 'Pluie flandrienne 🌧️';
+  if (code <= 77) return 'Neige fondue ❄️';
+  if (code <= 82) return 'Averses copieuses 🌧️';
+  return 'Orage sur les bergs ⚡';
+}
+(async function () {
   try {
-    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,precipitation,weather_code,wind_speed_10m&timezone=auto`);
-    if (!res.ok) throw new Error('Erreur API météo');
-    const data = await res.json();
-    const cur = data.current;
-
-    document.getElementById('meteo-temp').textContent = Math.round(cur.temperature_2m) + '°C';
-    document.getElementById('meteo-vent').textContent = Math.round(cur.wind_speed_10m) + ' km/h';
-    document.getElementById('meteo-pluie').textContent = cur.precipitation + ' mm';
-
-    const code = cur.weather_code;
-    let description = 'Ciel dégagé ☀️';
-    if (code >= 1 && code <= 3) description = 'Éclaircies / Nuageux ⛅';
-    else if (code >= 45 && code <= 48) description = 'Brouillard flandrien 🌫️';
-    else if (code >= 51 && code <= 67) description = 'Pluie flandrienne 🌧️';
-    else if (code >= 71 && code <= 77) description = 'Neige fondue ❄️';
-    else if (code >= 80 && code <= 82) description = 'Averses copieuses 🌧️';
-    else if (code >= 95) description = 'Orage sur les bergs ⚡';
-
-    document.getElementById('meteo-condition').textContent = description;
-  } catch (err) {
-    document.getElementById('meteo-condition').textContent = 'Météo indisponible';
-  }
-}
-
-// --- SCRIPT 2 : STUDIO VIDEO ET SYNTHESE VOCALE SEIXAS ---
-window.toggleSpeechSeixas = function() {
-  if (!('speechSynthesis' in window)) {
-    alert("Votre navigateur ne supporte pas la synthèse vocale.");
-    return;
-  }
-
-  const mouth = document.getElementById('avatar-mouth');
-  const head = document.getElementById('head-group');
-  const recDot = document.getElementById('rec-dot');
-  const recLabel = document.getElementById('rec-label');
-  const btnIcon = document.getElementById('btn-icon');
-  const btnText = document.getElementById('btn-text');
-  const speechState = document.getElementById('speech-state');
-  const audioEq = document.getElementById('audio-eq');
-  const eqBars = document.querySelectorAll('.eq-bar');
-
-  function startVisuals() {
-    mouth.classList.add('speaking-mouth');
-    head.classList.add('speaking-head');
-    recDot.style.background = '#C23B22';
-    recDot.classList.add('rec-active');
-    recLabel.textContent = 'ON AIR';
-    recLabel.style.color = '#C23B22';
-    btnIcon.textContent = '⏸';
-    btnText.textContent = "Mettre en pause";
-    speechState.textContent = 'Diffusion en cours...';
-    audioEq.style.opacity = '1';
-    eqBars.forEach((b, i) => b.className = 'eq-bar eq-active-' + ((i % 4) + 1));
-  }
-
-  function stopVisuals() {
-    mouth.classList.remove('speaking-mouth');
-    head.classList.remove('speaking-head');
-    recDot.style.background = '#555';
-    recDot.classList.remove('rec-active');
-    recLabel.textContent = 'STANDBY';
-    recLabel.style.color = '#777';
-    btnIcon.textContent = '▶';
-    btnText.textContent = "Relancer l'interview";
-    speechState.textContent = 'Interview terminée';
-    audioEq.style.opacity = '0.3';
-    eqBars.forEach(b => b.className = 'eq-bar');
-  }
-
-  if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.cancel();
-    stopVisuals();
-    return;
-  }
-
-  const texte = "Partir de Lille pour se farcir 140 bornes et les bergs pavés la veille des pros ? Mais c'est un délire de grands malades ! Le Koppenberg à 22 %, sur un vélo normal sans assistance, tes cuisses hurlent, ta chaîne grince et tu pries pour ne pas poser le pied à terre dans la boue. C'est complètement dément, et c'est exactement pour ça que c'est grandiose. Bon courage à la bande !";
-
-  const utterance = new SpeechSynthesisUtterance(texte);
-  utterance.lang = 'fr-FR';
-  utterance.rate = 1.05;
-  utterance.pitch = 1.05;
-
-  utterance.onstart = startVisuals;
-  utterance.onend = stopVisuals;
-  utterance.onerror = stopVisuals;
-
-  window.speechSynthesis.speak(utterance);
-};
-
-// --- SCRIPT 3 : GESTION DES PARTICIPANTS ET DU COMPTEUR ---
-const STORAGE_KEY = 'ronde_participants_list';
-
-function getStoredParticipants() {
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&current=temperature_2m,precipitation,weather_code,wind_speed_10m&timezone=auto`);
+    const c = (await r.json()).current;
+    document.getElementById('meteo-temp').textContent = Math.round(c.temperature_2m) + '°C';
+    document.getElementById('meteo-vent').textContent = Math.round(c.wind_speed_10m) + ' km/h';
+    document.getElementById('meteo-pluie').textContent = c.precipitation + ' mm';
+    document.getElementById('meteo-condition').textContent = wlabel(c.weather_code);
+  } catch (e) { document.getElementById('meteo-condition').textContent = 'Météo indisponible'; }
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
-      { prenom: 'Emilio', nom: 'G.' },
-      { prenom: 'Briek', nom: 'Schotte' }
-    ];
-  } catch(e) {
-    return [];
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&daily=temperature_2m_max,precipitation_sum,weather_code&timezone=auto&start_date=${CFG.eventDate}&end_date=${CFG.eventDate}`);
+    if (!r.ok) throw 0;
+    const d = (await r.json()).daily;
+    document.getElementById('meteo-jour').textContent = `Prévision du jour J : ${wlabel(d.weather_code[0])} · max ${Math.round(d.temperature_2m_max[0])}°C · ${d.precipitation_sum[0]} mm`;
+  } catch (e) {
+    document.getElementById('meteo-jour').textContent = 'La prévision du 3 avril apparaîtra ici environ deux semaines avant le départ.';
   }
+})();
+
+/* Flandrien voice */
+const studio = document.getElementById('studio'), btn = document.getElementById('speak-btn');
+function visuals(on) {
+  studio.classList.toggle('talk', on);
+  document.getElementById('rec').classList.toggle('on', on);
+  const rl = document.getElementById('rec-label');
+  rl.textContent = on ? 'ON AIR' : 'STANDBY'; rl.style.color = on ? '#C23B22' : '#777';
+  btn.textContent = on ? '⏸ Arrêter' : '▶ Lancer le briefing';
+  document.getElementById('speech-state').textContent = on ? 'Diffusion en cours…' : 'Prêt à diffuser';
 }
-
-function updateParticipantsUI() {
-  const participants = getStoredParticipants();
-  const counter = document.getElementById('counter-display');
-  const statCounter = document.getElementById('stat-participants-count');
-  const list = document.getElementById('participants-list');
-
-  if (counter) counter.textContent = participants.length;
-  if (statCounter) statCounter.textContent = participants.length;
-
-  if (list) {
-    list.innerHTML = '';
-    if (participants.length === 0) {
-      list.innerHTML = '<li style="list-style: none; color: #6F685A">Aucun inscrit pour le moment. Sois le premier !</li>';
-    } else {
-      participants.forEach((p, idx) => {
-        const li = document.createElement('li');
-        li.style.display = 'flex';
-        li.style.justifyContent = 'space-between';
-        li.style.alignItems = 'center';
-        li.style.marginBottom = '6px';
-        li.innerHTML = `<span><strong>${escapeHtml(p.prenom)}</strong> ${escapeHtml(p.nom)}</span> 
-                        <button onclick="window.supprimerParticipant(${idx})" title="Supprimer" style="background: none; border: none; cursor: pointer; color: #C23B22; font-weight: bold; font-size: 16px">✕</button>`;
-        list.appendChild(li);
-      });
-    }
-  }
-}
-
-function escapeHtml(str) {
-  return str.replace(/[&<>'"]/g, tag => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
-  }[tag] || tag));
-}
-
-window.ajouterParticipant = function() {
-  const prenomEl = document.getElementById('participant-prenom');
-  const nomEl = document.getElementById('participant-nom');
-  const msgEl = document.getElementById('confirmation-msg');
-
-  const prenom = prenomEl.value.trim();
-  const nom = nomEl.value.trim();
-
-  if (!prenom || !nom) return;
-
-  const participants = getStoredParticipants();
-  participants.push({ prenom, nom });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(participants));
-
-  updateParticipantsUI();
-
-  msgEl.style.display = 'block';
-  msgEl.textContent = `Bravo ${prenom} ! Ta présence est confirmée dans le peloton.`;
-
-  const waUrl = `https://wa.me/33661307647?text=Salut%2C%20je%20confirme%20ma%20participation%20au%20Tour%20des%20Flandres%20%3A%20${encodeURIComponent(prenom + ' ' + nom)}`;
-  setTimeout(() => {
-    if (confirm("Veux-tu aussi envoyer ta confirmation par WhatsApp à l'organisateur ?")) {
-      window.open(waUrl, '_blank');
-    }
-  }, 300);
-
-  prenomEl.value = '';
-  nomEl.value = '';
-};
-
-window.supprimerParticipant = function(index) {
-  const participants = getStoredParticipants();
-  participants.splice(index, 1);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(participants));
-  updateParticipantsUI();
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  fetchMeteoLive();
-  updateParticipantsUI();
+btn.addEventListener('click', () => {
+  if (!('speechSynthesis' in window)) return alert('Ton navigateur ne supporte pas la synthèse vocale.');
+  if (speechSynthesis.speaking) { speechSynthesis.cancel(); visuals(false); return; }
+  const u = new SpeechSynthesisUtterance(document.getElementById('script-text').textContent.replace(/[«»]/g, ''));
+  u.lang = 'fr-FR'; u.rate = 1.03;
+  u.onstart = () => visuals(true); u.onend = u.onerror = () => visuals(false);
+  speechSynthesis.speak(u);
 });
-</script>
 
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":7600}}'>
-class Component extends DCLogic {
-renderVals() {
-return {};
-}
+/* Contact + registration via WhatsApp */
+document.getElementById('phone-show').textContent = CFG.phoneShow;
+document.getElementById('wa-direct').href = `https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent('Salut, je viens à la sortie des bergs du 3 avril !')}`;
+document.getElementById('reg-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const msg = `Salut, je confirme ma participation au Tour des Flandres cyclo du 3 avril 2027 !\nNom : ${v('prenom')} ${v('nom')}\nNiveau : ${v('niveau')}\nVélo : ${v('velo')}`;
+  window.open(`https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+/* Share */
+document.getElementById('share-btn').addEventListener('click', async () => {
+  const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 10 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
+  const m = document.getElementById('share-msg');
+  try {
+    if (navigator.share) await navigator.share(data);
+    else { await navigator.clipboard.writeText(location.href); m.textContent = 'Lien copié, envoie-le à tes potes !'; }
+  } catch (e) {}
+});
+
+/* Calendar (.ics) */
+function addToCalendar() {
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Flandres Cyclo//FR','BEGIN:VEVENT',
+    'UID:flandres-cyclo-2027@flandres',
+    'DTSTAMP:20261116T080000Z','DTSTART:20270403T070000Z','DTEND:20270403T160000Z',
+    'SUMMARY:Tour des Flandres cyclo depuis Lille',
+    'LOCATION:Marcq-en-Barœul',
+    'DESCRIPTION:141 km\\, 10 bergs. Rendez-vous 8h30\\, départ 9h.',
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+  a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
 </script>
 </body>
