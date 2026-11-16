@@ -34,7 +34,7 @@ h2.big{margin:8px 0 24px;font-family:'Anton',Impact,sans-serif;font-weight:400;f
 .btn-ink{background:var(--ink);color:var(--paper)}.btn-ink:hover{color:var(--paper)}
 .btn-red{background:var(--red);color:var(--paper)}.btn-red:hover{color:var(--paper)}
 .btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{color:var(--ink);box-shadow:4px 4px 0 #000}
-
+ 
 /* progress + nav */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--amber);z-index:100}
 nav{position:sticky;top:0;z-index:90;background:var(--red);padding:6px 16px}
@@ -42,7 +42,7 @@ nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:0 4px}
 nav a{color:var(--paper);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;padding:10px}
 nav a:hover{color:var(--amber)}
 nav a.cta{background:var(--ink);margin-left:8px}
-
+ 
 /* hero */
 header.hero{position:relative;padding:56px 24px 0;overflow:hidden;background:
  radial-gradient(circle at 20% 20%,rgba(255,246,221,.5),transparent 55%),var(--cream)}
@@ -65,13 +65,13 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 @keyframes ride{to{left:110%}}
 .wheel{transform-box:fill-box;transform-origin:center;animation:spin .5s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
+ 
 /* ticker */
 .ticker{background:var(--amber);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap}
 .ticker div{display:inline-block;padding:10px 0;animation:tick 30s linear infinite;font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
 .ticker span{margin:0 28px}
 @keyframes tick{to{transform:translateX(-50%)}}
-
+ 
 /* weather */
 #meteo{background:var(--blue);color:var(--paper);padding:36px 24px;border-block:4px solid var(--ink)}
 .meteo-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
@@ -79,14 +79,14 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 @keyframes pulse{50%{opacity:.35}}
 .mval{font-family:'Anton',sans-serif;font-size:44px;line-height:1}
 .mlab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
-
+ 
 /* stats */
 .stats{background:var(--ink);color:var(--paper);padding:40px 24px}
 .stats .wrap{display:flex;flex-wrap:wrap;gap:32px 24px;justify-content:space-between}
 .stat{flex:1 1 200px}
 .stat .n{font-family:'Anton',sans-serif;font-size:64px;line-height:1;color:var(--amber)}
 .stat .l{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.08em;text-transform:uppercase}
-
+ 
 /* why / audience */
 .cards{display:flex;flex-wrap:wrap;gap:24px}
 .card{flex:1 1 300px;min-width:0;background:var(--paper2);border:3px solid var(--ink);padding:28px;transition:transform .2s,box-shadow .2s}
@@ -97,7 +97,7 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 .dark .card{background:#2A2720;border-color:#2A2720;border-top:6px solid var(--amber)}
 .dark .card:hover{box-shadow:6px 6px 0 #000}
 .dark .card h3{color:var(--amber)}
-
+ 
 /* timeline */
 .tl{display:flex;flex-direction:column;border-top:3px solid var(--ink)}
 .tl .row{display:flex;flex-wrap:wrap;gap:8px 32px;padding:22px 0;border-bottom:1px solid var(--ink)}
@@ -105,7 +105,7 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 .tl .t{flex:1 1 420px;min-width:0;font-size:19px;line-height:1.55}
 .dark .tl,.dark .tl .row{border-color:#5C5649}
 .dark .tl .y{color:var(--amber)}
-
+ 
 /* bergs */
 .berg{background:var(--paper2);border:3px solid var(--ink);display:flex;flex-wrap:wrap;margin-bottom:32px}
 .berg .side{flex:1 1 280px;color:var(--paper);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
@@ -125,13 +125,13 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 .bar .tr{flex:1;min-width:0}
 .bar .fill{height:22px;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
 .reveal.in .bar .fill{width:var(--w)}
-
+ 
 /* voix */
 #voix{background:var(--amber)}
 .quote{flex:1 1 320px;min-width:0;margin:0;background:var(--paper2);padding:28px;border:3px solid var(--ink)}
 .quote p{margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1.1}
 .quote figcaption{margin-top:14px;font-size:16px;line-height:1.45}
-
+ 
 /* flandrien studio */
 .studio{flex:1 1 480px;min-width:0;background:#141310;border:3px solid var(--red);border-radius:6px;overflow:hidden;box-shadow:8px 8px 0 #000}
 .studio .top{background:var(--ink);padding:10px 16px;display:flex;justify-content:space-between;border-bottom:2px solid #2A2720;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
@@ -150,38 +150,38 @@ header.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-
 .talk .eq i{animation:eq .3s infinite ease-in-out}
 .talk .eq i:nth-child(2){animation-delay:.07s}.talk .eq i:nth-child(3){animation-delay:.14s}.talk .eq i:nth-child(4){animation-delay:.21s}
 @keyframes eq{50%{height:18px}}
-
+ 
 /* estaminet */
 #estaminets{background:var(--paper2);border-top:4px solid var(--ink)}
 .stop{flex:1 1 320px;background:var(--paper);border:3px solid var(--ink);padding:28px}
 .stop h3{margin:4px 0 10px;font-family:'Anton',sans-serif;font-weight:400;font-size:30px;text-transform:uppercase}
-
+ 
 /* program */
 .prog{border-left:4px solid var(--amber);margin-left:8px}
 .prog .step{position:relative;padding:0 0 28px 28px}
 .prog .step::before{content:"";position:absolute;left:-12px;top:6px;width:20px;height:20px;background:var(--red);border:3px solid var(--ink);border-radius:50%}
 .prog .h{font-family:'Anton',sans-serif;font-size:30px;color:var(--amber)}
 .prog .d{font-size:19px;line-height:1.5}
-
+ 
 /* checklist */
 .check{columns:2 280px;column-gap:32px;padding:0;margin:0;list-style:none}
 .check li{break-inside:avoid;padding:8px 0 8px 36px;position:relative;font-size:18px;border-bottom:1px dashed #5C5649}
 .check li::before{content:"✓";position:absolute;left:0;top:6px;width:24px;height:24px;background:var(--amber);color:var(--ink);font-weight:700;text-align:center;line-height:24px}
-
+ 
 /* faq */
 details{background:var(--paper2);border:3px solid var(--ink);margin-bottom:12px}
 summary{cursor:pointer;padding:18px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::after{content:"+";font-size:28px;line-height:1;color:var(--red)}
 details[open] summary::after{content:"–"}
 details p{margin:0;padding:0 24px 20px;font-size:18px;line-height:1.6}
-
+ 
 /* parcours */
 .pgrid{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
 .pgrid img{width:100%;height:auto;display:block;border:3px solid var(--amber)}
 .kpi{padding:18px 0;border-bottom:1px solid #5C5649}
 .kpi .l{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
 .kpi .v{font-family:'Anton',sans-serif;font-size:36px;line-height:1.1}
-
+ 
 /* register */
 #participer{background:var(--red);color:var(--paper)}
 #participer .eyebrow{color:var(--paper)}
@@ -196,15 +196,15 @@ details p{margin:0;padding:0 24px 20px;font-size:18px;line-height:1.6}
 .infos div{flex:1 1 200px}
 .infos .v{font-family:'Anton',sans-serif;font-size:32px;line-height:1.1}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-
+ 
 footer{padding:56px 24px 110px}
 footer ul{padding-left:20px;font-size:16px;line-height:1.8}
-
+ 
 /* floating cta */
 #float{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;text-align:center;background:var(--red);color:var(--paper);padding:14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transform:translateY(140%);transition:transform .35s}
 #float.show{transform:none}
 @media(min-width:900px){#float{left:auto;right:24px;width:auto;padding:14px 28px}}
-
+ 
 /* reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
@@ -217,7 +217,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
 </head>
 <body>
 <div id="progress"></div>
-
+ 
 <nav>
   <div class="links">
     <a href="#pourquoi">Pourquoi</a>
@@ -229,7 +229,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     <a class="cta" href="#participer">Je viens !</a>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-grid">
@@ -268,12 +268,12 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </svg>
   </div>
 </header>
-
+ 
 <div class="ticker" aria-hidden="true"><div>
   <span>★ Koppenberg 22 %</span><span>★ Paterberg 20,3 %</span><span>★ Vieux Quaremont 2,2 km</span><span>★ 141 km</span><span>★ Frites &amp; bière d'abbaye à l'arrivée</span><span>★ La veille du Ronde</span>
   <span>★ Koppenberg 22 %</span><span>★ Paterberg 20,3 %</span><span>★ Vieux Quaremont 2,2 km</span><span>★ 141 km</span><span>★ Frites &amp; bière d'abbaye à l'arrivée</span><span>★ La veille du Ronde</span>
 </div></div>
-
+ 
 <!-- METEO -->
 <section id="meteo" style="padding:36px 24px">
   <div class="wrap">
@@ -292,7 +292,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     <div style="margin-top:6px;font-size:14px;color:var(--cream);opacity:.9">Données Open-Meteo. Tout le monde espère de la pluie, mais pas nous.</div>
   </div>
 </section>
-
+ 
 <!-- STATS -->
 <div class="stats"><div class="wrap">
   <div class="stat"><div class="n" data-count="141">0</div><div class="l">kilomètres depuis Lille</div></div>
@@ -300,7 +300,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
   <div class="stat"><div class="n" data-count="1374">0</div><div class="l">mètres de dénivelé</div></div>
   <div class="stat"><div class="n" data-count="1913">0</div><div class="l">première édition du Ronde</div></div>
 </div></div>
-
+ 
 <!-- POURQUOI -->
 <section id="pourquoi">
   <div class="wrap">
@@ -313,7 +313,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
       <div class="card reveal"><div class="ic">📺</div><h3>Le Ronde le lendemain</h3><p>Tu auras les jambes lourdes mais tu regarderas la course avec des yeux de connaisseur.</p></div>
       <div class="card reveal"><div class="ic">🤝</div><h3>Un peloton à taille humaine</h3><p>Pas de dossard ni de chrono : une sortie amicale où personne n'est laissé derrière.</p></div>
     </div>
-
+ 
     <h3 class="anton" style="font-size:36px;margin:56px 0 16px">C'est pour toi si…</h3>
     <div class="cards">
       <div class="card reveal"><h3>Tu roules régulièrement</h3><p>Tu as déjà fait 100 km et tu aimes les côtes. Allure conviviale, regroupements avant chaque berg.</p></div>
@@ -322,14 +322,14 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- BERGS -->
 <section id="bergs" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Les stars du parcours</div>
     <h2 class="big">Les trois bergs</h2>
     <p class="lead">Trois montées, trois caractères. Le long, le brutal, le cruel.</p>
-
+ 
     <article class="berg reveal">
       <div class="side" style="background:var(--red)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 1</div><h3>Oude Kwaremont</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le Vieux Quaremont</div></div>
@@ -340,7 +340,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
         <blockquote style="margin:20px 0 0"><q>« C'est incontestablement l'un des efforts les plus douloureux de la saison. »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
       </div>
     </article>
-
+ 
     <article class="berg reveal">
       <div class="side" style="background:var(--blue)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 2</div><h3>Paterberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Court, droit, explosif</div></div>
@@ -351,7 +351,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
         <blockquote style="margin:20px 0 0"><q>« Parfois, je suis juste content d'arriver en haut… »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
       </div>
     </article>
-
+ 
     <article class="berg reveal">
       <div class="side" style="background:var(--ink)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em;color:var(--amber)">Berg n° 3</div><h3>Koppenberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le plus cruel</div></div>
@@ -362,7 +362,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
         <blockquote style="margin:20px 0 0"><q>« Un cauchemar, l'un des pires de ma vie. »</q><cite>Eddy Merckx, à propos du Koppenberg (UCI, traduit de l'anglais)</cite></blockquote>
       </div>
     </article>
-
+ 
     <div class="bars reveal">
       <h3 class="anton" style="margin:0 0 24px;font-size:32px;color:var(--amber)">Face à face</h3>
       <div class="cols">
@@ -382,7 +382,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
@@ -404,7 +404,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- PROGRAMME -->
 <section id="programme">
   <div class="wrap">
@@ -423,7 +423,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- CHECKLIST -->
 <section class="dark" id="materiel">
   <div class="wrap">
@@ -441,7 +441,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </ul>
   </div>
 </section>
-
+ 
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -483,7 +483,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- VOIX -->
 <section id="voix">
   <div class="wrap">
@@ -500,7 +500,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- ESTAMINET -->
 <section id="estaminets">
   <div class="wrap">
@@ -521,7 +521,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     <p style="margin-top:20px;font-size:16px;color:var(--muted)">Horaires et réservations à confirmer auprès de l'établissement avant le 3 avril.</p>
   </div>
 </section>
-
+ 
 <!-- HISTOIRE -->
 <section id="histoire" class="dark">
   <div class="wrap">
@@ -537,7 +537,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
       <div class="row reveal"><div class="y">2012</div><div class="t"><strong>Arrivée à Oudenaarde.</strong> Les éditions récentes alignent de 17 à 19 côtes sur environ 265 km.</div></div>
       <div class="row reveal"><div class="y">3 fois</div><div class="t"><strong>Le club des huit.</strong> Buysse, Magni, Leman, Museeuw, Boonen, Cancellara, van der Poel et Pogačar ont tous gagné trois fois.</div></div>
     </div>
-
+ 
     <h3 class="anton" style="font-size:40px;margin:64px 0 24px;color:var(--amber)">La mythologie</h3>
     <div class="cards">
       <div class="card reveal"><h3>Le Flandrien</h3><p>Le mot désignait à l'origine des ouvriers wallons de la sidérurgie. Karel Van Wijnendaele le reprend dans les années 1920 pour qualifier un coureur tenace et généreux.</p></div>
@@ -547,7 +547,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- LILLE -->
 <section id="lille">
   <div class="wrap">
@@ -570,7 +570,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section id="faq" style="background:var(--paper)">
   <div class="wrap" style="max-width:860px">
@@ -584,7 +584,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     <details><summary>Comment rentrer à Lille ?</summary><p>Le peloton roule dans les deux sens : le point d'arrivée est Marcq-en-Barœul.</p></details>
   </div>
 </section>
-
+ 
 <!-- INSCRIPTION -->
 <section id="participer">
   <div class="wrap">
@@ -628,7 +628,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <div class="wrap">
     <h2 class="anton" style="font-size:32px;margin:0 0 16px">Sources &amp; références</h2>
@@ -647,9 +647,9 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </ul>
   </div>
 </footer>
-
+ 
 <a id="float" href="#participer">Je viens rouler 🚴</a>
-
+ 
 <script>
 /* ===== CONFIG : à modifier ici uniquement ===== */
 const CFG = {
@@ -659,7 +659,7 @@ const CFG = {
   lat: 50.7833, lon: 3.5167,
   eventDate: '2027-04-03'
 };
-
+ 
 /* Progress bar + floating CTA */
 const bar = document.getElementById('progress'), fl = document.getElementById('float');
 addEventListener('scroll', () => {
@@ -668,11 +668,11 @@ addEventListener('scroll', () => {
   const reg = document.getElementById('participer').getBoundingClientRect();
   fl.classList.toggle('show', h.scrollTop > 700 && !(reg.top < innerHeight && reg.bottom > 0));
 }, { passive: true });
-
+ 
 /* Reveal on scroll */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
+ 
 /* Count-up */
 const cio = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting) return;
@@ -685,7 +685,7 @@ const cio = new IntersectionObserver(es => es.forEach(e => {
   cio.unobserve(el);
 }), { threshold: .6 });
 document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
-
+ 
 /* Countdown */
 function tickCd() {
   let s = Math.max(0, Math.floor((new Date(CFG.start) - Date.now()) / 1000));
@@ -697,7 +697,7 @@ function tickCd() {
   set('cd-h', h); set('cd-m', m); set('cd-s', s);
 }
 tickCd(); setInterval(tickCd, 1000);
-
+ 
 /* Weather */
 function wlabel(code) {
   if (code === 0) return 'Ciel dégagé ☀️';
@@ -726,7 +726,7 @@ function wlabel(code) {
     document.getElementById('meteo-jour').textContent = 'La prévision du 3 avril apparaîtra ici environ deux semaines avant le départ.';
   }
 })();
-
+ 
 /* Flandrien voice */
 const studio = document.getElementById('studio'), btn = document.getElementById('speak-btn');
 function visuals(on) {
@@ -745,7 +745,7 @@ btn.addEventListener('click', () => {
   u.onstart = () => visuals(true); u.onend = u.onerror = () => visuals(false);
   speechSynthesis.speak(u);
 });
-
+ 
 /* Contact + registration via WhatsApp */
 document.getElementById('phone-show').textContent = CFG.phoneShow;
 document.getElementById('wa-direct').href = `https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent('Salut, je viens à la sortie des bergs du 3 avril !')}`;
@@ -755,7 +755,7 @@ document.getElementById('reg-form').addEventListener('submit', e => {
   const msg = `Salut, je confirme ma participation au Tour des Flandres cyclo du 3 avril 2027 !\nNom : ${v('prenom')} ${v('nom')}\nNiveau : ${v('niveau')}\nVélo : ${v('velo')}`;
   window.open(`https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent(msg)}`, '_blank');
 });
-
+ 
 /* Share */
 document.getElementById('share-btn').addEventListener('click', async () => {
   const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 10 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
@@ -765,7 +765,7 @@ document.getElementById('share-btn').addEventListener('click', async () => {
     else { await navigator.clipboard.writeText(location.href); m.textContent = 'Lien copié, envoie-le à tes potes !'; }
   } catch (e) {}
 });
-
+ 
 /* Calendar (.ics) */
 function addToCalendar() {
   const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Flandres Cyclo//FR','BEGIN:VEVENT',
@@ -782,3 +782,4 @@ function addToCalendar() {
 </script>
 </body>
 </html>
+ 
