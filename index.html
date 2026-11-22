@@ -4,15 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour des Flandres cyclo depuis Lille · 3 avril 2027</title>
-<meta name="description" content="Sortie cyclo de 141 km au départ de Lille, 10 bergs pavés des Ardennes flamandes, la veille du Ronde van Vlaanderen. Samedi 3 avril 2027.">
+<meta name="description" content="Sortie cyclo de 141 km au départ de Lille, 12 bergs pavés des Ardennes flamandes, la veille du Ronde van Vlaanderen. Samedi 3 avril 2027.">
 <meta property="og:title" content="Tour des Flandres cyclo depuis Lille · 3 avril 2027">
-<meta property="og:description" content="141 km, 10 bergs, Koppenberg, Paterberg, Vieux Quaremont. Rejoins le peloton la veille du Ronde !">
+<meta property="og:description" content="141 km, 12 bergs, Koppenberg, Paterberg, Vieux Quaremont. Rejoins le peloton la veille du Ronde !">
 <meta property="og:type" content="website">
-<meta property="og:image" content="./image1.png">
+<meta property="og:image" content="https://oparrod-afk.github.io/flandres/image1.png">
+<meta property="og:url" content="https://oparrod-afk.github.io/flandres/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://oparrod-afk.github.io/flandres/">
 <meta name="theme-color" content="#C23B22">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SportsEvent","name":"Tour des Flandres cyclo depuis Lille","startDate":"2027-04-03T09:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Marcq-en-Barœul","address":{"@type":"PostalAddress","addressLocality":"Marcq-en-Barœul","addressCountry":"FR"}},"description":"Sortie cyclo de 141 km avec 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.","sport":"Cyclisme"}
+{"@context":"https://schema.org","@type":"SportsEvent","name":"Tour des Flandres cyclo depuis Lille","startDate":"2027-04-03T09:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/InStock"},"location":{"@type":"Place","name":"Marcq-en-Barœul","address":{"@type":"PostalAddress","addressLocality":"Marcq-en-Barœul","addressCountry":"FR"}},"description":"Sortie cyclo de 141 km avec 12 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.","sport":"Cyclisme"}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;700&display=swap">
 <style>
 :root{--red:#C23B22;--red-d:#A52E18;--ink:#1C1A16;--cream:#F1DDA2;--paper:#FFF6DD;--paper2:#FAF0CF;--amber:#E2951A;--blue:#2F6B8A;--muted:#4A4437}
@@ -216,17 +222,67 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
  .reveal{opacity:1;transform:none}
  html{scroll-behavior:auto}
 }
+ 
+/* ===== V2 : améliorations ===== */
+::selection{background:var(--red);color:var(--paper)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:200;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.hero h1{text-shadow:4px 4px 0 rgba(28,26,22,.14)}
+.hero h1 span{text-shadow:3px 3px 0 rgba(28,26,22,.2)}
+nav{box-shadow:0 3px 0 var(--ink)}
+nav .links{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+nav .links::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;position:relative}
+nav a.active:not(.cta){color:var(--amber)}
+nav a.active:not(.cta)::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:3px;background:var(--amber)}
+@media(min-width:900px){nav .links{justify-content:center}}
+.ticker:hover div{animation-play-state:paused}
+.cards .reveal:nth-child(2){transition-delay:.08s}
+.cards .reveal:nth-child(3){transition-delay:.16s}
+.cards .reveal:nth-child(4){transition-delay:.24s}
+.berg .side{position:relative;overflow:hidden}
+.berg .side>*{position:relative;z-index:1}
+.berg .side::after{content:attr(data-n);position:absolute;right:-6px;bottom:-34px;font-family:'Anton',sans-serif;font-size:220px;line-height:1;color:rgba(255,246,221,.13);z-index:0}
+.berg{transition:transform .25s,box-shadow .25s}
+.berg:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.cd .n{font-variant-numeric:tabular-nums}
+.tip-ic{font-size:36px;line-height:1}
+#conseils{background:var(--paper)}
+.sub{font-family:'Anton',sans-serif;font-weight:400;font-size:36px;text-transform:uppercase;margin:56px 0 8px}
+textarea.in{resize:vertical;min-height:80px}
+.in:invalid:not(:placeholder-shown){border-color:var(--red)}
+.form .hint{font-size:14px;color:#BDB291;margin:12px 0 0}
+#toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,30px);background:var(--ink);color:var(--paper);padding:12px 22px;border:3px solid var(--amber);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:150}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#totop{position:fixed;left:16px;bottom:16px;width:48px;height:48px;background:var(--ink);color:var(--amber);border:3px solid var(--amber);font-size:22px;cursor:pointer;z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}
+#totop.show{opacity:1;pointer-events:auto}
+@media(max-width:899px){#totop{display:none}}
+.status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
+@media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
+ 
+#liste-bergs{padding-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none;counter-reset:b}
+.chips li{counter-increment:b;display:flex;align-items:center;gap:12px;background:var(--paper2);border:3px solid var(--ink);padding:10px 18px 10px 10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
+.chips li::before{content:counter(b);display:inline-grid;place-items:center;min-width:34px;height:34px;background:var(--ink);color:var(--amber);font-family:'Anton',sans-serif;font-size:18px}
+.chips li small{display:block;font-weight:500;font-size:14px;letter-spacing:.06em;color:var(--muted);text-transform:none}
+.chips li.star{background:var(--amber)}
+.chips li:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
 </style>
 </head>
 <body>
+<a class="skip" href="#pourquoi">Aller au contenu</a>
 <div id="progress"></div>
  
-<nav>
+<nav aria-label="Navigation principale">
   <div class="links">
     <a href="#pourquoi">Pourquoi</a>
     <a href="#bergs">Les bergs</a>
     <a href="#parcours">Parcours</a>
     <a href="#programme">Programme</a>
+    <a href="#conseils">Conseils</a>
     <a href="#histoire">Histoire</a>
     <a href="#faq">FAQ</a>
     <a class="cta" href="#participer">Je viens !</a>
@@ -243,7 +299,8 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
       <div class="badges">
         <span class="badge"><b>141</b> km</span>
         <span class="badge"><b>1 374</b> m D+</span>
-        <span class="badge"><b>10</b> bergs</span>
+        <span class="badge"><b>12</b> bergs</span>
+        <span class="badge"><b>Gratuit</b></span>
         <span class="badge">Départ <b>9 h</b></span>
       </div>
       <div class="countdown" id="countdown" aria-label="Compte à rebours avant le départ">
@@ -257,7 +314,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
         <a class="btn btn-ink" href="#parcours">Voir le parcours</a>
       </div>
     </div>
-    <div><img src="./image1.png" alt="Tour des Flandres depuis Lille – Ronde van Vlaanderen van Rijsel"></div>
+    <div><img fetchpriority="high" src="./image1.png" alt="Tour des Flandres depuis Lille – Ronde van Vlaanderen van Rijsel"></div>
   </div>
   <div class="road" aria-hidden="true">
     <svg class="biker" viewBox="0 0 110 70">
@@ -299,7 +356,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
 <!-- STATS -->
 <div class="stats"><div class="wrap">
   <div class="stat"><div class="n" data-count="141">0</div><div class="l">kilomètres depuis Lille</div></div>
-  <div class="stat"><div class="n" data-count="10">0</div><div class="l">bergs au programme</div></div>
+  <div class="stat"><div class="n" data-count="12">0</div><div class="l">bergs au programme</div></div>
   <div class="stat"><div class="n" data-count="1374">0</div><div class="l">mètres de dénivelé</div></div>
   <div class="stat"><div class="n" data-count="1913">0</div><div class="l">première édition du Ronde</div></div>
 </div></div>
@@ -330,11 +387,11 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
 <section id="bergs" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Les stars du parcours</div>
-    <h2 class="big">Les trois bergs</h2>
+    <h2 class="big">Les trois stars</h2>
     <p class="lead">Trois montées, trois caractères. Le long, le brutal, le cruel.</p>
  
     <article class="berg reveal">
-      <div class="side" style="background:var(--red)">
+      <div class="side" data-n="1" style="background:var(--red)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 1</div><h3>Oude Kwaremont</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le Vieux Quaremont</div></div>
         <div class="nums"><div><b>2,2 km</b><span>Longueur</span></div><div><b>4 %</b><span>Pente moy.</span></div><div><b>11 %</b><span>Pente max.</span></div></div>
       </div>
@@ -345,7 +402,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </article>
  
     <article class="berg reveal">
-      <div class="side" style="background:var(--blue)">
+      <div class="side" data-n="2" style="background:var(--blue)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em">Berg n° 2</div><h3>Paterberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Court, droit, explosif</div></div>
         <div class="nums"><div><b>360 m</b><span>Longueur</span></div><div><b>12,9 %</b><span>Pente moy.</span></div><div><b>20,3 %</b><span>Pente max.</span></div></div>
       </div>
@@ -356,7 +413,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     </article>
  
     <article class="berg reveal">
-      <div class="side" style="background:var(--ink)">
+      <div class="side" data-n="3" style="background:var(--ink)">
         <div><div class="cond" style="font-size:18px;letter-spacing:.16em;color:var(--amber)">Berg n° 3</div><h3>Koppenberg</h3><div style="font-family:'Barlow Condensed';font-size:20px;margin-top:6px">Le plus cruel</div></div>
         <div class="nums" style="color:var(--amber)"><div><b>600 m</b><span>Longueur</span></div><div><b>11,6 %</b><span>Pente moy.</span></div><div><b>22 %</b><span>Pente max.</span></div></div>
       </div>
@@ -387,21 +444,44 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
   </div>
 </section>
  
+<!-- LISTE DES BERGS -->
+<section id="liste-bergs">
+  <div class="wrap">
+    <div class="eyebrow">Au menu de la journée</div>
+    <h2 class="big">Les 12 bergs</h2>
+    <p class="lead">Les trois stars sont en jaune. Les autres montées, plus discrètes, font tout autant monter le cardio. L'ordre exact de passage est sur le tracé Strava.</p>
+    <ul class="chips reveal">
+      <li><span>Kluisberg<small>Mont de l'Enclus</small></span></li>
+      <li><span>Knokteberg</span></li>
+      <li class="star"><span>Oude Kwaremont<small>Le Vieux Quaremont</small></span></li>
+      <li class="star"><span>Paterberg</span></li>
+      <li class="star"><span>Koppenberg</span></li>
+      <li><span>Taaienberg</span></li>
+      <li><span>Muziekberg</span></li>
+      <li><span>Kruisberg</span></li>
+      <li><span>Oude Kruisberg</span></li>
+      <li><span>Hotondberg</span></li>
+      <li><span>La Croisette</span></li>
+      <li><span>Mont Saint-Aubert</span></li>
+    </ul>
+  </div>
+</section>
+ 
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
     <div class="eyebrow">Le tracé</div>
     <h2 class="big">Le parcours</h2>
-    <p class="lead">De Rijsel jusqu'aux Ardennes flamandes, avec dix bergs au menu. Le tracé complet est sur Strava.</p>
+    <p class="lead">De Rijsel jusqu'aux Ardennes flamandes, avec douze bergs au menu. Le tracé complet est sur Strava.</p>
     <div class="pgrid">
       <div style="flex:2 1 520px;min-width:0">
-        <img src="./32c19b4e3fd07f2855be5a872f9b4f29.png" alt="Plan du parcours de 141,74 km au départ de Lille avec profil altimétrique">
+        <img loading="lazy" decoding="async" src="./32c19b4e3fd07f2855be5a872f9b4f29.png" alt="Plan du parcours de 141,74 km au départ de Lille avec profil altimétrique">
         <p style="margin:12px 0 0;font-size:16px;color:#E8DDB8">Plan et profil altimétrique du tracé Strava.</p>
       </div>
       <div style="flex:1 1 320px;min-width:0;border-top:3px solid var(--amber)">
         <div class="kpi"><div class="l">Distance</div><div class="v">141,74 km</div></div>
         <div class="kpi"><div class="l">Dénivelé</div><div class="v">1 374 m</div></div>
-        <div class="kpi"><div class="l">Bergs</div><div class="v">10</div></div>
+        <div class="kpi"><div class="l">Bergs</div><div class="v">12</div></div>
         <div class="kpi"><div class="l">Ravitaillement</div><div class="v">'t Juiste Verzet</div></div>
         <a class="btn btn-amber" style="margin-top:24px" href="https://www.strava.com/routes/3549816002530168536">Ouvrir le tracé sur Strava</a>
       </div>
@@ -446,6 +526,32 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
   </div>
 </section>
  
+<!-- CONSEILS -->
+<section id="conseils">
+  <div class="wrap">
+    <div class="eyebrow">Savoir-faire</div>
+    <h2 class="big">Dompter les pavés</h2>
+    <p class="lead">Six réflexes de flandriens pour arriver en haut des bergs avec le sourire (et des poignets intacts).</p>
+    <div class="cards">
+      <div class="card reveal"><div class="tip-ic">🛞</div><h3>Pneus un peu mous</h3><p>En 28 mm ou plus, gonfle un peu moins que sur route lisse pour absorber les chocs. Teste ta pression avant le jour J.</p></div>
+      <div class="card reveal"><div class="tip-ic">⚙️</div><h3>Braquet souple</h3><p>Garde de quoi tourner les jambes sur 15 à 22 %. Un pignon de plus à l'arrière vaut mieux qu'une marche à pied.</p></div>
+      <div class="card reveal"><div class="tip-ic">🚴</div><h3>Reste assis, lance-toi</h3><p>Prends de l'élan avant le pied du berg, reste assis pour garder l'adhérence, et évite de zigzaguer sur les pavés.</p></div>
+      <div class="card reveal"><div class="tip-ic">✋</div><h3>Mains fermes, bras souples</h3><p>Pouces autour du cintre, bras détendus : les chocs passent dans les coudes, pas dans les poignets.</p></div>
+      <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
+      <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
+    </div>
+ 
+    <h3 class="sub">Préparer l'échéance</h3>
+    <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
+    <div class="tl">
+      <div class="row reveal"><div class="y" style="font-size:28px">Nov. – Déc.</div><div class="t"><strong>La base.</strong> Sorties régulières à allure facile, une sortie longue par semaine, première approche du dénivelé.</div></div>
+      <div class="row reveal"><div class="y" style="font-size:28px">Janv. – Fév.</div><div class="t"><strong>Le volume.</strong> Allonge la sortie du week-end jusqu'à 100 km, ajoute des côtes répétées et du renforcement musculaire.</div></div>
+      <div class="row reveal"><div class="y" style="font-size:28px">Mars</div><div class="t"><strong>L'esprit des bergs.</strong> Sorties de 120 à 140 km avec du dénivelé et, si possible, quelques secteurs pavés pour t'habituer aux vibrations.</div></div>
+      <div class="row reveal"><div class="y" style="font-size:28px">Dernière semaine</div><div class="t"><strong>L'affûtage.</strong> Révision du vélo, pneus et chambres neufs, sorties courtes, bon sommeil. Le Ronde se gagne aussi avec de la fraîcheur.</div></div>
+    </div>
+  </div>
+</section>
+ 
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -481,7 +587,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
       </div>
       <div style="flex:1 1 400px;min-width:0">
         <div class="cond" style="display:inline-block;background:var(--red);font-size:14px;letter-spacing:.14em;padding:4px 10px;margin-bottom:12px">Transcription</div>
-        <p style="margin:0;font-family:'Barlow Condensed';font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.2;color:var(--cream)" id="script-text">« Cent quarante kilomètres, dix bergs, des pavés qui secouent jusqu'aux dents… Écoute le Flandrien : au pied du Koppenberg, reste calme, garde ton souffle et ne regarde pas la pente. Si tu dois poser le pied, pose-le avec le sourire. Ici, personne ne juge. À la fin, il y a des frites ! »</p>
+        <p style="margin:0;font-family:'Barlow Condensed';font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.2;color:var(--cream)" id="script-text">« Cent quarante kilomètres, douze bergs, des pavés qui secouent jusqu'aux dents… Écoute le Flandrien : au pied du Koppenberg, reste calme, garde ton souffle et ne regarde pas la pente. Si tu dois poser le pied, pose-le avec le sourire. Ici, personne ne juge. À la fin, il y a des frites ! »</p>
         <p style="margin-top:16px;font-size:14px;color:#A99E8B">Personnage et texte fictifs, créés pour cette page.</p>
       </div>
     </div>
@@ -583,9 +689,10 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
   <div class="wrap" style="max-width:860px">
     <div class="eyebrow">Questions fréquentes</div>
     <h2 class="big">FAQ</h2>
-    <details><summary>Est-ce payant ?</summary><p>À confirmer avec l'organisateur : écris-lui sur WhatsApp via le bouton « Je viens ».</p></details>
-    <details><summary>Quel niveau faut-il avoir ?</summary><p>Il faut être à l'aise sur 140 km avec du dénivelé et quelques passages pavés raides. L'allure est conviviale et le groupe se regroupe avant chaque berg.</p></details>
+    <details><summary>Est-ce payant ?</summary><p>Non, la sortie est gratuite. Prévois seulement de quoi payer ton café, tes frites et ta bière d'abbaye.</p></details>
+    <details><summary>Quel niveau faut-il avoir ?</summary><p>Il faut pouvoir rouler 100 km sans souci et être prêt à en enchaîner 141 avec 1 374 m de dénivelé et des pavés raides. L'allure est conviviale et le groupe se regroupe avant chaque berg. Voir la trame de préparation plus haut.</p></details>
     <details><summary>Puis-je venir en vélo électrique ou gravel ?</summary><p>Un vélo de route avec des pneus larges est recommandé. Pour les autres vélos, préviens l'organisateur à l'inscription.</p></details>
+    <details><summary>Comment m'entraîner pour les pavés ?</summary><p>Mise sur des sorties longues, des côtes répétées et quelques secteurs pavés si tu en as près de chez toi. Retrouve nos <a href="#conseils">conseils et la trame de préparation</a>.</p></details>
     <details><summary>Et s'il pleut ?</summary><p>Les pavés mouillés rendent les bergs glissants, c'est le charme du Ronde. Prévois un coupe-vent et des vêtements de rechange. La décision de maintenir ou non la sortie sera communiquée la veille.</p></details>
     <details><summary>Y a-t-il une voiture suiveuse ou un assistant mécanique ?</summary><p>À confirmer. Prévois dans tous les cas chambres à air, pompe et outils pour être autonome.</p></details>
     <details><summary>Comment rentrer à Lille ?</summary><p>Le peloton roule dans les deux sens : le point d'arrivée est Marcq-en-Barœul.</p></details>
@@ -601,8 +708,8 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
     <div class="reg">
       <div>
         <form class="form" id="reg-form">
-          <div class="f"><label for="prenom">Prénom</label><input class="in" id="prenom" required placeholder="Ex : Briek"></div>
-          <div class="f"><label for="nom">Nom</label><input class="in" id="nom" required placeholder="Ex : Schotte"></div>
+          <div class="f"><label for="prenom">Prénom</label><input class="in" id="prenom" required autocomplete="given-name" maxlength="40" placeholder="Ex : Briek"></div>
+          <div class="f"><label for="nom">Nom</label><input class="in" id="nom" required autocomplete="family-name" maxlength="40" placeholder="Ex : Schotte"></div>
           <div class="f"><label for="niveau">Ton niveau</label>
             <select class="in" id="niveau">
               <option>Régulier (100 km sans souci)</option>
@@ -616,7 +723,10 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
               <option>Gravel</option>
               <option>Vélo électrique</option>
             </select></div>
+          <div class="f"><label for="note">Un message ? (facultatif)</label><textarea class="in" id="note" maxlength="300" placeholder="Allergie, covoiturage, question…"></textarea></div>
           <button class="btn btn-red" type="submit" style="width:100%">Je confirme ma participation</button>
+          <button class="btn btn-amber" type="button" id="copy-msg" style="width:100%;margin-top:10px">Copier le message</button>
+          <p class="hint">Un clic ouvre WhatsApp avec ton message prêt à envoyer. Si rien ne s'ouvre, copie-le et envoie-le au numéro de contact.</p>
         </form>
       </div>
       <div>
@@ -624,6 +734,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
           <div><div class="mlab" style="color:var(--paper)">Date</div><div class="v">Samedi 3 avril 2027</div></div>
           <div><div class="mlab" style="color:var(--paper)">Rendez-vous</div><div class="v">Marcq-en-Barœul</div></div>
           <div><div class="mlab" style="color:var(--paper)">Départ</div><div class="v">9 h</div></div>
+          <div><div class="mlab" style="color:var(--paper)">Tarif</div><div class="v">Gratuit</div></div>
           <div><div class="mlab" style="color:var(--paper)">Contact</div><div class="v" id="phone-show"></div></div>
         </div>
         <div class="actions">
@@ -656,6 +767,8 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
 </footer>
  
 <a id="float" href="#participer">Je viens rouler 🚴</a>
+<button id="totop" aria-label="Revenir en haut">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
  
 <script>
 /* ===== CONFIG : à modifier ici uniquement ===== */
@@ -756,16 +869,19 @@ btn.addEventListener('click', () => {
 /* Contact + registration via WhatsApp */
 document.getElementById('phone-show').textContent = CFG.phoneShow;
 document.getElementById('wa-direct').href = `https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent('Salut, je viens à la sortie des bergs du 3 avril !')}`;
+const v = id => document.getElementById(id).value.trim();
+function buildMsg() {
+  return `Salut, je confirme ma participation au Tour des Flandres cyclo du 3 avril 2027 !\nNom : ${v('prenom')} ${v('nom')}\nNiveau : ${v('niveau')}\nVélo : ${v('velo')}` + (v('note') ? `\nMessage : ${v('note')}` : '');
+}
 document.getElementById('reg-form').addEventListener('submit', e => {
   e.preventDefault();
-  const v = id => document.getElementById(id).value.trim();
-  const msg = `Salut, je confirme ma participation au Tour des Flandres cyclo du 3 avril 2027 !\nNom : ${v('prenom')} ${v('nom')}\nNiveau : ${v('niveau')}\nVélo : ${v('velo')}`;
+  const msg = buildMsg();
   window.open(`https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent(msg)}`, '_blank');
 });
  
 /* Share */
 document.getElementById('share-btn').addEventListener('click', async () => {
-  const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 10 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
+  const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 12 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
   const m = document.getElementById('share-msg');
   try {
     if (navigator.share) await navigator.share(data);
@@ -777,15 +893,51 @@ document.getElementById('share-btn').addEventListener('click', async () => {
 function addToCalendar() {
   const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Flandres Cyclo//FR','BEGIN:VEVENT',
     'UID:flandres-cyclo-2027@flandres',
-    'DTSTAMP:20261116T080000Z','DTSTART:20270403T070000Z','DTEND:20270403T160000Z',
+    'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''),'DTSTART:20270403T070000Z','DTEND:20270403T160000Z',
     'SUMMARY:Tour des Flandres cyclo depuis Lille',
     'LOCATION:Marcq-en-Barœul',
-    'DESCRIPTION:141 km\\, 10 bergs. Rendez-vous 8h30\\, départ 9h.',
-    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    'DESCRIPTION:141 km\\, 12 bergs. Rendez-vous 8h30\\, départ 9h.',
+    'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Demain : Tour des Flandres cyclo !','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
   a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
+ 
+/* ===== V2 ===== */
+function toast(t) {
+  const el = document.getElementById('toast');
+  el.textContent = t; el.classList.add('show');
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 2600);
+}
+/* Contact cliquable */
+document.getElementById('phone-show').innerHTML = `<a href="tel:+${CFG.phoneIntl}" style="color:inherit">${CFG.phoneShow}</a>`;
+/* Copier le message */
+document.getElementById('copy-msg').addEventListener('click', async () => {
+  const f = document.getElementById('reg-form');
+  if (!f.reportValidity()) return;
+  try { await navigator.clipboard.writeText(buildMsg()); toast('Message copié'); }
+  catch (e) { toast('Copie impossible, sélectionne le texte à la main'); }
+});
+/* Scroll-spy de la navigation */
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  const act = document.querySelector('nav a.active');
+  if (act && act.scrollIntoView) act.scrollIntoView({ inline: 'center', block: 'nearest' });
+}), { rootMargin: '-40% 0px -55% 0px' });
+['pourquoi','bergs','parcours','programme','conseils','histoire','faq'].forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
+/* Retour en haut */
+const totop = document.getElementById('totop');
+addEventListener('scroll', () => totop.classList.toggle('show', document.documentElement.scrollTop > 1200), { passive: true });
+totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+/* Compte à rebours : message le jour J */
+(function () {
+  const cd = document.getElementById('countdown');
+  setInterval(() => { if (new Date(CFG.start) <= Date.now()) cd.innerHTML = '<div class="cd" style="min-width:0;padding:12px 24px"><div class="n" style="font-size:30px">C\'est parti !</div></div>'; }, 5000);
+})();
+/* Agenda : confirmation */
+const _cal = addToCalendar;
+addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda'); };
 </script>
 </body>
 </html>
