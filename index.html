@@ -18,7 +18,6 @@
 <meta property="og:site_name" content="Tour des Flandres cyclo depuis Lille">
 <meta property="og:image:alt" content="Affiche du Tour des Flandres cyclo depuis Lille, samedi 3 avril 2027">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="author" content="Olivier Parrod">
 <meta name="keywords" content="tour des flandres cyclo, cyclo lille, sortie vélo pavés, bergs flandriens, koppenberg, paterberg, vieux quaremont, ronde van vlaanderen, marcq-en-barœul">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23C23B22%27/%3E%3Ctext x=%2732%27 y=%2746%27 font-size=%2740%27 font-family=%27Impact,sans-serif%27 text-anchor=%27middle%27 fill=%27%23FFF6DD%27%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preload" as="image" href="./image1-hd.webp" type="image/webp" fetchpriority="high">
@@ -78,11 +77,6 @@
      "latitude": 50.6667,
      "longitude": 3.0833
     }
-   },
-   "organizer": {
-    "@type": "Person",
-    "name": "Olivier Parrod",
-    "url": "https://oparrod-afk.github.io/flandres/"
    },
    "offers": {
     "@type": "Offer",
@@ -477,6 +471,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
         <span class="badge"><b>1 374</b> m D+</span>
         <span class="badge"><b>10</b> bergs</span>
         <span class="badge"><b>Gratuit</b></span>
+        <span class="badge" id="count-badge" hidden><b id="count-n">0</b> <span id="count-lbl">inscrits</span></span>
         <span class="badge">Départ <b>9 h</b></span>
       </div>
       <div class="countdown" id="countdown" aria-label="Compte à rebours avant le départ">
@@ -913,7 +908,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
           <div class="f"><label for="note">Un message ? (facultatif)</label><textarea class="fi" id="note" maxlength="300" placeholder="Allergie, covoiturage, question…"></textarea></div>
           <button class="btn btn-red" type="submit" style="width:100%">Je confirme ma participation</button>
           <button class="btn btn-amber" type="button" id="copy-msg" style="width:100%;margin-top:10px">Copier le message</button>
-          <p class="hint">Un clic ouvre WhatsApp avec ton message prêt à envoyer. Si rien ne s'ouvre, copie-le et envoie-le au numéro de contact.</p>
+          <p class="hint">Ton prénom, ton nom et tes réponses servent uniquement à organiser la sortie. Un clic ouvre WhatsApp avec ton message prêt à envoyer. Si rien ne s'ouvre, copie-le et envoie-le au numéro de contact.</p>
         </form>
       </div>
       <div>
@@ -922,7 +917,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
           <div><div class="mlab" style="color:var(--paper)">Rendez-vous</div><div class="v">Marcq-en-Barœul</div></div>
           <div><div class="mlab" style="color:var(--paper)">Départ</div><div class="v">9 h</div></div>
           <div><div class="mlab" style="color:var(--paper)">Tarif</div><div class="v">Gratuit</div></div>
-          <div><div class="mlab" style="color:var(--paper)">Organisateur</div><div class="v">Olivier Parrod</div></div>
+          <div><div class="mlab" style="color:var(--paper)">Inscrits</div><div class="v" id="count-show">…</div></div>
           <div><div class="mlab" style="color:var(--paper)">Contact</div><div class="v">WhatsApp</div></div>
         </div>
         <div class="actions">
@@ -940,7 +935,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 <footer>
   <div class="wrap">
     <h2 class="anton" style="font-size:32px;margin:0 0 16px">Sources &amp; références</h2>
-    <p style="font-size:18px;line-height:1.6;max-width:80ch">Sortie cyclo gratuite organisée par <strong>Olivier Parrod</strong>, au départ et à l'arrivée de Marcq-en-Barœul (Lille), le samedi 3 avril 2027 : 141 km, 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.</p>
+    <p style="font-size:18px;line-height:1.6;max-width:80ch">Sortie cyclo gratuite au départ et à l'arrivée de Marcq-en-Barœul (Lille), le samedi 3 avril 2027 : 141 km, 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.</p>
     <p style="font-size:16px;line-height:1.6;max-width:80ch;color:var(--muted)">Brochure cyclo commémorative non affiliée aux organisateurs officiels de Flanders Classics.</p>
     <ul>
       <li><a href="https://www.uci.org/article/the-cobbled-climbs-of-the-tour-of-flanders-ronde-s-epic-soul/5AbNl6K790vT5yQaj93Rkb">UCI, The cobbled climbs of the Tour of Flanders</a></li>
@@ -968,6 +963,8 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 /* ===== CONFIG : à modifier ici uniquement ===== */
 const CFG = {
   p: 'MzI2NzAzMTY2MzM=',   /* numéro WhatsApp encodé (non lisible dans le code) */
+  inscrits: 0,                     /* compteur manuel (utilisé si api est vide ou injoignable) */
+  api: '',                         /* adresse du script Google (voir le guide) pour un compteur automatique */
   start: '2027-04-03T09:00:00+02:00',
   lat: 50.7833, lon: 3.5167,
   eventDate: '2027-04-03'
@@ -1250,6 +1247,32 @@ dlg.addEventListener('close', () => { document.documentElement.style.overflow = 
 dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 document.getElementById('bd-prev').addEventListener('click', () => openBerg(BERGS[(cur + BERGS.length - 1) % BERGS.length].id));
 document.getElementById('bd-next').addEventListener('click', () => openBerg(BERGS[(cur + 1) % BERGS.length].id));
+
+/* ===== Compteur d'inscrits ===== */
+let nbInscrits = CFG.inscrits || 0;
+function showCount(n) {
+  nbInscrits = n;
+  const lbl = n > 1 ? 'inscrits' : 'inscrit';
+  document.getElementById('count-show').textContent = n > 0 ? n + ' ' + lbl : 'Sois le premier !';
+  const bd = document.getElementById('count-badge');
+  bd.hidden = n < 1; document.getElementById('count-n').textContent = n; document.getElementById('count-lbl').textContent = lbl;
+}
+showCount(nbInscrits);
+if (CFG.api) {
+  fetch(CFG.api).then(r => r.json()).then(j => { if (typeof j.count === 'number') showCount(j.count); }).catch(() => {});
+}
+function registerOnce() {
+  let done = false;
+  try { done = localStorage.getItem('flandres-inscrit') === '1'; } catch (e) {}
+  if (done) return;
+  if (CFG.api) {
+    fetch(CFG.api, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ prenom: v('prenom'), nom: v('nom'), niveau: v('niveau'), velo: v('velo'), note: v('note') }) }).catch(() => {});
+  }
+  showCount(nbInscrits + 1);
+  try { localStorage.setItem('flandres-inscrit', '1'); } catch (e) {}
+}
+document.getElementById('reg-form').addEventListener('submit', registerOnce);
 </script>
 </body>
 </html>
