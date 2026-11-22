@@ -30,7 +30,7 @@
 :root{--red:#C23B22;--red-d:#A52E18;--ink:#1C1A16;--cream:#F1DDA2;--paper:#FFF6DD;--paper2:#FAF0CF;--amber:#E2951A;--blue:#2F6B8A;--muted:#4A4437}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:'Barlow',sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Barlow',sans-serif;overflow-x:hidden;overflow-x:clip}
 a{color:var(--red-d)}a:hover{color:var(--ink)}
 .wrap{max-width:1120px;margin:0 auto}
 section{padding:88px 24px}
@@ -48,7 +48,7 @@ h2.big{margin:8px 0 24px;font-family:'Anton',Impact,sans-serif;font-weight:400;f
 .btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{color:var(--ink);box-shadow:4px 4px 0 #000}
  
 /* progress + nav */
-#progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--amber);z-index:100}
+#progress{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:0 0;will-change:transform;background:var(--amber);z-index:100}
 nav{position:sticky;top:0;z-index:90;background:var(--red);padding:6px 16px}
 nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:0 4px}
 nav a{color:var(--paper);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;padding:10px}
@@ -228,10 +228,10 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
  .reveal{opacity:1;transform:none}
  html{scroll-behavior:auto}
 }
- 
+
 /* ===== V2 : améliorations ===== */
 ::selection{background:var(--red);color:var(--paper)}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:multiply;
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;
  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:200;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase}
 .skip:focus{left:8px}
@@ -268,8 +268,8 @@ textarea.fi{resize:vertical;min-height:80px}
 @media(max-width:899px){#totop{display:none}}
 .status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
- 
- 
+
+
 #liste-bergs{padding-top:0}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
 .chip{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;background:var(--paper2);border:3px solid var(--ink);padding:16px 18px;transition:transform .2s,box-shadow .2s,background .2s;position:relative}
@@ -279,7 +279,6 @@ textarea.fi{resize:vertical;min-height:80px}
 .chip .go{position:absolute;right:14px;top:12px;font-family:'Anton',sans-serif;font-size:22px;color:var(--red)}
 .chip:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink);background:var(--amber)}
 .chip:hover .mt,.chip:hover .go{color:var(--ink)}
-body:has(dialog[open]){overflow:hidden}
 dialog#bergDlg{border:3px solid var(--ink);background:var(--paper);color:var(--ink);padding:0;width:min(900px,calc(100vw - 20px));max-height:calc(100vh - 20px);box-shadow:10px 10px 0 var(--ink);overflow:auto;margin:auto}
 dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 .bd{padding:28px 28px 24px;position:relative}
@@ -301,6 +300,17 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 .bd-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 .bd-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
 .bd-nav .btn{padding:10px 18px;font-size:18px}
+
+/* ===== V6 : fluidité du défilement ===== */
+@media (hover:none),(max-width:899px){body::before{display:none}}
+@media (hover:none){
+ .card:hover,.berg:hover,.btn:hover,.chip:hover,.stop:hover{transform:none;box-shadow:none}
+ .chip:hover{background:var(--paper2)}
+ .chip:hover .mt,.chip:hover .go{color:var(--red-d)}
+}
+.paused,.paused *{animation-play-state:paused!important}
+.reveal{will-change:opacity,transform}
+.reveal.in{will-change:auto}
 </style>
 </head>
 <body>
@@ -488,7 +498,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     <p style="margin:32px 0 0;font-size:16px;color:var(--muted);max-width:70ch">La Kruisberg, l'Oude Kruisberg et le Hotond forment une seule double montée, à Ronse. Le Kluisberg et le Mont de l'Enclus sont les deux versants d'une même colline.</p>
   </div>
 </section>
- 
+
 <dialog id="bergDlg" aria-labelledby="bd-title">
   <div class="bd">
     <button class="bd-x" id="bd-close" aria-label="Fermer la fiche">×</button>
@@ -507,7 +517,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     </div>
   </div>
 </dialog>
- 
+
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
@@ -581,7 +591,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
       <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
       <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
     </div>
- 
+
     <h3 class="sub">Préparer l'échéance</h3>
     <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
     <div class="tl">
@@ -592,7 +602,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     </div>
   </div>
 </section>
- 
+
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -823,15 +833,19 @@ const CFG = {
   eventDate: '2027-04-03'
 };
  
-/* Progress bar + floating CTA */
-const bar = document.getElementById('progress'), fl = document.getElementById('float');
-addEventListener('scroll', () => {
-  const h = document.documentElement;
-  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
-  const reg = document.getElementById('participer').getBoundingClientRect();
-  fl.classList.toggle('show', h.scrollTop > 700 && !(reg.top < innerHeight && reg.bottom > 0));
-}, { passive: true });
- 
+/* Progress bar + floating CTA (une seule mise à jour par image, sans lecture de géométrie) */
+const bar = document.getElementById('progress'), fl = document.getElementById('float'), totop = document.getElementById('totop');
+let regVisible = false, ticking = false;
+function upd() {
+  ticking = false;
+  const h = document.documentElement, max = h.scrollHeight - h.clientHeight, y = h.scrollTop;
+  bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+  fl.classList.toggle('show', y > 700 && !regVisible);
+  totop.classList.toggle('show', y > 1200);
+}
+new IntersectionObserver(es => { regVisible = es[0].isIntersecting; upd(); }).observe(document.getElementById('participer'));
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+
 /* Reveal on scroll */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
@@ -945,7 +959,11 @@ function addToCalendar() {
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
   a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
- 
+
+/* Animations en pause quand elles ne sont pas visibles */
+const vio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('paused', !e.isIntersecting)), { rootMargin: '100px' });
+document.querySelectorAll('.road,.ticker,.studio').forEach(el => vio.observe(el));
+
 /* ===== V2 ===== */
 function toast(t) {
   const el = document.getElementById('toast');
@@ -963,14 +981,12 @@ document.getElementById('copy-msg').addEventListener('click', async () => {
 const spy = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting) return;
   document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-  const act = document.querySelector('nav a.active');
-  if (act && act.scrollIntoView) act.scrollIntoView({ inline: 'center', block: 'nearest' });
+  const act = document.querySelector('nav a.active'), lk = document.querySelector('nav .links');
+  if (act && lk) lk.scrollLeft += (act.getBoundingClientRect().left + act.offsetWidth / 2) - (lk.getBoundingClientRect().left + lk.clientWidth / 2);
 }), { rootMargin: '-40% 0px -55% 0px' });
 ['pourquoi','bergs','parcours','programme','conseils','histoire','faq'].forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
 /* Retour en haut */
-const totop = document.getElementById('totop');
-addEventListener('scroll', () => totop.classList.toggle('show', document.documentElement.scrollTop > 1200), { passive: true });
-totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+document.getElementById('totop').addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 /* Compte à rebours : message le jour J */
 (function () {
   const cd = document.getElementById('countdown');
@@ -979,7 +995,7 @@ totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 /* Agenda : confirmation */
 const _cal = addToCalendar;
 addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda'); };
- 
+
 /* ===== Fiches des bergs ===== */
 const BERGS = [
  {id:'kluisberg', nm:'Kluisberg', sb:"Mont de l'Enclus", len:925, avg:6.8, max:14.5, surf:'Asphalte', pk:.6,
@@ -1082,7 +1098,7 @@ function openBerg(id) {
   document.getElementById('bd-desc').textContent = b.d;
   document.getElementById('bd-legend').innerHTML = '<span>Pente :</span>' + [['< 2 %', 0], ['2-4', 1], ['4-6', 2], ['6-8', 3], ['8-10', 4], ['10-13', 5], ['13-16', 6], ['> 16 %', 7]].map(l => '<span><i style="background:' + COL[l[1]][1] + '"></i>' + l[0] + '</span>').join('');
   document.getElementById('bd-note').textContent = 'Durée estimée pour une allure de sortie amicale, hors arrêt. Les chiffres sont indicatifs (Climbfinder, Cyclingnews, Wikipedia, UCI) et varient selon la variante et le point de départ. Le profil est schématique, construit à partir de la longueur et des pentes moyenne et maximale : le tracé Strava fait foi.';
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) { dlg.showModal(); document.documentElement.style.overflow = 'hidden'; }
   chart(b, i);
   dlg.scrollTop = 0;
 }
@@ -1090,12 +1106,12 @@ document.getElementById('berg-grid').innerHTML = BERGS.map(b =>
   '<button class="chip" data-open="' + b.id + '"><span class="go" aria-hidden="true">→</span><span class="nm">' + b.nm + '</span><span class="sb">' + (b.sb || '') + '</span><span class="mt">' + fmtLen(b.len) + ' · ' + fr(b.avg) + ' % moy.</span></button>').join('');
 document.addEventListener('click', e => { const t = e.target.closest('[data-open]'); if (t) openBerg(t.dataset.open); });
 document.getElementById('bd-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('close', () => { document.documentElement.style.overflow = ''; });
 dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 document.getElementById('bd-prev').addEventListener('click', () => openBerg(BERGS[(cur + BERGS.length - 1) % BERGS.length].id));
 document.getElementById('bd-next').addEventListener('click', () => openBerg(BERGS[(cur + 1) % BERGS.length].id));
 </script>
 </body>
 </html>
- 
  
  
