@@ -12,6 +12,12 @@
 <meta property="og:url" content="https://oparrod-afk.github.io/flandres/">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Vérification Google Search Console : décommente et remplace le code par le tien
+<meta name="google-site-verification" content="TON_CODE_GOOGLE">
+-->
+<!-- Vérification Bing Webmaster Tools (si besoin)
+<meta name="msvalidate.01" content="TON_CODE_BING">
+-->
 <link rel="canonical" href="https://oparrod-afk.github.io/flandres/">
 <meta name="theme-color" content="#C23B22">
 <script type="application/ld+json">
@@ -222,7 +228,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
  .reveal{opacity:1;transform:none}
  html{scroll-behavior:auto}
 }
-
+ 
 /* ===== V2 : améliorations ===== */
 ::selection{background:var(--red);color:var(--paper)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:multiply;
@@ -262,8 +268,8 @@ textarea.fi{resize:vertical;min-height:80px}
 @media(max-width:899px){#totop{display:none}}
 .status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
-
-
+ 
+ 
 #liste-bergs{padding-top:0}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
 .chip{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;background:var(--paper2);border:3px solid var(--ink);padding:16px 18px;transition:transform .2s,box-shadow .2s,background .2s;position:relative}
@@ -482,7 +488,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     <p style="margin:32px 0 0;font-size:16px;color:var(--muted);max-width:70ch">La Kruisberg, l'Oude Kruisberg et le Hotond forment une seule double montée, à Ronse. Le Kluisberg et le Mont de l'Enclus sont les deux versants d'une même colline.</p>
   </div>
 </section>
-
+ 
 <dialog id="bergDlg" aria-labelledby="bd-title">
   <div class="bd">
     <button class="bd-x" id="bd-close" aria-label="Fermer la fiche">×</button>
@@ -501,7 +507,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     </div>
   </div>
 </dialog>
-
+ 
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
@@ -575,7 +581,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
       <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
       <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
     </div>
-
+ 
     <h3 class="sub">Préparer l'échéance</h3>
     <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
     <div class="tl">
@@ -586,7 +592,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
     </div>
   </div>
 </section>
-
+ 
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -770,10 +776,10 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
           <div><div class="mlab" style="color:var(--paper)">Rendez-vous</div><div class="v">Marcq-en-Barœul</div></div>
           <div><div class="mlab" style="color:var(--paper)">Départ</div><div class="v">9 h</div></div>
           <div><div class="mlab" style="color:var(--paper)">Tarif</div><div class="v">Gratuit</div></div>
-          <div><div class="mlab" style="color:var(--paper)">Contact</div><div class="v" id="phone-show"></div></div>
+          <div><div class="mlab" style="color:var(--paper)">Contact</div><div class="v">WhatsApp</div></div>
         </div>
         <div class="actions">
-          <a class="btn btn-ink" id="wa-direct" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+          <a class="btn btn-ink" id="wa-direct" href="#participer" rel="noopener">Écrire sur WhatsApp</a>
           <button class="btn btn-ink" id="share-btn">Partager l'événement</button>
         </div>
         <div id="share-msg" style="margin-top:10px;font-size:16px;min-height:22px"></div>
@@ -811,8 +817,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 <script>
 /* ===== CONFIG : à modifier ici uniquement ===== */
 const CFG = {
-  phoneIntl: '33661307623',        // format international sans +
-  phoneShow: '06 61 30 76 23',     
+  p: 'MzI2NzAzMTY2MzM=',   /* numéro WhatsApp encodé (non lisible dans le code) */
   start: '2027-04-03T09:00:00+02:00',
   lat: 50.7833, lon: 3.5167,
   eventDate: '2027-04-03'
@@ -905,8 +910,8 @@ btn.addEventListener('click', () => {
 });
  
 /* Contact + registration via WhatsApp */
-document.getElementById('phone-show').textContent = CFG.phoneShow;
-document.getElementById('wa-direct').href = `https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent('Salut, je viens à la sortie des bergs du 3 avril !')}`;
+const waUrl = t => 'https://wa.me/' + atob(CFG.p).split('').reverse().join('') + '?text=' + encodeURIComponent(t);
+document.getElementById('wa-direct').addEventListener('click', e => { e.preventDefault(); window.open(waUrl('Salut, je viens à la sortie des bergs du 3 avril !'), '_blank', 'noopener'); });
 const v = id => document.getElementById(id).value.trim();
 function buildMsg() {
   return `Salut, je confirme ma participation au Tour des Flandres cyclo du 3 avril 2027 !\nNom : ${v('prenom')} ${v('nom')}\nNiveau : ${v('niveau')}\nVélo : ${v('velo')}` + (v('note') ? `\nMessage : ${v('note')}` : '');
@@ -914,7 +919,7 @@ function buildMsg() {
 document.getElementById('reg-form').addEventListener('submit', e => {
   e.preventDefault();
   const msg = buildMsg();
-  window.open(`https://wa.me/${CFG.phoneIntl}?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(waUrl(msg), '_blank', 'noopener');
 });
  
 /* Share */
@@ -940,15 +945,13 @@ function addToCalendar() {
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
   a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
-
+ 
 /* ===== V2 ===== */
 function toast(t) {
   const el = document.getElementById('toast');
   el.textContent = t; el.classList.add('show');
   clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 2600);
 }
-/* Contact cliquable */
-document.getElementById('phone-show').innerHTML = `<a href="tel:+${CFG.phoneIntl}" style="color:inherit">${CFG.phoneShow}</a>`;
 /* Copier le message */
 document.getElementById('copy-msg').addEventListener('click', async () => {
   const f = document.getElementById('reg-form');
@@ -976,7 +979,7 @@ totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 /* Agenda : confirmation */
 const _cal = addToCalendar;
 addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda'); };
-
+ 
 /* ===== Fiches des bergs ===== */
 const BERGS = [
  {id:'kluisberg', nm:'Kluisberg', sb:"Mont de l'Enclus", len:925, avg:6.8, max:14.5, surf:'Asphalte', pk:.6,
@@ -1093,5 +1096,6 @@ document.getElementById('bd-next').addEventListener('click', () => openBerg(BERG
 </script>
 </body>
 </html>
+ 
  
  
