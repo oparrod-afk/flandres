@@ -21,7 +21,7 @@
 <meta name="author" content="Olivier Parrod">
 <meta name="keywords" content="tour des flandres cyclo, cyclo lille, sortie vélo pavés, bergs flandriens, koppenberg, paterberg, vieux quaremont, ronde van vlaanderen, marcq-en-barœul">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23C23B22%27/%3E%3Ctext x=%2732%27 y=%2746%27 font-size=%2740%27 font-family=%27Impact,sans-serif%27 text-anchor=%27middle%27 fill=%27%23FFF6DD%27%3EF%3C/text%3E%3C/svg%3E">
-<link rel="preload" as="image" href="./image1.png" fetchpriority="high">
+<link rel="preload" as="image" href="./image1-hd.webp" type="image/webp" fetchpriority="high">
 <meta name="google-site-verification" content="4giDFYwa53yWgqXKaEB2_NuKmc3ALFUKxirkCPZrKPo" />
 <!-- Vérification Bing Webmaster Tools (si besoin)
 <meta name="msvalidate.01" content="TON_CODE_BING">
@@ -437,6 +437,15 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 .paused,.paused *{animation-play-state:paused!important}
 .reveal{will-change:opacity,transform}
 .reveal.in{will-change:auto}
+
+/* ===== V9 : illustration d'accueil agrandie ===== */
+header.hero .hero-grid{max-width:1400px;gap:32px 48px}
+header.hero .hero-grid>div:first-child{flex:1 1 400px}
+header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
+.hero h1{font-size:clamp(50px,7vw,92px)}
+.hero img{box-shadow:8px 8px 0 var(--ink)}
+@media(min-width:1200px){.hero img{transform:rotate(1deg) scale(1.04)}.hero img:hover{transform:rotate(0) scale(1.04)}}
+@media(max-width:899px){header.hero .hero-grid>div:last-child{order:-1}.hero img{transform:rotate(1deg)}}
 </style>
 </head>
 <body>
@@ -481,7 +490,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
         <a class="btn btn-ink" href="#parcours">Voir le parcours</a>
       </div>
     </div>
-    <div><img fetchpriority="high" src="./image1.png" alt="Tour des Flandres depuis Lille – Ronde van Vlaanderen van Rijsel"></div>
+    <div><picture><source type="image/webp" srcset="./image1-hd.webp"><img fetchpriority="high" width="763" height="429" src="./image1.png" alt="Tour des Flandres depuis Lille – Ronde van Vlaanderen van Rijsel"></picture></div>
   </div>
   <div class="road" aria-hidden="true">
     <svg class="biker" viewBox="0 0 110 70">
