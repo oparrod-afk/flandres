@@ -1,0 +1,35 @@
+// ===== Script Google Apps Script : compteur d'inscrits =====
+// Colle ce code dans Extensions > Apps Script d'un Google Sheets.
+// Dans le Sheets, renomme l'onglet "Inscrits" et mets cette ligne d'en-tête en A1 :
+// Date | Prénom | Nom | Niveau | Vélo | Message
+
+const ONGLET = 'Inscrits';
+
+function feuille_() {
+  return SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ONGLET);
+}
+
+// Renvoie le nombre d'inscrits (nombre de lignes sous l'en-tête)
+function doGet() {
+  const n = Math.max(0, feuille_().getLastRow() - 1);
+  return ContentService.createTextOutput(JSON.stringify({ count: n }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Enregistre une inscription
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    const d = JSON.parse(e.postData.contents);
+    // limite la longueur et neutralise les formules (=, +, -, @)
+    const sur = v => {
+      v = String(v || '').slice(0, 200);
+      return /^[=+\-@]/.test(v) ? "'" + v : v;
+    };
+    feuille_().appendRow([new Date(), sur(d.prenom), sur(d.nom), sur(d.niveau), sur(d.velo), sur(d.note)]);
+  } finally {
+    lock.releaseLock();
+  }
+  return ContentService.createTextOutput('ok');
+}
