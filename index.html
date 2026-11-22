@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour des Flandres cyclo depuis Lille · 3 avril 2027</title>
-<meta name="description" content="Sortie cyclo de 141 km au départ de Lille, 12 bergs pavés des Ardennes flamandes, la veille du Ronde van Vlaanderen. Samedi 3 avril 2027.">
+<meta name="description" content="Sortie cyclo de 141 km au départ de Lille, 10 bergs pavés des Ardennes flamandes, la veille du Ronde van Vlaanderen. Samedi 3 avril 2027.">
 <meta property="og:title" content="Tour des Flandres cyclo depuis Lille · 3 avril 2027">
-<meta property="og:description" content="141 km, 12 bergs, Koppenberg, Paterberg, Vieux Quaremont. Rejoins le peloton la veille du Ronde !">
+<meta property="og:description" content="141 km, 10 bergs, Koppenberg, Paterberg, Vieux Quaremont. Rejoins le peloton la veille du Ronde !">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://oparrod-afk.github.io/flandres/image1.png">
 <meta property="og:url" content="https://oparrod-afk.github.io/flandres/">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://oparrod-afk.github.io/flandres/">
 <meta name="theme-color" content="#C23B22">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SportsEvent","name":"Tour des Flandres cyclo depuis Lille","startDate":"2027-04-03T09:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/InStock"},"location":{"@type":"Place","name":"Marcq-en-Barœul","address":{"@type":"PostalAddress","addressLocality":"Marcq-en-Barœul","addressCountry":"FR"}},"description":"Sortie cyclo de 141 km avec 12 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.","sport":"Cyclisme"}
+{"@context":"https://schema.org","@type":"SportsEvent","name":"Tour des Flandres cyclo depuis Lille","startDate":"2027-04-03T09:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/InStock"},"location":{"@type":"Place","name":"Marcq-en-Barœul","address":{"@type":"PostalAddress","addressLocality":"Marcq-en-Barœul","addressCountry":"FR"}},"description":"Sortie cyclo de 141 km avec 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.","sport":"Cyclisme"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -197,8 +197,8 @@ details p{margin:0;padding:0 24px 20px;font-size:18px;line-height:1.6}
 .form{background:var(--ink);padding:32px;max-width:560px;border:3px solid var(--amber)}
 .form label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
 .form .f{margin-bottom:18px}
-.in{background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:12px 16px;font:17px 'Barlow',sans-serif;width:100%}
-.in:focus{outline:none;border-color:var(--red)}
+.fi{background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:12px 16px;font:17px 'Barlow',sans-serif;width:100%}
+.fi:focus{outline:none;border-color:var(--red)}
 .reg{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
 .reg>div{flex:1 1 360px;min-width:0}
 .infos{display:flex;flex-wrap:wrap;gap:24px 40px;margin-top:32px}
@@ -252,8 +252,8 @@ nav a.active:not(.cta)::after{content:"";position:absolute;left:10px;right:10px;
 .tip-ic{font-size:36px;line-height:1}
 #conseils{background:var(--paper)}
 .sub{font-family:'Anton',sans-serif;font-weight:400;font-size:36px;text-transform:uppercase;margin:56px 0 8px}
-textarea.in{resize:vertical;min-height:80px}
-.in:invalid:not(:placeholder-shown){border-color:var(--red)}
+textarea.fi{resize:vertical;min-height:80px}
+.fi:invalid:not(:placeholder-shown){border-color:var(--red)}
 .form .hint{font-size:14px;color:#BDB291;margin:12px 0 0}
 #toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,30px);background:var(--ink);color:var(--paper);padding:12px 22px;border:3px solid var(--amber);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:150}
 #toast.show{opacity:1;transform:translate(-50%,0)}
@@ -263,13 +263,38 @@ textarea.in{resize:vertical;min-height:80px}
 .status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
 
+
 #liste-bergs{padding-top:0}
-.chips{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none;counter-reset:b}
-.chips li{counter-increment:b;display:flex;align-items:center;gap:12px;background:var(--paper2);border:3px solid var(--ink);padding:10px 18px 10px 10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
-.chips li::before{content:counter(b);display:inline-grid;place-items:center;min-width:34px;height:34px;background:var(--ink);color:var(--amber);font-family:'Anton',sans-serif;font-size:18px}
-.chips li small{display:block;font-weight:500;font-size:14px;letter-spacing:.06em;color:var(--muted);text-transform:none}
-.chips li.star{background:var(--amber)}
-.chips li:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.chip{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;background:var(--paper2);border:3px solid var(--ink);padding:16px 18px;transition:transform .2s,box-shadow .2s,background .2s;position:relative}
+.chip .nm{padding-right:28px;font-family:'Anton',sans-serif;font-size:27px;line-height:1.05;text-transform:uppercase}
+.chip .sb{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:17px;color:var(--muted);min-height:1.2em}
+.chip .mt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--red-d)}
+.chip .go{position:absolute;right:14px;top:12px;font-family:'Anton',sans-serif;font-size:22px;color:var(--red)}
+.chip:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink);background:var(--amber)}
+.chip:hover .mt,.chip:hover .go{color:var(--ink)}
+body:has(dialog[open]){overflow:hidden}
+dialog#bergDlg{border:3px solid var(--ink);background:var(--paper);color:var(--ink);padding:0;width:min(900px,calc(100vw - 20px));max-height:calc(100vh - 20px);box-shadow:10px 10px 0 var(--ink);overflow:auto;margin:auto}
+dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
+.bd{padding:28px 28px 24px;position:relative}
+.bd-x{position:sticky;float:right;top:0;width:44px;height:44px;margin:-8px -8px 0 8px;border:3px solid var(--ink);background:var(--red);color:var(--paper);font-size:26px;line-height:1;cursor:pointer;z-index:3}
+.bd-x:hover{background:var(--ink)}
+.bd h3{margin:4px 0 0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(36px,6vw,58px);line-height:1;text-transform:uppercase}
+.bd-sub{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-d);margin-top:6px}
+.tag{display:inline-block;background:var(--ink);color:var(--paper);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;margin-top:12px}
+.bd-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:20px 0}
+.bd-stat{background:var(--paper2);border:2px solid var(--ink);padding:10px 14px}
+.bd-stat b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:34px;line-height:1.05}
+.bd-stat span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bd-desc{font-size:19px;line-height:1.6;margin:0 0 20px;max-width:68ch}
+.bd-chart{background:#FFFBEE;border:2px solid var(--ink);margin:0}
+.bd-chart svg{display:block;width:100%;height:auto;touch-action:pan-y}
+.bd-chart text{font-family:'Barlow Condensed',sans-serif;font-weight:700;fill:var(--ink)}
+.bd-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:12px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.bd-legend i{display:inline-block;width:14px;height:14px;margin-right:5px;vertical-align:-2px;border:1px solid rgba(0,0,0,.3)}
+.bd-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 0}
+.bd-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+.bd-nav .btn{padding:10px 18px;font-size:18px}
 </style>
 </head>
 <body>
@@ -299,7 +324,7 @@ textarea.in{resize:vertical;min-height:80px}
       <div class="badges">
         <span class="badge"><b>141</b> km</span>
         <span class="badge"><b>1 374</b> m D+</span>
-        <span class="badge"><b>12</b> bergs</span>
+        <span class="badge"><b>10</b> bergs</span>
         <span class="badge"><b>Gratuit</b></span>
         <span class="badge">Départ <b>9 h</b></span>
       </div>
@@ -356,7 +381,7 @@ textarea.in{resize:vertical;min-height:80px}
 <!-- STATS -->
 <div class="stats"><div class="wrap">
   <div class="stat"><div class="n" data-count="141">0</div><div class="l">kilomètres depuis Lille</div></div>
-  <div class="stat"><div class="n" data-count="12">0</div><div class="l">bergs au programme</div></div>
+  <div class="stat"><div class="n" data-count="10">0</div><div class="l">bergs au programme</div></div>
   <div class="stat"><div class="n" data-count="1374">0</div><div class="l">mètres de dénivelé</div></div>
   <div class="stat"><div class="n" data-count="1913">0</div><div class="l">première édition du Ronde</div></div>
 </div></div>
@@ -386,8 +411,8 @@ textarea.in{resize:vertical;min-height:80px}
 <!-- BERGS -->
 <section id="bergs" style="padding-top:0">
   <div class="wrap">
-    <div class="eyebrow">Les stars du parcours</div>
-    <h2 class="big">Les trois stars</h2>
+    <div class="eyebrow">Les incontournables du Ronde</div>
+    <h2 class="big">Trois monts emblématiques</h2>
     <p class="lead">Trois montées, trois caractères. Le long, le brutal, le cruel.</p>
  
     <article class="berg reveal">
@@ -397,6 +422,7 @@ textarea.in{resize:vertical;min-height:80px}
       </div>
       <div class="body">
         <p>Des pavés irréguliers sur le plus long des trois. Les 600 premiers mètres sont plus faciles, les 500 suivants plus raides. Le piège : s'y prendre trop fort trop tôt. Peter Sagan y a attaqué en 2016, en maillot arc-en-ciel.</p>
+        <button class="btn btn-ink" data-open="kwaremont" style="margin:0 0 4px">Voir le profil de la montée</button>
         <blockquote style="margin:20px 0 0"><q>« C'est incontestablement l'un des efforts les plus douloureux de la saison. »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
       </div>
     </article>
@@ -408,6 +434,7 @@ textarea.in{resize:vertical;min-height:80px}
       </div>
       <div class="body">
         <p>Jusqu'en 1986, ce n'était qu'un chemin non revêtu, réservé aux tracteurs. La commune de Kluisbergen voulait l'asphalter. Un agriculteur du coin, grand fan de la course, a proposé de garder et d'utiliser les pavés. On lui doit l'un des murs les plus célèbres du Ronde.</p>
+        <button class="btn btn-ink" data-open="paterberg" style="margin:0 0 4px">Voir le profil de la montée</button>
         <blockquote style="margin:20px 0 0"><q>« Parfois, je suis juste content d'arriver en haut… »</q><cite>Wout van Aert, coureur (L'Avenir)</cite></blockquote>
       </div>
     </article>
@@ -419,6 +446,7 @@ textarea.in{resize:vertical;min-height:80px}
       </div>
       <div class="body">
         <p>Walter Godefroot l'a recommandé à l'organisation après l'avoir découvert à l'entraînement. Débuts en 1976 : cinq coureurs seulement montent en selle. Quand les pavés sont humides, la montée devient très glissante et ne ressemble à aucune autre.</p>
+        <button class="btn btn-ink" data-open="koppenberg" style="margin:0 0 4px">Voir le profil de la montée</button>
         <blockquote style="margin:20px 0 0"><q>« Un cauchemar, l'un des pires de ma vie. »</q><cite>Eddy Merckx, à propos du Koppenberg (UCI, traduit de l'anglais)</cite></blockquote>
         <div class="video" style="margin-top:24px"><iframe src="https://www.youtube.com/embed/cnetsjH_UHQ" title="Le Koppenberg en vidéo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       </div>
@@ -448,31 +476,38 @@ textarea.in{resize:vertical;min-height:80px}
 <section id="liste-bergs">
   <div class="wrap">
     <div class="eyebrow">Au menu de la journée</div>
-    <h2 class="big">Les 12 bergs</h2>
-    <p class="lead">Les trois stars sont en jaune. Les autres montées, plus discrètes, font tout autant monter le cardio. L'ordre exact de passage est sur le tracé Strava.</p>
-    <ul class="chips reveal">
-      <li><span>Kluisberg<small>Mont de l'Enclus</small></span></li>
-      <li><span>Knokteberg</span></li>
-      <li class="star"><span>Oude Kwaremont<small>Le Vieux Quaremont</small></span></li>
-      <li class="star"><span>Paterberg</span></li>
-      <li class="star"><span>Koppenberg</span></li>
-      <li><span>Taaienberg</span></li>
-      <li><span>Muziekberg</span></li>
-      <li><span>Kruisberg</span></li>
-      <li><span>Oude Kruisberg</span></li>
-      <li><span>Hotondberg</span></li>
-      <li><span>La Croisette</span></li>
-      <li><span>Mont Saint-Aubert</span></li>
-    </ul>
+    <h2 class="big">Les 10 bergs</h2>
+    <p class="lead">Dix montées, dix caractères. Clique sur un berg pour découvrir sa longueur, ses pentes, sa durée estimée et son profil.</p>
+    <div class="chips reveal" id="berg-grid"></div>
+    <p style="margin:32px 0 0;font-size:16px;color:var(--muted);max-width:70ch">La Kruisberg, l'Oude Kruisberg et le Hotond forment une seule double montée, à Ronse. Le Kluisberg et le Mont de l'Enclus sont les deux versants d'une même colline.</p>
   </div>
 </section>
+
+<dialog id="bergDlg" aria-labelledby="bd-title">
+  <div class="bd">
+    <button class="bd-x" id="bd-close" aria-label="Fermer la fiche">×</button>
+    <div class="eyebrow">Fiche du berg</div>
+    <h3 id="bd-title"></h3>
+    <div class="bd-sub" id="bd-sub"></div>
+    <div id="bd-tags"></div>
+    <div class="bd-stats" id="bd-stats"></div>
+    <p class="bd-desc" id="bd-desc"></p>
+    <figure class="bd-chart"><svg id="bd-svg" role="img" aria-label="Profil schématique de la montée"></svg></figure>
+    <div class="bd-legend" id="bd-legend"></div>
+    <p class="bd-note" id="bd-note"></p>
+    <div class="bd-nav">
+      <button class="btn btn-ink" id="bd-prev">← Berg précédent</button>
+      <button class="btn btn-ink" id="bd-next">Berg suivant →</button>
+    </div>
+  </div>
+</dialog>
 
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
     <div class="eyebrow">Le tracé</div>
     <h2 class="big">Le parcours</h2>
-    <p class="lead">De Rijsel jusqu'aux Ardennes flamandes, avec douze bergs au menu. Le tracé complet est sur Strava.</p>
+    <p class="lead">De Rijsel jusqu'aux Ardennes flamandes, avec dix bergs au menu. Le tracé complet est sur Strava.</p>
     <div class="pgrid">
       <div style="flex:2 1 520px;min-width:0">
         <img loading="lazy" decoding="async" src="./32c19b4e3fd07f2855be5a872f9b4f29.png" alt="Plan du parcours de 141,74 km au départ de Lille avec profil altimétrique">
@@ -481,7 +516,7 @@ textarea.in{resize:vertical;min-height:80px}
       <div style="flex:1 1 320px;min-width:0;border-top:3px solid var(--amber)">
         <div class="kpi"><div class="l">Distance</div><div class="v">141,74 km</div></div>
         <div class="kpi"><div class="l">Dénivelé</div><div class="v">1 374 m</div></div>
-        <div class="kpi"><div class="l">Bergs</div><div class="v">12</div></div>
+        <div class="kpi"><div class="l">Bergs</div><div class="v">10</div></div>
         <div class="kpi"><div class="l">Ravitaillement</div><div class="v">'t Juiste Verzet</div></div>
         <a class="btn btn-amber" style="margin-top:24px" href="https://www.strava.com/routes/3549816002530168536">Ouvrir le tracé sur Strava</a>
       </div>
@@ -587,7 +622,7 @@ textarea.in{resize:vertical;min-height:80px}
       </div>
       <div style="flex:1 1 400px;min-width:0">
         <div class="cond" style="display:inline-block;background:var(--red);font-size:14px;letter-spacing:.14em;padding:4px 10px;margin-bottom:12px">Transcription</div>
-        <p style="margin:0;font-family:'Barlow Condensed';font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.2;color:var(--cream)" id="script-text">« Cent quarante kilomètres, douze bergs, des pavés qui secouent jusqu'aux dents… Écoute le Flandrien : au pied du Koppenberg, reste calme, garde ton souffle et ne regarde pas la pente. Si tu dois poser le pied, pose-le avec le sourire. Ici, personne ne juge. À la fin, il y a des frites ! »</p>
+        <p style="margin:0;font-family:'Barlow Condensed';font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.2;color:var(--cream)" id="script-text">« Cent quarante kilomètres, dix bergs, des pavés qui secouent jusqu'aux dents… Écoute le Flandrien : au pied du Koppenberg, reste calme, garde ton souffle et ne regarde pas la pente. Si tu dois poser le pied, pose-le avec le sourire. Ici, personne ne juge. À la fin, il y a des frites ! »</p>
         <p style="margin-top:16px;font-size:14px;color:#A99E8B">Personnage et texte fictifs, créés pour cette page.</p>
       </div>
     </div>
@@ -708,22 +743,22 @@ textarea.in{resize:vertical;min-height:80px}
     <div class="reg">
       <div>
         <form class="form" id="reg-form">
-          <div class="f"><label for="prenom">Prénom</label><input class="in" id="prenom" required autocomplete="given-name" maxlength="40" placeholder="Ex : Briek"></div>
-          <div class="f"><label for="nom">Nom</label><input class="in" id="nom" required autocomplete="family-name" maxlength="40" placeholder="Ex : Schotte"></div>
+          <div class="f"><label for="prenom">Prénom</label><input class="fi" id="prenom" required autocomplete="given-name" maxlength="40" placeholder="Ex : Briek"></div>
+          <div class="f"><label for="nom">Nom</label><input class="fi" id="nom" required autocomplete="family-name" maxlength="40" placeholder="Ex : Schotte"></div>
           <div class="f"><label for="niveau">Ton niveau</label>
-            <select class="in" id="niveau">
+            <select class="fi" id="niveau">
               <option>Régulier (100 km sans souci)</option>
               <option>Confirmé (150 km et plus)</option>
               <option>Je me prépare activement</option>
             </select></div>
           <div class="f"><label for="velo">Ton vélo</label>
-            <select class="in" id="velo">
+            <select class="fi" id="velo">
               <option>Route, pneus 28 mm ou plus</option>
               <option>Route, pneus 25 mm</option>
               <option>Gravel</option>
               <option>Vélo électrique</option>
             </select></div>
-          <div class="f"><label for="note">Un message ? (facultatif)</label><textarea class="in" id="note" maxlength="300" placeholder="Allergie, covoiturage, question…"></textarea></div>
+          <div class="f"><label for="note">Un message ? (facultatif)</label><textarea class="fi" id="note" maxlength="300" placeholder="Allergie, covoiturage, question…"></textarea></div>
           <button class="btn btn-red" type="submit" style="width:100%">Je confirme ma participation</button>
           <button class="btn btn-amber" type="button" id="copy-msg" style="width:100%;margin-top:10px">Copier le message</button>
           <p class="hint">Un clic ouvre WhatsApp avec ton message prêt à envoyer. Si rien ne s'ouvre, copie-le et envoie-le au numéro de contact.</p>
@@ -758,6 +793,9 @@ textarea.in{resize:vertical;min-height:80px}
       <li><a href="https://www.lavenir.net/sports/cyclisme/2025/03/27/le-quaremont-en-effort-le-plus-douloureux-de-la-saison-et-son-top-3-des-monts-flandriens-wout-van-aert-vous-emmene-dans-sa-roue-sur-les-paves-PZTHUHZ7ANBSLMUQEOMGLZ5RN4/">L'Avenir, Wout van Aert et le top 3 des monts flandriens</a></li>
       <li><a href="https://www.letemps.ch/sport/tour-flandres-cest-lidentite-flamande-idealisee">Le Temps, Tour des Flandres : l'identité flamande idéalisée</a></li>
       <li><a href="https://www.tour-magazin.de/fr/professionnel-cyclisme/course-du-jour/tour-des-flandres-belgique/le-mythe-du-tour-des-flandres-des-jours-feries-dans-toute-une-region-de-belgique/">Tour Magazin, Le mythe du Tour des Flandres</a></li>
+      <li><a href="https://climbfinder.com/">Climbfinder, profils et statistiques des montées</a></li>
+      <li><a href="https://www.cyclingnews.com/features/insiders-guide-climbs-of-the-ronde-van-vlaanderen/">Cyclingnews, Insider's guide: climbs of the Ronde van Vlaanderen</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Kruisberg">Wikipedia, Kruisberg</a></li>
       <li><a href="https://en.wikipedia.org/wiki/Tour_of_Flanders_(men%27s_race)">Wikipedia, Tour of Flanders (men's race)</a></li>
       <li><a href="https://www.pariszigzag.fr/lille-actu/palais-rihour-lille/">Paris ZigZag, Le palais Rihour à Lille</a></li>
       <li><a href="https://fr.vikidia.org/wiki/Histoire_de_Lille">Vikidia, Histoire de Lille</a></li>
@@ -881,7 +919,7 @@ document.getElementById('reg-form').addEventListener('submit', e => {
  
 /* Share */
 document.getElementById('share-btn').addEventListener('click', async () => {
-  const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 12 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
+  const data = { title: 'Tour des Flandres cyclo depuis Lille', text: '141 km, 10 bergs, la veille du Ronde. Samedi 3 avril 2027. Tu viens ?', url: location.href };
   const m = document.getElementById('share-msg');
   try {
     if (navigator.share) await navigator.share(data);
@@ -896,7 +934,7 @@ function addToCalendar() {
     'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''),'DTSTART:20270403T070000Z','DTEND:20270403T160000Z',
     'SUMMARY:Tour des Flandres cyclo depuis Lille',
     'LOCATION:Marcq-en-Barœul',
-    'DESCRIPTION:141 km\\, 12 bergs. Rendez-vous 8h30\\, départ 9h.',
+    'DESCRIPTION:141 km\\, 10 bergs. Rendez-vous 8h30\\, départ 9h.',
     'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Demain : Tour des Flandres cyclo !','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
@@ -938,6 +976,120 @@ totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 /* Agenda : confirmation */
 const _cal = addToCalendar;
 addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda'); };
+
+/* ===== Fiches des bergs ===== */
+const BERGS = [
+ {id:'kluisberg', nm:'Kluisberg', sb:"Mont de l'Enclus", len:925, avg:6.8, max:14.5, surf:'Asphalte', pk:.6,
+  d:"Colline à cheval sur la Flandre et le Hainaut : Kluisberg côté flamand, Mont de l'Enclus côté wallon. La montée est asphaltée, plus roulante que les pavés, mais elle comporte un passage à 14,5 % qui fait monter le cœur."},
+ {id:'knokteberg', nm:'Knokteberg', sb:'Côte de Trieu', len:1260, avg:7.3, max:13.3, surf:'Asphalte', pk:.55,
+  d:"Longue montée asphaltée des Ardennes flamandes, connue côté wallon sous le nom de Côte de Trieu. Régulière et soutenue, elle se grimpe à son rythme, avec un raidillon à plus de 13 %."},
+ {id:'kwaremont', nm:'Oude Kwaremont', sb:'Le Vieux Quaremont', len:2200, avg:4, max:11, surf:'Pavés', pk:.62,
+  d:"Le plus long des trois monts emblématiques, sur des pavés irréguliers. Les premiers 600 mètres sont plus faciles, les 500 suivants plus raides : le piège est de s'y prendre trop fort trop tôt. Notre halte au café 't Juiste Verzet se trouve sur sa pente."},
+ {id:'paterberg', nm:'Paterberg', sb:'Court, droit, explosif', len:360, avg:12.9, max:20.3, surf:'Pavés', pk:.55,
+  d:"Un mur pavé de 360 mètres, qui n'était qu'un chemin de terre pour tracteurs jusqu'en 1986. Il se monte d'un souffle : une cadence souple et un bon élan avant le pied suffisent à le dompter."},
+ {id:'koppenberg', nm:'Koppenberg', sb:'Le plus cruel', len:600, avg:11.6, max:22, surf:'Pavés', pk:.5,
+  d:"Une montée pavée étroite et raide, qui culmine à 22 %. Lorsque les pavés sont humides, elle devient très glissante : même Eddy Merckx a dû poser le pied en 1976. Aucune honte à marcher quelques mètres."},
+ {id:'taaienberg', nm:'Taaienberg', sb:'Maarkedal', len:530, avg:6.6, max:15.8, surf:'Pavés', pk:.5,
+  d:"Montée pavée au profil irrégulier : les passages roulants alternent avec des raidillons proches de 16 %. Elle se joue sur la gestion de l'effort et le choix de sa trajectoire sur les pavés."},
+ {id:'muziekberg', nm:'Muziekberg', sb:'Ardennes flamandes', len:700, avg:4.6, max:9.6, m100:true, pk:.55,
+  d:"Une montée courte et accessible, à 4,6 % de moyenne. Elle permet de se relancer et de souffler avant les passages plus raides de la journée."},
+ {id:'kruisberg', nm:'Kruisberg – Hotond', sb:'Oude Kruisberg, Ronse', len:2500, avg:5, max:9.8, surf:'Pavés puis asphalte', pk:.3,
+  d:"Une double montée à Ronse : on attaque la Kruisberg (Oude Kruisberg), dont la partie haute, la plus raide, est pavée sur environ 450 mètres. La route se poursuit ensuite en douceur sur l'asphalte jusqu'au sommet du Hotond, qui domine la ville."},
+ {id:'croisette', nm:'La Croisette', sb:'Pays des Collines', len:1900, avg:3.8, max:11.4, m100:true, pk:.7,
+  d:"Longue montée progressive du Pays des Collines, près de Frasnes-lez-Anvaing, avec une pente moyenne modérée et un passage plus raide. Le Petit Sarlat, notre halte, se trouve tout près."},
+ {id:'saintaubert', nm:'Mont Saint-Aubert', sb:'Tournai', len:1700, avg:7, max:10.3, pk:.5,
+  d:"Colline de Tournai, en Wallonie picarde : une montée soutenue d'environ 1,7 km à 7 % de moyenne, qui culmine à 141 mètres d'altitude."}
+];
+const fr = x => String(x).replace('.', ',');
+const fmtLen = m => m >= 1000 ? fr(parseFloat((m / 1000).toFixed(2))) + ' km' : m + ' m';
+const gain = b => Math.round(b.len * b.avg / 100);
+function dur(b) {
+  let v = 21 / (1 + 0.12 * b.avg);              /* km/h, allure de sortie amicale */
+  if (b.surf && b.surf.indexOf('Pavés') === 0) v *= 0.85;
+  const min = b.len / 1000 / v * 60;
+  return min < 1.5 ? '≈ 1 min' : '≈ ' + Math.round(min) + ' min';
+}
+const COL = [[2,'#7CC36B'],[4,'#C5D44A'],[6,'#F2C230'],[8,'#EE9B2B'],[10,'#E2672A'],[13,'#C23B22'],[16,'#8E2A5E'],[99,'#4B1D4F']];
+const colour = g => COL.find(c => g < c[0])[1];
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+/* Profil schématique : pentes par tronçon, cohérentes avec la longueur, la pente moyenne et la pente max */
+function profile(b, idx) {
+  const n = Math.max(12, Math.round(b.len / 50)), seg = b.len / n, rnd = rng(idx * 97 + 13);
+  let g = null;
+  for (const sg of [.22, .16, .12, .09, .07, .05]) {
+    let w = Array.from({ length: n }, (_, i) => Math.exp(-Math.pow(((i + .5) / n - b.pk) / sg, 2)));
+    const wm = Math.max(...w); w = w.map(x => x / wm);
+    const mw = w.reduce((a, x) => a + x, 0) / n, base = (b.avg - b.max * mw) / (1 - mw);
+    if (base >= 0.3 * b.avg) { g = w.map(x => base + (b.max - base) * x); break; }
+  }
+  if (!g) g = Array(n).fill(b.avg);
+  g = g.map(x => x * (1 + (rnd() - .5) * .22));
+  const m = g.reduce((a, x) => a + x, 0) / n; g = g.map(x => x * b.avg / m);
+  const h = [0]; g.forEach(x => h.push(h[h.length - 1] + x / 100 * seg));
+  return { n, seg, g, h };
+}
+function chart(b, idx) {
+  const cw = document.getElementById('bd-svg').parentElement.clientWidth, sm = cw > 0 && cw < 560;
+  const P = profile(b, idx), W = sm ? 380 : 760, H = sm ? 280 : 300, L = sm ? 76 : 54, R = sm ? 24 : 16, T = sm ? 34 : 26, B = sm ? 44 : 40, pw = W - L - R, ph = H - T - B, fs = sm ? 17 : 13;
+  const hmax = P.h[P.n], ymax = Math.max(hmax * 1.15, 10);
+  const X = d => L + d / b.len * pw, Y = e => T + ph - e / ymax * ph;
+  let o = '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="none"/>';
+  const ys = [5, 10, 20, 25, 50, 100].find(st => ymax / st <= 5) || 100;
+  for (let e = 0; e <= ymax; e += ys) o += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(e) + '" y2="' + Y(e) + '" stroke="#1C1A16" stroke-opacity=".15"/><text x="' + (L - 8) + '" y="' + (Y(e) + 4) + '" text-anchor="end" font-size="' + fs + '">' + (e ? '+' + e + ' m' : '0') + '</text>';
+  const xs = b.len <= 800 ? (sm ? 200 : 100) : b.len <= 1500 ? (sm ? 500 : 250) : b.len <= 3000 ? (sm ? 1000 : 500) : 1000;
+  for (let d = 0; d <= b.len + 1; d += xs) o += '<line x1="' + X(d) + '" x2="' + X(d) + '" y1="' + T + '" y2="' + (T + ph) + '" stroke="#1C1A16" stroke-opacity=".1"/><text x="' + X(d) + '" y="' + (H - 16) + '" text-anchor="' + (X(d) > W - 34 ? 'end' : 'middle') + '" font-size="' + fs + '">' + (d === 0 ? '0' : d >= 1000 ? fr(d / 1000) + ' km' : d + ' m') + '</text>';
+  for (let i = 0; i < P.n; i++) {
+    const x1 = X(i * P.seg), x2 = X((i + 1) * P.seg);
+    o += '<polygon points="' + x1 + ',' + Y(P.h[i]) + ' ' + x2 + ',' + Y(P.h[i + 1]) + ' ' + x2 + ',' + Y(0) + ' ' + x1 + ',' + Y(0) + '" fill="' + colour(P.g[i]) + '" stroke="' + colour(P.g[i]) + '" stroke-width=".8"/>';
+  }
+  o += '<polyline fill="none" stroke="#1C1A16" stroke-width="2.5" stroke-linejoin="round" points="' + P.h.map((e, i) => X(i * P.seg) + ',' + Y(e)).join(' ') + '"/>';
+  const pi = P.g.indexOf(Math.max(...P.g)), px = X((pi + .5) * P.seg), py = Y((P.h[pi] + P.h[pi + 1]) / 2);
+  const lab = 'max ' + fr(b.max) + ' %', anc = px > W - 90 ? 'end' : px < L + 60 ? 'start' : 'middle';
+  o += '<circle cx="' + px + '" cy="' + py + '" r="5" fill="#FFFBEE" stroke="#1C1A16" stroke-width="2.5"/><text x="' + px + '" y="' + (py - 12) + '" text-anchor="' + anc + '" font-size="' + (fs + 2) + '">' + lab + '</text>';
+  o += '<g id="hov" style="display:none;pointer-events:none"><line id="hl" y1="' + T + '" y2="' + (T + ph) + '" stroke="#1C1A16" stroke-width="2"/><circle id="hc" r="5" fill="#C23B22" stroke="#1C1A16" stroke-width="2"/><rect id="hr" rx="2" height="24" fill="#1C1A16"/><text id="ht" font-size="' + (fs + 1) + '" style="fill:#FFF6DD"></text></g>';
+  const svg = document.getElementById('bd-svg');
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = o;
+  const hov = svg.querySelector('#hov'), hl = svg.querySelector('#hl'), hc = svg.querySelector('#hc'), hr = svg.querySelector('#hr'), ht = svg.querySelector('#ht');
+  function move(e) {
+    const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
+    const i = Math.min(P.n - 1, Math.max(0, Math.floor((x - L) / pw * P.n)));
+    if (x < L || x > W - R) { hov.style.display = 'none'; return; }
+    const cx = X((i + .5) * P.seg), cy = Y((P.h[i] + P.h[i + 1]) / 2);
+    ht.textContent = 'à ' + Math.round((i + .5) * P.seg) + ' m : ' + fr(P.g[i].toFixed(1)) + ' %';
+    const tw = ht.getComputedTextLength() + 16, tx = Math.min(W - R - tw, Math.max(L, cx - tw / 2));
+    hl.setAttribute('x1', cx); hl.setAttribute('x2', cx); hc.setAttribute('cx', cx); hc.setAttribute('cy', cy);
+    hr.setAttribute('x', tx); hr.setAttribute('y', 2); hr.setAttribute('width', tw);
+    ht.setAttribute('x', tx + 8); ht.setAttribute('y', sm ? 20 : 19);
+    hov.style.display = '';
+  }
+  svg.onpointermove = move; svg.onpointerdown = move; svg.onpointerleave = () => { hov.style.display = 'none'; };
+}
+const dlg = document.getElementById('bergDlg');
+let cur = 0;
+function openBerg(id) {
+  const i = BERGS.findIndex(b => b.id === id); if (i < 0) return;
+  cur = i; const b = BERGS[i];
+  document.getElementById('bd-title').textContent = b.nm;
+  document.getElementById('bd-sub').textContent = b.sb;
+  document.getElementById('bd-tags').innerHTML = b.surf ? '<span class="tag">' + b.surf + '</span>' : '';
+  document.getElementById('bd-stats').innerHTML = [
+    [fmtLen(b.len), 'Longueur'], [fr(b.avg) + ' %', 'Pente moyenne'], [fr(b.max) + ' %', b.m100 ? 'Pente max. (100 m)' : 'Pente max.'],
+    ['≈ ' + gain(b) + ' m', 'Dénivelé'], [dur(b), 'Durée estimée']
+  ].map(x => '<div class="bd-stat"><b>' + x[0] + '</b><span>' + x[1] + '</span></div>').join('');
+  document.getElementById('bd-desc').textContent = b.d;
+  document.getElementById('bd-legend').innerHTML = '<span>Pente :</span>' + [['< 2 %', 0], ['2-4', 1], ['4-6', 2], ['6-8', 3], ['8-10', 4], ['10-13', 5], ['13-16', 6], ['> 16 %', 7]].map(l => '<span><i style="background:' + COL[l[1]][1] + '"></i>' + l[0] + '</span>').join('');
+  document.getElementById('bd-note').textContent = 'Durée estimée pour une allure de sortie amicale, hors arrêt. Les chiffres sont indicatifs (Climbfinder, Cyclingnews, Wikipedia, UCI) et varient selon la variante et le point de départ. Le profil est schématique, construit à partir de la longueur et des pentes moyenne et maximale : le tracé Strava fait foi.';
+  if (!dlg.open) dlg.showModal();
+  chart(b, i);
+  dlg.scrollTop = 0;
+}
+document.getElementById('berg-grid').innerHTML = BERGS.map(b =>
+  '<button class="chip" data-open="' + b.id + '"><span class="go" aria-hidden="true">→</span><span class="nm">' + b.nm + '</span><span class="sb">' + (b.sb || '') + '</span><span class="mt">' + fmtLen(b.len) + ' · ' + fr(b.avg) + ' % moy.</span></button>').join('');
+document.addEventListener('click', e => { const t = e.target.closest('[data-open]'); if (t) openBerg(t.dataset.open); });
+document.getElementById('bd-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+document.getElementById('bd-prev').addEventListener('click', () => openBerg(BERGS[(cur + BERGS.length - 1) % BERGS.length].id));
+document.getElementById('bd-next').addEventListener('click', () => openBerg(BERGS[(cur + 1) % BERGS.length].id));
 </script>
 </body>
 </html>
