@@ -222,7 +222,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
  .reveal{opacity:1;transform:none}
  html{scroll-behavior:auto}
 }
- 
+
 /* ===== V2 : améliorations ===== */
 ::selection{background:var(--red);color:var(--paper)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:multiply;
@@ -262,7 +262,7 @@ textarea.in{resize:vertical;min-height:80px}
 @media(max-width:899px){#totop{display:none}}
 .status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
- 
+
 #liste-bergs{padding-top:0}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none;counter-reset:b}
 .chips li{counter-increment:b;display:flex;align-items:center;gap:12px;background:var(--paper2);border:3px solid var(--ink);padding:10px 18px 10px 10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
@@ -466,7 +466,7 @@ textarea.in{resize:vertical;min-height:80px}
     </ul>
   </div>
 </section>
- 
+
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
@@ -540,7 +540,7 @@ textarea.in{resize:vertical;min-height:80px}
       <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
       <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
     </div>
- 
+
     <h3 class="sub">Préparer l'échéance</h3>
     <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
     <div class="tl">
@@ -551,7 +551,7 @@ textarea.in{resize:vertical;min-height:80px}
     </div>
   </div>
 </section>
- 
+
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -902,7 +902,7 @@ function addToCalendar() {
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
   a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
- 
+
 /* ===== V2 ===== */
 function toast(t) {
   const el = document.getElementById('toast');
@@ -941,6 +941,5 @@ addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda')
 </script>
 </body>
 </html>
- 
  
  
