@@ -471,7 +471,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
         <span class="badge"><b>1 374</b> m D+</span>
         <span class="badge"><b>10</b> bergs</span>
         <span class="badge"><b>Gratuit</b></span>
-        <span class="badge" id="count-badge" hidden><b id="count-n">0</b> <span id="count-lbl">inscrits</span></span>
+        <span class="badge" id="count-badge"><b id="count-n">0</b> <span id="count-lbl">inscrit</span></span>
         <span class="badge">Départ <b>9 h</b></span>
       </div>
       <div class="countdown" id="countdown" aria-label="Compte à rebours avant le départ">
@@ -963,7 +963,8 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 /* ===== CONFIG : à modifier ici uniquement ===== */
 const CFG = {
   p: 'MzI2NzAzMTY2MzM=',   /* numéro WhatsApp encodé (non lisible dans le code) */
-  inscrits: 0,                     /* compteur manuel (utilisé si api est vide ou injoignable) */
+  inscrits: 0,                     /* NOMBRE D'INSCRITS : modifie ce chiffre à la main (ex. inscrits: 12) */
+  places: 0,                       /* nombre de places maximum, ou 0 si pas de limite (ex. places: 50 affiche « 12 / 50 ») */
   api: '',                         /* adresse du script Google (voir le guide) pour un compteur automatique */
   start: '2027-04-03T09:00:00+02:00',
   lat: 50.7833, lon: 3.5167,
@@ -1252,10 +1253,10 @@ document.getElementById('bd-next').addEventListener('click', () => openBerg(BERG
 let nbInscrits = CFG.inscrits || 0;
 function showCount(n) {
   nbInscrits = n;
-  const lbl = n > 1 ? 'inscrits' : 'inscrit';
-  document.getElementById('count-show').textContent = n > 0 ? n + ' ' + lbl : 'Sois le premier !';
-  const bd = document.getElementById('count-badge');
-  bd.hidden = n < 1; document.getElementById('count-n').textContent = n; document.getElementById('count-lbl').textContent = lbl;
+  const lbl = n > 1 ? 'inscrits' : 'inscrit', num = CFG.places > 0 ? n + ' / ' + CFG.places : String(n);
+  document.getElementById('count-show').textContent = num + ' ' + lbl;
+  document.getElementById('count-n').textContent = num;
+  document.getElementById('count-lbl').textContent = lbl;
 }
 showCount(nbInscrits);
 if (CFG.api) {
@@ -1269,7 +1270,7 @@ function registerOnce() {
     fetch(CFG.api, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ prenom: v('prenom'), nom: v('nom'), niveau: v('niveau'), velo: v('velo'), note: v('note') }) }).catch(() => {});
   }
-  showCount(nbInscrits + 1);
+  if (CFG.api) showCount(nbInscrits + 1);
   try { localStorage.setItem('flandres-inscrit', '1'); } catch (e) {}
 }
 document.getElementById('reg-form').addEventListener('submit', registerOnce);
