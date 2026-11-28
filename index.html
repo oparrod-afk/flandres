@@ -354,7 +354,7 @@ footer ul{padding-left:20px;font-size:16px;line-height:1.8}
  .reveal{opacity:1;transform:none}
  html{scroll-behavior:auto}
 }
- 
+
 /* ===== V2 : améliorations ===== */
 ::selection{background:var(--red);color:var(--paper)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;
@@ -394,8 +394,8 @@ textarea.fi{resize:vertical;min-height:80px}
 @media(max-width:899px){#totop{display:none}}
 .status{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media print{nav,#float,#totop,#progress,.ticker,.road,body::before{display:none!important}}
- 
- 
+
+
 #liste-bergs{padding-top:0}
 .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
 .chip{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;background:var(--paper2);border:3px solid var(--ink);padding:16px 18px;transition:transform .2s,box-shadow .2s,background .2s;position:relative}
@@ -426,7 +426,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 .bd-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 .bd-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
 .bd-nav .btn{padding:10px 18px;font-size:18px}
- 
+
 /* ===== V6 : fluidité du défilement ===== */
 @media (hover:none),(max-width:899px){body::before{display:none}}
 @media (hover:none){
@@ -437,7 +437,7 @@ dialog#bergDlg::backdrop{background:rgba(28,26,22,.74)}
 .paused,.paused *{animation-play-state:paused!important}
 .reveal{will-change:opacity,transform}
 .reveal.in{will-change:auto}
- 
+
 /* ===== V9 : illustration d'accueil agrandie ===== */
 header.hero .hero-grid{max-width:1400px;gap:32px 48px}
 header.hero .hero-grid>div:first-child{flex:1 1 400px}
@@ -446,7 +446,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 .hero img{box-shadow:8px 8px 0 var(--ink)}
 @media(min-width:1200px){.hero img{transform:rotate(1deg) scale(1.04)}.hero img:hover{transform:rotate(0) scale(1.04)}}
 @media(max-width:899px){header.hero .hero-grid>div:last-child{order:-1}.hero img{transform:rotate(1deg)}}
- 
+
 /* ===== Terroirs : Wallonie picarde & Ardennes flamandes ===== */
 #terroirs{background:var(--paper2);border-top:4px solid var(--ink)}
 .terr-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
@@ -466,7 +466,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 .beer .pl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--red-d)}
 .beer p{margin:8px 0 0;font-size:16px;line-height:1.5}
 .terr-note{font-size:15px;color:var(--muted);margin-top:24px;max-width:75ch}
- 
+
 /* ===== V3 : nouvelles fonctions ===== */
 [hidden]{display:none!important}
 .frise{position:relative;margin:72px 14px 8px;height:6px;background:var(--amber)}
@@ -520,7 +520,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
 .qbar{height:8px;background:#d7c58e;margin-bottom:18px}.qbar i{display:block;height:100%;background:var(--red);transition:width .4s}
 .pwa-note{font-size:14px;color:#BDB291;margin-top:10px}
 #meteo-paves{font-size:30px}
- 
+
 /* Vidéos des bergs */
 .bd-video{margin:20px 0 0}
 .bd-video h4{margin:0 0 10px;font-family:'Anton',sans-serif;font-weight:400;font-size:26px;text-transform:uppercase}
@@ -726,7 +726,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     <p style="margin:32px 0 0;font-size:16px;color:var(--muted);max-width:70ch">La Kruisberg, l'Oude Kruisberg et le Hotond forment une seule double montée, à Ronse. Le Kluisberg et le Mont de l'Enclus sont les deux versants d'une même colline.</p>
   </div>
 </section>
- 
+
 <dialog id="bergDlg" aria-labelledby="bd-title">
   <div class="bd">
     <button class="bd-x" id="bd-close" aria-label="Fermer la fiche">×</button>
@@ -746,7 +746,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     </div>
   </div>
 </dialog>
- 
+
 <!-- PARCOURS -->
 <section id="parcours" class="dark">
   <div class="wrap">
@@ -774,7 +774,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     <div class="frise-ends"><span>Départ · 0 km · 9 h</span><span>Arrivée · 141,7 km</span></div>
     <ol class="etapes" id="etapes"></ol>
     <p class="bd-note" style="color:#BDB291">Heures estimées avec 22 km/h en roulant, 5 minutes de regroupement par berg et une pause d'une heure à 't Juiste Verzet.</p>
- 
+
     <h3 class="anton" style="font-size:40px;margin:56px 0 8px;color:var(--amber)">Carte et profil</h3>
     <div id="map" role="region" aria-label="Carte du parcours"></div>
     <p id="map-note" class="bd-note" style="color:#BDB291"></p>
@@ -814,7 +814,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
       <div class="card reveal"><div class="ic">🤝</div><h3>Covoiturage</h3><p>Trouve ou propose des places avec les autres participants, via le contact WhatsApp.</p><div class="cta-row"><button class="btn btn-ink" type="button" data-carpool="cherche">Je cherche une place</button><button class="btn btn-amber" type="button" data-carpool="propose">Je propose des places</button></div></div>
       <div class="card reveal"><div class="ic">🏁</div><h3>Le retour</h3><p>La sortie finit là où elle a commencé : Marcq-en-Barœul. Aucune navette de retour n'est annoncée, prévois donc un plan B (proche, taxi) si tu dois abandonner, et préviens le groupe.</p></div>
     </div>
- 
+
     <h3 class="sub" id="securite">Sécurité et règles de la sortie</h3>
     <ul class="check">
       <li>Casque obligatoire, vélo révisé (freins, pneus, transmission).</li>
@@ -828,7 +828,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     </ul>
   </div>
 </section>
- 
+
 <!-- CHECKLIST -->
 <section class="dark" id="materiel">
   <div class="wrap">
@@ -861,7 +861,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
       <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
       <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
     </div>
- 
+
     <h3 class="sub">Ton plan de ravitaillement</h3>
     <p class="lead" style="margin-bottom:12px">Un ordre de grandeur pour les 141 km. À ajuster à ton ventre et à ton expérience.</p>
     <div class="calc">
@@ -888,7 +888,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
       <div class="calc-out" id="calc-out" aria-live="polite"></div>
     </div>
     <p class="terr-note">Pause d'une heure au café comptée dans la durée. Repères généraux pour une sortie longue, pas un avis médical.</p>
- 
+
     <h3 class="sub">Préparer l'échéance</h3>
     <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
     <div class="tl">
@@ -899,7 +899,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     </div>
   </div>
 </section>
- 
+
 <!-- FLANDRIEN -->
 <section id="flandrien" style="background:#141310;color:var(--paper);border-top:4px solid var(--red)">
   <div class="wrap">
@@ -955,7 +955,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
   <img id="photo-img" alt="">
   <p id="photo-cap"></p>
 </dialog>
- 
+
 <!-- VOIX -->
 <section id="voix">
   <div class="wrap">
@@ -1052,12 +1052,12 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     <div class="eyebrow">Les terres traversées</div>
     <h2 class="big">Deux pays, une même colline</h2>
     <p class="lead">Le parcours quitte la métropole lilloise, longe l'Escaut et grimpe dans deux régions voisines : la Wallonie picarde, côté francophone, et les Ardennes flamandes, côté néerlandophone. Même relief, mêmes pavés, mais deux langues, deux histoires et deux cartes de bières.</p>
- 
+
     <div class="terr-tabs" role="tablist" aria-label="Choisir une région">
       <button class="terr-tab" role="tab" id="tab-wp" aria-controls="pan-wp" aria-selected="true">Wallonie picarde</button>
       <button class="terr-tab" role="tab" id="tab-af" aria-controls="pan-af" aria-selected="false" tabindex="-1">Ardennes flamandes</button>
     </div>
- 
+
     <!-- WALLONIE PICARDE -->
     <div class="terr-panel" role="tabpanel" id="pan-wp" aria-labelledby="tab-wp">
       <div class="terr-intro">
@@ -1070,7 +1070,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="terr-fact"><b>Picard</b><span>Langue régionale</span></div>
         <div class="terr-fact"><b>UNESCO</b><span>Cathédrale &amp; beffroi</span></div>
       </div>
- 
+
       <h3 class="terr-h">Histoire</h3>
       <div class="tl">
         <div class="row reveal"><div class="y" style="font-size:30px">Antiquité</div><div class="t"><strong>Turnacum, cité romaine.</strong> Tournai est l'une des plus anciennes villes de Belgique, établie sur l'Escaut le long d'un axe romain majeur.</div></div>
@@ -1079,24 +1079,24 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="row reveal"><div class="y" style="font-size:30px">1745</div><div class="t"><strong>Bataille de Fontenoy.</strong> Dans la campagne tournaisienne, victoire française pendant la guerre de Succession d'Autriche.</div></div>
         <div class="row reveal"><div class="y" style="font-size:30px">XIXe siècle</div><div class="t"><strong>Pierre, textile, agriculture.</strong> La pierre bleue de Tournai, la carrière et l'industrie rurale façonnent villages et paysages.</div></div>
       </div>
- 
+
       <h3 class="terr-h">Topographie</h3>
       <div class="cards">
         <div class="card reveal"><div class="ic">🏞️</div><h3>Une vallée, des collines</h3><p>L'Escaut traverse Tournai, puis le terrain se relève en une succession de collines peu élevées mais abruptes par endroits, héritées de dépôts sableux et argileux.</p></div>
         <div class="card reveal"><div class="ic">⛰️</div><h3>Mont Saint-Aubert</h3><p>Une butte isolée au-dessus de Tournai, couronnée par un sanctuaire. Les vues sur la plaine y sont dégagées, la montée est régulière et soutenue.</p></div>
         <div class="card reveal"><div class="ic">🌳</div><h3>Pays des Collines</h3><p>Bocages, bois et petites routes sinueuses entre Frasnes-lez-Anvaing, Flobecq et Ellezelles. La Croisette en est un bel exemple.</p></div>
       </div>
- 
+
       <h3 class="terr-h">Lien avec le cyclisme</h3>
       <p class="bd-desc" style="max-width:72ch">La Wallonie picarde est le prolongement naturel des classiques flandriennes. Les mêmes collines, de part et d'autre de la frontière linguistique, servent de terrain de jeu aux coureurs et aux cyclos : on y croise des parcours d'entraînement, des courses locales et les passages réguliers de grandes épreuves du début de saison, qui empruntent le Mont de l'Enclus, la Croisette ou leurs voisines. Plus au sud de la métropole lilloise, le Paris-Roubaix partage avec elle l'esprit des pavés et des classiques du Nord.</p>
- 
+
       <h3 class="terr-h">Gastronomie</h3>
       <div class="cards">
         <div class="card reveal"><div class="ic">🍟</div><h3>La friterie, institution</h3><p>Les frites à la graisse de bœuf, la sauce et le fricadelle sont un rituel avant et après la sortie.</p></div>
         <div class="card reveal"><div class="ic">🥘</div><h3>Cuisine du terroir</h3><p>Carbonade à la bière, plats mijotés, volailles et produits de la ferme : une cuisine de fermes et d'estaminets, généreuse et sans chichis.</p></div>
         <div class="card reveal"><div class="ic">🎭</div><h3>Géants et ducasses</h3><p>À Ath, la Ducasse et ses géants processionnels sont inscrits au patrimoine immatériel de l'UNESCO. Les fêtes de village rythment l'année.</p></div>
       </div>
- 
+
       <h3 class="terr-h">Les bières</h3>
       <div class="beers">
         <div class="beer reveal"><h4>Saison Dupont</h4><div class="pl">Brasserie Dupont · Tourpes (Leuze)</div><p>La saison de référence : sèche, houblonnée, très désaltérante. Brassée à la ferme depuis le XIXe siècle.</p></div>
@@ -1106,7 +1106,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="beer reveal"><h4>Tournay</h4><div class="pl">Brasserie Cazeau · Templeuve</div><p>Une brasserie de village tournaisienne, tradition familiale et recettes régionales.</p></div>
       </div>
     </div>
- 
+
     <!-- ARDENNES FLAMANDES -->
     <div class="terr-panel" role="tabpanel" id="pan-af" aria-labelledby="tab-af" hidden>
       <div class="terr-intro">
@@ -1119,7 +1119,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="terr-fact"><b>Néerlandais</b><span>Langue locale</span></div>
         <div class="terr-fact"><b>Bergs</b><span>Pavés et pentes courtes</span></div>
       </div>
- 
+
       <h3 class="terr-h">Histoire</h3>
       <div class="tl">
         <div class="row reveal"><div class="y" style="font-size:30px">Moyen Âge</div><div class="t"><strong>Audenarde, ville drapière.</strong> Comme toute la Flandre, la région prospère grâce au textile. Audenarde est célèbre pour ses tapisseries.</div></div>
@@ -1128,28 +1128,28 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="row reveal"><div class="y" style="font-size:30px">XIXe siècle</div><div class="t"><strong>Renaix, ville textile.</strong> L'industrie du textile s'y développe, avec ses ouvriers, ses usines et ses coopératives.</div></div>
         <div class="row reveal"><div class="y" style="font-size:30px">1913</div><div class="t"><strong>Naissance du Ronde.</strong> La première édition lance l'histoire sportive de la région, avec le lion de Flandre pour emblème.</div></div>
       </div>
- 
+
       <h3 class="terr-h">Topographie</h3>
       <div class="cards">
         <div class="card reveal"><div class="ic">🏔️</div><h3>Des buttes, pas des montagnes</h3><p>Les sommets dépassent à peine 150 mètres, mais les pentes sont raides et rapprochées, ce qui crée ces murs bien connus.</p></div>
         <div class="card reveal"><div class="ic">🌾</div><h3>Prairies et chemins creux</h3><p>Petites routes agricoles, chemins pavés et talus boisés. Les pavés viennent d'anciens chemins de ferme, d'où leur irrégularité.</p></div>
         <div class="card reveal"><div class="ic">🌊</div><h3>L'Escaut</h3><p>Le fleuve passe à Audenarde et sert de repère à la course, qui s'y termine. À l'est de la région, la Dendre dessine une autre vallée.</p></div>
       </div>
- 
+
       <h3 class="terr-h">Lien avec le cyclisme</h3>
       <div class="cards">
         <div class="card reveal"><div class="ic">🏁</div><h3>Ville d'arrivée</h3><p>Depuis 2012, le Tour des Flandres arrive à Audenarde. C'est aussi le siège du musée consacré au Ronde, le Centrum Ronde van Vlaanderen.</p></div>
         <div class="card reveal"><div class="ic">🚴</div><h3>Un calendrier de classiques</h3><p>Omloop Het Nieuwsblad, E3, Dwars door Vlaanderen : chaque printemps, les mêmes collines servent de décor à plusieurs courses.</p></div>
         <div class="card reveal"><div class="ic">☕</div><h3>Wielercafés</h3><p>Les cafés de cyclistes, comme 't Juiste Verzet sur l'Oude Kwaremont, font partie du paysage et du rituel des fans.</p></div>
       </div>
- 
+
       <h3 class="terr-h">Gastronomie</h3>
       <div class="cards">
         <div class="card reveal"><div class="ic">🥧</div><h3>Mattentaart</h3><p>Spécialité de Grammont (Geraardsbergen), cette tarte au lait caillé est la douceur incontournable des lieux : la ville est aussi celle du célèbre Muur.</p></div>
         <div class="card reveal"><div class="ic">🍲</div><h3>Waterzooi &amp; carbonade</h3><p>Plats mijotés flamands, au poulet ou au bœuf et à la bière, souvent servis avec des frites.</p></div>
         <div class="card reveal"><div class="ic">🍟</div><h3>Frites et sauces</h3><p>Frites bien dorées, mayonnaise et sauces maison : le repas d'après-course par excellence.</p></div>
       </div>
- 
+
       <h3 class="terr-h">Les bières</h3>
       <div class="beers">
         <div class="beer reveal"><h4>Liefmans</h4><div class="pl">Audenarde</div><p>Brasserie historique, spécialiste des bruns acides et des bières aux fruits comme la Kriek.</p></div>
@@ -1157,11 +1157,11 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
         <div class="beer reveal"><h4>Bière d'abbaye</h4><div class="pl">À l'arrivée</div><p>Notre rituel : une belle bière d'abbaye avec les frites pour célébrer les 141 km.</p></div>
       </div>
     </div>
- 
+
     <p class="terr-note">Repères historiques et gastronomiques indicatifs, à vérifier avant publication. Les noms et lieux de brasseries peuvent évoluer.</p>
   </div>
 </section>
- 
+
 <!-- QUIZ -->
 <section id="quiz" style="background:var(--cream)">
   <div class="wrap">
@@ -1171,7 +1171,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
     <div class="quiz" id="quiz-box" aria-live="polite"></div>
   </div>
 </section>
- 
+
 <!-- FAQ -->
 <section id="faq" style="background:var(--paper)">
   <div class="wrap" style="max-width:860px">
@@ -1239,7 +1239,7 @@ dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
 </section>
  
 </main>
- 
+
 <footer>
   <div class="wrap">
     <h2 class="anton" style="font-size:32px;margin:0 0 16px">Sources &amp; références</h2>
@@ -1310,7 +1310,7 @@ function upd() {
 }
 new IntersectionObserver(es => { regVisible = es[0].isIntersecting; upd(); }).observe(document.getElementById('participer'));
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
- 
+
 /* Reveal on scroll */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
@@ -1405,11 +1405,11 @@ function addToCalendar() {
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
   a.download = 'tour-des-flandres-cyclo.ics'; a.click();
 }
- 
+
 /* Animations en pause quand elles ne sont pas visibles */
 const vio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('paused', !e.isIntersecting)), { rootMargin: '100px' });
 document.querySelectorAll('.road,.ticker,.studio').forEach(el => vio.observe(el));
- 
+
 /* ===== V2 ===== */
 function toast(t) {
   const el = document.getElementById('toast');
@@ -1441,7 +1441,7 @@ document.getElementById('totop').addEventListener('click', () => scrollTo({ top:
 /* Agenda : confirmation */
 const _cal = addToCalendar;
 addToCalendar = function () { _cal(); toast('Événement ajouté à ton agenda'); };
- 
+
 /* ===== Fiches des bergs ===== */
 const BERGS = [
  {id:'kluisberg', nm:'Kluisberg', sb:"Mont de l'Enclus", len:925, avg:6.8, max:14.5, surf:'Asphalte', pk:.6,
@@ -1557,7 +1557,7 @@ dlg.addEventListener('close', () => { document.documentElement.style.overflow = 
 dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 document.getElementById('bd-prev').addEventListener('click', () => openBerg(BERGS[(cur + BERGS.length - 1) % BERGS.length].id));
 document.getElementById('bd-next').addEventListener('click', () => openBerg(BERGS[(cur + 1) % BERGS.length].id));
- 
+
 /* ===== Compteur d'inscrits ===== */
 let nbInscrits = CFG.inscrits || 0;
 function showCount(n) {
@@ -1583,7 +1583,7 @@ function registerOnce() {
   try { localStorage.setItem('flandres-inscrit', '1'); } catch (e) {}
 }
 document.getElementById('reg-form').addEventListener('submit', registerOnce);
- 
+
 /* ===== Onglets Terroirs (clavier inclus) ===== */
 (function () {
   const tabs = [...document.querySelectorAll('.terr-tab')];
@@ -1609,7 +1609,7 @@ document.getElementById('reg-form').addEventListener('submit', registerOnce);
     });
   });
 })();
- 
+
 /* ===== Frise des bergs + heures de passage ===== */
 const TOTAL_KM = 141.74, RAVITO_ID = 'kwaremont';
 const ETAPES = BERGS.map(b => ({ b, km: CFG.bergKm[b.id] })).filter(e => typeof e.km === 'number').sort((a, c) => a.km - c.km);
@@ -1625,7 +1625,7 @@ function heure(km, rang) {
   fr_.innerHTML = ETAPES.map((e, i) => '<button class="pt" type="button" data-open="' + e.b.id + '" style="left:' + (e.km / TOTAL_KM * 100).toFixed(2) + '%" aria-label="Berg ' + (i + 1) + ' : ' + e.b.nm + ', kilomètre ' + fr(e.km) + '">' + (i + 1) + '</button>').join('');
   ol.innerHTML = ETAPES.map((e, i) => '<li><button class="etape" type="button" data-open="' + e.b.id + '"><span class="n">' + (i + 1) + '</span><span class="nm">' + e.b.nm + '</span><span class="km">km ' + fr(e.km) + '</span><span class="hr">≈ ' + heure(e.km, i) + '</span></button></li>').join('');
 })();
- 
+
 /* ===== Carte (Leaflet) + tracé GPX + profil ===== */
 function loadLeaflet() {
   return new Promise((res, rej) => {
@@ -1685,7 +1685,7 @@ async function initMap() {
   }
 }
 new IntersectionObserver((es, o) => { if (es[0].isIntersecting && !mapDone) { mapDone = true; o.disconnect(); initMap(); } }, { rootMargin: '300px' }).observe(document.getElementById('map'));
- 
+
 /* ===== Météo : vent, direction, état des pavés ===== */
 const WDIR = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
 const wdir = d => WDIR[Math.round((((d % 360) + 360) % 360) / 45) % 8];
@@ -1712,7 +1712,7 @@ const wdir = d => WDIR[Math.round((((d % 360) + 360) % 360) / 45) % 8];
     document.getElementById('meteo-jour').textContent = 'La prévision du 3 avril apparaîtra ici environ deux semaines avant le départ.';
   }
 })();
- 
+
 /* ===== Groupe WhatsApp, covoiturage, lieu de rendez-vous ===== */
 if (CFG.groupe) {
   const g = document.getElementById('wa-group'); g.href = CFG.groupe; g.hidden = false;
@@ -1724,7 +1724,7 @@ document.querySelectorAll('[data-carpool]').forEach(b => b.addEventListener('cli
     : 'Salut, je propose des places en covoiturage pour le Tour des Flandres cyclo du 3 avril 2027. Je pars de : ';
   window.open(waUrl(m), '_blank', 'noopener');
 }));
- 
+
 /* ===== Photos ===== */
 (function () {
   if (!CFG.photos || !CFG.photos.length) return;
@@ -1742,7 +1742,7 @@ document.querySelectorAll('[data-carpool]').forEach(b => b.addEventListener('cli
   document.getElementById('photo-x').addEventListener('click', () => dlg2.close());
   dlg2.addEventListener('click', e => { if (e.target === dlg2) dlg2.close(); });
 })();
- 
+
 /* ===== Calculateur de ravitaillement ===== */
 (function () {
   const out = document.getElementById('calc-out'); if (!out) return;
@@ -1758,7 +1758,7 @@ document.querySelectorAll('[data-carpool]').forEach(b => b.addEventListener('cli
   }
   ids.forEach(i => document.getElementById(i).addEventListener('change', run)); run();
 })();
- 
+
 /* ===== Quiz du Flandrien ===== */
 (function () {
   const box = document.getElementById('quiz-box'); if (!box) return;
@@ -1797,12 +1797,12 @@ document.querySelectorAll('[data-carpool]').forEach(b => b.addEventListener('cli
   }
   show();
 })();
- 
+
 /* ===== Hors-ligne (PWA) ===== */
 if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
   addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 }
- 
+
 /* ===== Vidéos des bergs (chargées au clic, sans cookies) ===== */
 const YTQ = { kluisberg: "Kluisberg Mont de l'Enclus course cycliste", knokteberg: 'Knokteberg Côte de Trieu course cycliste', croisette: 'La Croisette Frasnes-lez-Anvaing course cycliste', saintaubert: 'Mont Saint-Aubert Tournai course cycliste' };
 function renderVideo(b) {
@@ -1826,6 +1826,5 @@ dlg.addEventListener('close', () => { document.getElementById('bd-video').innerH
 </script>
 </body>
 </html>
- 
  
  
