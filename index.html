@@ -26,6 +26,12 @@
 <meta name="msvalidate.01" content="TON_CODE_BING">
 -->
 <link rel="canonical" href="https://oparrod-afk.github.io/flandres/">
+<link rel="alternate" hreflang="fr" href="https://oparrod-afk.github.io/flandres/">
+<link rel="alternate" hreflang="en" href="https://oparrod-afk.github.io/flandres/en.html">
+<link rel="alternate" hreflang="nl" href="https://oparrod-afk.github.io/flandres/nl.html">
+<link rel="alternate" hreflang="x-default" href="https://oparrod-afk.github.io/flandres/">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <meta name="theme-color" content="#C23B22">
 <script type="application/ld+json">
 {
@@ -460,6 +466,60 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
 .beer .pl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--red-d)}
 .beer p{margin:8px 0 0;font-size:16px;line-height:1.5}
 .terr-note{font-size:15px;color:var(--muted);margin-top:24px;max-width:75ch}
+ 
+/* ===== V3 : nouvelles fonctions ===== */
+[hidden]{display:none!important}
+.frise{position:relative;margin:72px 14px 8px;height:6px;background:var(--amber)}
+.frise .pt{position:absolute;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:var(--red);color:var(--paper);border:3px solid var(--paper);font-family:'Anton',sans-serif;font-size:13px;line-height:22px;text-align:center;cursor:pointer;padding:0}
+.frise .pt:nth-child(odd){transform:translateY(-24px)}
+.frise .pt:nth-child(even){transform:translateY(24px)}
+.frise .pt:hover,.frise .pt:focus-visible{background:var(--amber);color:var(--ink)}
+.frise-ends{display:flex;justify-content:space-between;gap:12px;margin:48px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.etapes{list-style:none;padding:0;margin:20px 0 12px;border-top:1px solid #5C5649}
+.etapes li{border-bottom:1px solid #5C5649}
+.etape{display:grid;grid-template-columns:34px 1fr auto auto;gap:4px 14px;align-items:center;width:100%;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:12px 6px;cursor:pointer}
+.etape:hover{background:#2A2720}
+.etape .n{font-family:'Anton',sans-serif;font-size:22px;color:var(--amber)}
+.etape .nm{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase}
+.etape .km,.etape .hr{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.etape .hr{color:var(--amber)}
+@media(max-width:520px){.etape{grid-template-columns:30px 1fr auto}.etape .km{display:none}}
+#map{height:440px;border:3px solid var(--amber);background:#2A2720;margin-top:16px}
+#gpx-profile{margin-top:16px}
+#gpx-profile svg{display:block;width:100%;height:auto}
+#gpx-profile text{font-family:'Barlow Condensed',sans-serif;font-weight:700;fill:var(--ink)}
+.chk{display:flex!important;gap:10px;align-items:flex-start;font-family:'Barlow',sans-serif!important;font-weight:500!important;font-size:15px!important;letter-spacing:0!important;text-transform:none!important;line-height:1.4}
+.chk input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--red)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.cta-row .btn{padding:10px 16px;font-size:17px}
+#photos{background:var(--ink);color:var(--paper)}
+.pgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.pgal button{padding:0;border:3px solid var(--amber);background:#000;cursor:pointer;aspect-ratio:4/3;overflow:hidden}
+.pgal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.pgal button:hover img{transform:scale(1.04)}
+dialog#photoDlg{border:3px solid var(--ink);padding:0;background:var(--ink);color:var(--paper);width:min(1000px,calc(100vw - 20px));max-height:calc(100vh - 20px);margin:auto;overflow:auto}
+dialog#photoDlg::backdrop{background:rgba(28,26,22,.85)}
+#photoDlg img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;background:#000}
+#photoDlg p{margin:0;padding:14px 18px;font-size:17px}
+#photoDlg .bd-x{position:absolute;top:8px;right:8px;float:none;margin:0}
+.calc{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;margin-top:12px}
+.calc form{flex:1 1 300px;min-width:0;background:var(--ink);color:var(--paper);padding:24px;border:3px solid var(--ink)}
+.calc label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+.calc .f{margin-bottom:16px}
+.calc-out{flex:1 1 360px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.calc-out .terr-fact b{font-size:32px}
+.quiz{max-width:760px;background:var(--paper2);border:3px solid var(--ink);padding:28px;box-shadow:8px 8px 0 var(--ink)}
+.quiz .qn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-d)}
+.quiz h3{margin:6px 0 18px;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.1;text-transform:uppercase}
+.qopt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:14px 16px;font:600 19px 'Barlow',sans-serif;background:var(--paper);color:var(--ink);border:3px solid var(--ink);cursor:pointer}
+.qopt:hover:not(:disabled){background:var(--amber)}
+.qopt.ok{background:#8fd18a;border-color:#1f6b2a}
+.qopt.ko{background:#f0a89d;border-color:var(--red-d)}
+.qopt:disabled{cursor:default;color:var(--ink)}
+.qexp{margin:14px 0;font-size:18px;line-height:1.5;min-height:1.5em}
+.qbar{height:8px;background:#d7c58e;margin-bottom:18px}.qbar i{display:block;height:100%;background:var(--red);transition:width .4s}
+.pwa-note{font-size:14px;color:#BDB291;margin-top:10px}
+#meteo-paves{font-size:30px}
 </style>
 </head>
 <body>
@@ -472,11 +532,16 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
     <a href="#bergs">Les bergs</a>
     <a href="#parcours">Parcours</a>
     <a href="#programme">Programme</a>
+    <a href="#venir">Venir</a>
+    <a href="#photos" id="nav-photos" hidden>Photos</a>
     <a href="#conseils">Conseils</a>
     <a href="#histoire">Histoire</a>
     <a href="#terroirs">Terroirs</a>
+    <a href="#quiz">Quiz</a>
     <a href="#faq">FAQ</a>
     <a class="cta" href="#participer">Je viens !</a>
+    <a href="./en.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a href="./nl.html" lang="nl" hreflang="nl" aria-label="Nederlandse versie">NL</a>
   </div>
 </nav>
  
@@ -539,6 +604,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
         <div><div class="mlab">Température</div><div class="mval" id="meteo-temp">--°C</div></div>
         <div><div class="mlab">Vent</div><div class="mval" id="meteo-vent">-- km/h</div></div>
         <div><div class="mlab">Pluie</div><div class="mval" id="meteo-pluie">-- mm</div></div>
+        <div><div class="mlab">Pavés (maintenant)</div><div class="mval" id="meteo-paves">--</div></div>
       </div>
     </div>
     <div id="meteo-jour" style="margin-top:14px;font-size:16px;color:var(--cream)"></div>
@@ -687,8 +753,21 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
         <div class="kpi"><div class="l">Bergs</div><div class="v">10</div></div>
         <div class="kpi"><div class="l">Ravitaillement</div><div class="v">'t Juiste Verzet</div></div>
         <a class="btn btn-amber" style="margin-top:24px" href="https://www.strava.com/routes/3549816002530168536">Ouvrir le tracé sur Strava</a>
+        <a class="btn btn-red" id="gpx-dl" style="margin-top:12px" href="https://www.strava.com/routes/3549816002530168536/export_gpx" target="_blank" rel="noopener">Télécharger le GPX</a>
+        <p class="pwa-note">Le GPX se télécharge depuis Strava (connexion gratuite demandée). Il se charge dans la plupart des compteurs et applications GPS.</p>
       </div>
     </div>
+    <h3 class="anton" style="font-size:40px;margin:64px 0 8px;color:var(--amber)">Où tombent les bergs</h3>
+    <p class="lead" style="margin-bottom:0">Clique sur un numéro ou une ligne pour ouvrir la fiche du berg. Kilomètres et heures indicatifs : le tracé Strava fait foi.</p>
+    <div class="frise" id="frise" role="group" aria-label="Position des bergs sur les 141 kilomètres"></div>
+    <div class="frise-ends"><span>Départ · 0 km · 9 h</span><span>Arrivée · 141,7 km</span></div>
+    <ol class="etapes" id="etapes"></ol>
+    <p class="bd-note" style="color:#BDB291">Heures estimées avec 22 km/h en roulant, 5 minutes de regroupement par berg et une pause d'une heure à 't Juiste Verzet.</p>
+ 
+    <h3 class="anton" style="font-size:40px;margin:56px 0 8px;color:var(--amber)">Carte et profil</h3>
+    <div id="map" role="region" aria-label="Carte du parcours"></div>
+    <p id="map-note" class="bd-note" style="color:#BDB291"></p>
+    <figure id="gpx-profile" class="bd-chart" hidden><svg id="gpx-svg" role="img" aria-label="Profil altimétrique du tracé GPX"></svg></figure>
   </div>
 </section>
  
@@ -708,6 +787,34 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
     <div class="actions">
       <button class="btn btn-ink" onclick="addToCalendar()">📅 Ajouter à mon agenda</button>
     </div>
+  </div>
+</section>
+ 
+<!-- VENIR -->
+<section id="venir" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="eyebrow">Logistique</div>
+    <h2 class="big">Venir et repartir</h2>
+    <p class="lead">Départ et arrivée au même endroit : Marcq-en-Barœul, dans la métropole lilloise.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ic">📍</div><h3>Le rendez-vous</h3><p><strong id="rdv-txt">Marcq-en-Barœul, 59700.</strong> Accueil à 8 h 30, départ à 9 h. Le point de rendez-vous exact est communiqué aux inscrits sur WhatsApp.</p></div>
+      <div class="card reveal"><div class="ic">🚆</div><h3>En transports</h3><p>La ville est desservie par le réseau Ilévia : consulte les horaires du samedi matin sur <a href="https://www.ilevia.fr" target="_blank" rel="noopener">ilevia.fr</a>. Depuis la gare de Lille-Flandres ou Lille-Europe, rejoins le départ à vélo. Pour emporter ton vélo dans un TER, vérifie les conditions sur <a href="https://www.ter.sncf.com/hauts-de-france" target="_blank" rel="noopener">TER Hauts-de-France</a>.</p></div>
+      <div class="card reveal"><div class="ic">🚗</div><h3>En voiture</h3><p>Aucun parking dédié n'est annoncé : arrive un peu en avance et gare-toi dans les rues voisines, en respectant les riverains. Le covoiturage est vivement conseillé.</p></div>
+      <div class="card reveal"><div class="ic">🤝</div><h3>Covoiturage</h3><p>Trouve ou propose des places avec les autres participants, via le contact WhatsApp.</p><div class="cta-row"><button class="btn btn-ink" type="button" data-carpool="cherche">Je cherche une place</button><button class="btn btn-amber" type="button" data-carpool="propose">Je propose des places</button></div></div>
+      <div class="card reveal"><div class="ic">🏁</div><h3>Le retour</h3><p>La sortie finit là où elle a commencé : Marcq-en-Barœul. Aucune navette de retour n'est annoncée, prévois donc un plan B (proche, taxi) si tu dois abandonner, et préviens le groupe.</p></div>
+    </div>
+ 
+    <h3 class="sub" id="securite">Sécurité et règles de la sortie</h3>
+    <ul class="check">
+      <li>Casque obligatoire, vélo révisé (freins, pneus, transmission).</li>
+      <li>Respect du code de la route en France et en Belgique : feux, priorités, file indienne dans les passages étroits.</li>
+      <li>Ce n'est pas une course : pas de chrono, on se regroupe avant chaque berg.</li>
+      <li>Sur les pavés, garde de l'espace devant toi, évite de zigzaguer et ne double pas dans les pentes raides.</li>
+      <li>Poser le pied est permis : mets-toi sur le côté pour laisser passer.</li>
+      <li>En cas de chute ou de souci mécanique, préviens les voisins : le groupe s'arrête.</li>
+      <li>Urgence : appelle le 112, numéro européen valable en France et en Belgique.</li>
+      <li>Sortie amicale entre cyclistes : chacun roule sous sa propre responsabilité et vérifie son assurance personnelle (responsabilité civile).</li>
+    </ul>
   </div>
 </section>
  
@@ -743,6 +850,33 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
       <div class="card reveal"><div class="tip-ic">🛑</div><h3>Freine avant, pas dessus</h3><p>Ralentis avant les pavés en descente, surtout par temps humide. Garde une distance de sécurité dans le groupe.</p></div>
       <div class="card reveal"><div class="tip-ic">🍌</div><h3>Mange avant d'avoir faim</h3><p>Une barre ou un gel toutes les 30 à 45 minutes, et bois régulièrement, même s'il fait frais.</p></div>
     </div>
+ 
+    <h3 class="sub">Ton plan de ravitaillement</h3>
+    <p class="lead" style="margin-bottom:12px">Un ordre de grandeur pour les 141 km. À ajuster à ton ventre et à ton expérience.</p>
+    <div class="calc">
+      <form id="calc-form" onsubmit="return false">
+        <div class="f"><label for="calc-niveau">Ton allure</label>
+          <select class="fi" id="calc-niveau">
+            <option value="18">Tranquille (≈ 18 km/h)</option>
+            <option value="21" selected>Régulier (≈ 21 km/h)</option>
+            <option value="24">Soutenu (≈ 24 km/h)</option>
+          </select></div>
+        <div class="f"><label for="calc-meteo">Température</label>
+          <select class="fi" id="calc-meteo">
+            <option value="500">Froid (moins de 10 °C)</option>
+            <option value="650" selected>Doux (10 à 20 °C)</option>
+            <option value="800">Chaud (plus de 20 °C)</option>
+          </select></div>
+        <div class="f" style="margin-bottom:0"><label for="calc-glu">Glucides par heure</label>
+          <select class="fi" id="calc-glu">
+            <option value="40">40 g (prudent)</option>
+            <option value="60" selected>60 g (courant)</option>
+            <option value="80">80 g (entraîné)</option>
+          </select></div>
+      </form>
+      <div class="calc-out" id="calc-out" aria-live="polite"></div>
+    </div>
+    <p class="terr-note">Pause d'une heure au café comptée dans la durée. Repères généraux pour une sortie longue, pas un avis médical.</p>
  
     <h3 class="sub">Préparer l'échéance</h3>
     <p class="lead" style="margin-bottom:24px">Une trame indicative pour arriver prêt le 3 avril. À adapter à ton niveau.</p>
@@ -796,6 +930,20 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
     </div>
   </div>
 </section>
+ 
+<!-- PHOTOS -->
+<section id="photos" hidden>
+  <div class="wrap">
+    <div class="eyebrow">En images</div>
+    <h2 class="big">Photos</h2>
+    <div class="pgal" id="photo-grid"></div>
+  </div>
+</section>
+<dialog id="photoDlg" aria-label="Photo agrandie">
+  <button class="bd-x" id="photo-x" aria-label="Fermer la photo">×</button>
+  <img id="photo-img" alt="">
+  <p id="photo-cap"></p>
+</dialog>
  
 <!-- VOIX -->
 <section id="voix">
@@ -896,7 +1044,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
  
     <div class="terr-tabs" role="tablist" aria-label="Choisir une région">
       <button class="terr-tab" role="tab" id="tab-wp" aria-controls="pan-wp" aria-selected="true">Wallonie picarde</button>
-      <button class="terr-tab" role="tab" id="tab-af" aria-controls="pan-af" aria-selected="false">Ardennes flamandes</button>
+      <button class="terr-tab" role="tab" id="tab-af" aria-controls="pan-af" aria-selected="false" tabindex="-1">Ardennes flamandes</button>
     </div>
  
     <!-- WALLONIE PICARDE -->
@@ -1003,6 +1151,16 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
   </div>
 </section>
  
+<!-- QUIZ -->
+<section id="quiz" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="eyebrow">Pour t'échauffer</div>
+    <h2 class="big">Le quiz du Flandrien</h2>
+    <p class="lead">Huit questions sur le Ronde et ses monts. Les réponses sont dans la page.</p>
+    <div class="quiz" id="quiz-box" aria-live="polite"></div>
+  </div>
+</section>
+ 
 <!-- FAQ -->
 <section id="faq" style="background:var(--paper)">
   <div class="wrap" style="max-width:860px">
@@ -1043,9 +1201,10 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
               <option>Vélo électrique</option>
             </select></div>
           <div class="f"><label for="note">Un message ? (facultatif)</label><textarea class="fi" id="note" maxlength="300" placeholder="Allergie, covoiturage, question…"></textarea></div>
+          <div class="f"><label class="chk" for="regles"><input type="checkbox" id="regles" required><span>J'ai lu les <a href="#securite">règles de sécurité</a> et je roule sous ma propre responsabilité.</span></label></div>
           <button class="btn btn-red" type="submit" style="width:100%">Je confirme ma participation</button>
           <button class="btn btn-amber" type="button" id="copy-msg" style="width:100%;margin-top:10px">Copier le message</button>
-          <p class="hint">Ton prénom, ton nom et tes réponses servent uniquement à organiser la sortie. Un clic ouvre WhatsApp avec ton message prêt à envoyer. Si rien ne s'ouvre, copie-le et envoie-le au numéro de contact.</p>
+          <p class="hint">Ton prénom, ton nom et tes réponses servent uniquement à organiser la sortie. Un clic ouvre WhatsApp avec ton message prêt à envoyer : si rien ne s'ouvre, copie-le et envoie-le au numéro de contact. Tu peux demander à tout moment la suppression de tes données à l'organisateur sur WhatsApp.</p>
         </form>
       </div>
       <div>
@@ -1060,6 +1219,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
         <div class="actions">
           <a class="btn btn-ink" id="wa-direct" href="#participer" rel="noopener">Écrire sur WhatsApp</a>
           <button class="btn btn-ink" id="share-btn">Partager l'événement</button>
+          <a class="btn btn-amber" id="wa-group" href="#" target="_blank" rel="noopener" hidden>Rejoindre le groupe WhatsApp</a>
         </div>
         <div id="share-msg" style="margin-top:10px;font-size:16px;min-height:22px"></div>
       </div>
@@ -1073,6 +1233,7 @@ header.hero .hero-grid>div:last-child{flex:1.7 1 560px}
   <div class="wrap">
     <h2 class="anton" style="font-size:32px;margin:0 0 16px">Sources &amp; références</h2>
     <p style="font-size:18px;line-height:1.6;max-width:80ch">Sortie cyclo gratuite au départ et à l'arrivée de Marcq-en-Barœul (Lille), le samedi 3 avril 2027 : 141 km, 10 bergs pavés des Ardennes flamandes, la veille du Tour des Flandres.</p>
+    <p style="font-size:16px;line-height:1.6;max-width:80ch;color:var(--muted)">Données personnelles : le formulaire ne sert qu'à préparer ton message WhatsApp pour l'organisateur. Si un compteur d'inscrits est activé, ton prénom, ton nom, ton niveau, ton vélo et ton message sont enregistrés dans une feuille de calcul privée, utilisée uniquement pour organiser la sortie. Suppression sur simple demande.</p>
     <p style="font-size:16px;line-height:1.6;max-width:80ch;color:var(--muted)">Brochure cyclo commémorative non affiliée aux organisateurs officiels de Flanders Classics.</p>
     <ul>
       <li><a href="https://www.uci.org/article/the-cobbled-climbs-of-the-tour-of-flanders-ronde-s-epic-soul/5AbNl6K790vT5yQaj93Rkb">UCI, The cobbled climbs of the Tour of Flanders</a></li>
@@ -1108,7 +1269,13 @@ const CFG = {
   api: '',                         /* adresse du script Google (voir le guide) pour un compteur automatique */
   start: '2027-04-03T09:00:00+02:00',
   lat: 50.7833, lon: 3.5167,
-  eventDate: '2027-04-03'
+  eventDate: '2027-04-03',
+  depart: [50.6667, 3.0833],       /* Marcq-en-Barœul (carte) */
+  rdv: '',                         /* lieu exact du rendez-vous (ex. 'Parking de ...') ; vide = texte par défaut */
+  groupe: '',                      /* lien d'invitation du groupe WhatsApp (https://chat.whatsapp.com/...) ; vide = bouton masqué */
+  photos: [],                      /* ex. [{src:'./photos/koppenberg.jpg', alt:'Le Koppenberg', caption:'Légende'}] ; vide = section masquée */
+  /* Kilomètre de chaque berg sur le tracé : valeurs PROVISOIRES, à caler sur le GPX */
+  bergKm: { saintaubert: 34, croisette: 52, kluisberg: 66, knokteberg: 70, kwaremont: 82, paterberg: 85, koppenberg: 93, taaienberg: 99, muziekberg: 104, kruisberg: 114 }
 };
  
 /* Progress bar + floating CTA (une seule mise à jour par image, sans lecture de géométrie) */
@@ -1163,25 +1330,6 @@ function wlabel(code) {
   if (code <= 82) return 'Averses copieuses 🌧️';
   return 'Orage sur les bergs ⚡';
 }
-(async function () {
-  try {
-    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&current=temperature_2m,precipitation,weather_code,wind_speed_10m&timezone=auto`);
-    const c = (await r.json()).current;
-    document.getElementById('meteo-temp').textContent = Math.round(c.temperature_2m) + '°C';
-    document.getElementById('meteo-vent').textContent = Math.round(c.wind_speed_10m) + ' km/h';
-    document.getElementById('meteo-pluie').textContent = c.precipitation + ' mm';
-    document.getElementById('meteo-condition').textContent = wlabel(c.weather_code);
-  } catch (e) { document.getElementById('meteo-condition').textContent = 'Météo indisponible'; }
-  try {
-    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&daily=temperature_2m_max,precipitation_sum,weather_code&timezone=auto&start_date=${CFG.eventDate}&end_date=${CFG.eventDate}`);
-    if (!r.ok) throw 0;
-    const d = (await r.json()).daily;
-    document.getElementById('meteo-jour').textContent = `Prévision du jour J : ${wlabel(d.weather_code[0])} · max ${Math.round(d.temperature_2m_max[0])}°C · ${d.precipitation_sum[0]} mm`;
-  } catch (e) {
-    document.getElementById('meteo-jour').textContent = 'La prévision du 3 avril apparaîtra ici environ deux semaines avant le départ.';
-  }
-})();
- 
 /* Flandrien voice */
 const studio = document.getElementById('studio'), btn = document.getElementById('speak-btn');
 function visuals(on) {
@@ -1415,14 +1563,224 @@ function registerOnce() {
 }
 document.getElementById('reg-form').addEventListener('submit', registerOnce);
  
-/* ===== Onglets Terroirs ===== */
-(function(){
-  const tabs=[...document.querySelectorAll('.terr-tab')];
-  tabs.forEach(t=>t.addEventListener('click',()=>{
-    tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on;});
-    document.querySelectorAll('#'+t.getAttribute('aria-controls')+' .reveal').forEach(el=>el.classList.add('in'));
-  }));
+/* ===== Onglets Terroirs (clavier inclus) ===== */
+(function () {
+  const tabs = [...document.querySelectorAll('.terr-tab')];
+  function select(t, focus) {
+    tabs.forEach(o => {
+      const on = o === t;
+      o.setAttribute('aria-selected', on ? 'true' : 'false');
+      o.tabIndex = on ? 0 : -1;
+      document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+    });
+    document.querySelectorAll('#' + t.getAttribute('aria-controls') + ' .reveal').forEach(el => el.classList.add('in'));
+    if (focus) t.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t, false));
+    t.addEventListener('keydown', e => {
+      let j = -1;
+      if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') j = (i + tabs.length - 1) % tabs.length;
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = tabs.length - 1;
+      if (j >= 0) { e.preventDefault(); select(tabs[j], true); }
+    });
+  });
 })();
+ 
+/* ===== Frise des bergs + heures de passage ===== */
+const TOTAL_KM = 141.74, RAVITO_ID = 'kwaremont';
+const ETAPES = BERGS.map(b => ({ b, km: CFG.bergKm[b.id] })).filter(e => typeof e.km === 'number').sort((a, c) => a.km - c.km);
+const ravitoKm = (ETAPES.find(e => e.b.id === RAVITO_ID) || { km: Infinity }).km;
+function heure(km, rang) {
+  let min = km / 22 * 60 + rang * 5 + (km > ravitoKm ? 60 : 0);
+  min = Math.round((9 * 60 + min) / 5) * 5;
+  return Math.floor(min / 60) + ' h ' + String(min % 60).padStart(2, '0');
+}
+(function () {
+  const fr_ = document.getElementById('frise'), ol = document.getElementById('etapes');
+  if (!fr_ || !ol) return;
+  fr_.innerHTML = ETAPES.map((e, i) => '<button class="pt" type="button" data-open="' + e.b.id + '" style="left:' + (e.km / TOTAL_KM * 100).toFixed(2) + '%" aria-label="Berg ' + (i + 1) + ' : ' + e.b.nm + ', kilomètre ' + fr(e.km) + '">' + (i + 1) + '</button>').join('');
+  ol.innerHTML = ETAPES.map((e, i) => '<li><button class="etape" type="button" data-open="' + e.b.id + '"><span class="n">' + (i + 1) + '</span><span class="nm">' + e.b.nm + '</span><span class="km">km ' + fr(e.km) + '</span><span class="hr">≈ ' + heure(e.km, i) + '</span></button></li>').join('');
+})();
+ 
+/* ===== Carte (Leaflet) + tracé GPX + profil ===== */
+function loadLeaflet() {
+  return new Promise((res, rej) => {
+    if (window.L) return res();
+    const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'; document.head.appendChild(l);
+    const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'; s.onload = res; s.onerror = rej; document.head.appendChild(s);
+  });
+}
+async function loadGpx() {
+  try {
+    const r = await fetch('./parcours.gpx'); if (!r.ok) throw 0;
+    const x = new DOMParser().parseFromString(await r.text(), 'application/xml');
+    const pts = [...x.querySelectorAll('trkpt')].map(p => { const e = p.querySelector('ele'); return { la: +p.getAttribute('lat'), lo: +p.getAttribute('lon'), el: e ? +e.textContent : 0 }; });
+    if (pts.length < 2) throw 0;
+    return pts;
+  } catch (e) { return null; }
+}
+function drawProfile(pts) {
+  const R = 6371000, rad = Math.PI / 180, d = [0];
+  for (let i = 1; i < pts.length; i++) {
+    const a = pts[i - 1], b = pts[i], dl = (b.la - a.la) * rad, dn = (b.lo - a.lo) * rad;
+    const h = Math.sin(dl / 2) ** 2 + Math.cos(a.la * rad) * Math.cos(b.la * rad) * Math.sin(dn / 2) ** 2;
+    d.push(d[i - 1] + 2 * R * Math.asin(Math.sqrt(h)));
+  }
+  const total = d[d.length - 1] / 1000, N = Math.min(300, pts.length), xs = [], ys = [];
+  for (let k = 0; k < N; k++) { const i = Math.round(k * (pts.length - 1) / (N - 1)); xs.push(d[i] / 1000); ys.push(pts[i].el); }
+  const sm = ys.map((_, i) => { let s = 0, c = 0; for (let j = Math.max(0, i - 2); j <= Math.min(N - 1, i + 2); j++) { s += ys[j]; c++; } return s / c; });
+  const lo = Math.floor(Math.min(...sm) / 10) * 10, hi = Math.ceil(Math.max(...sm) / 10) * 10 + 10;
+  const W = 760, H = 260, L = 56, Rr = 16, T = 20, B = 36, pw = W - L - Rr, ph = H - T - B;
+  const X = k => L + k / total * pw, Y = e => T + ph - (e - lo) / (hi - lo) * ph;
+  let o = '';
+  const st = (hi - lo) <= 60 ? 10 : (hi - lo) <= 150 ? 25 : 50;
+  for (let e = lo; e <= hi; e += st) o += '<line x1="' + L + '" x2="' + (W - Rr) + '" y1="' + Y(e) + '" y2="' + Y(e) + '" stroke="#1C1A16" stroke-opacity=".15"/><text x="' + (L - 8) + '" y="' + (Y(e) + 4) + '" text-anchor="end" font-size="13">' + e + ' m</text>';
+  for (let k = 0; k <= total; k += 20) o += '<text x="' + X(k) + '" y="' + (H - 12) + '" text-anchor="middle" font-size="13">' + k + ' km</text>';
+  const line = xs.map((x, i) => X(x).toFixed(1) + ',' + Y(sm[i]).toFixed(1)).join(' ');
+  o += '<polygon points="' + X(0) + ',' + Y(lo) + ' ' + line + ' ' + X(total) + ',' + Y(lo) + '" fill="#E2951A" fill-opacity=".55"/><polyline points="' + line + '" fill="none" stroke="#1C1A16" stroke-width="2.5" stroke-linejoin="round"/>';
+  const svg = document.getElementById('gpx-svg');
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = o;
+  document.getElementById('gpx-profile').hidden = false;
+}
+let mapDone = false;
+async function initMap() {
+  const note = document.getElementById('map-note');
+  try { await loadLeaflet(); } catch (e) { note.textContent = 'Carte indisponible sans connexion. Le tracé complet est sur Strava.'; return; }
+  const map = L.map('map', { scrollWheelZoom: false }).setView([50.73, 3.35], 9);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+  L.marker(CFG.depart).addTo(map).bindPopup('Départ et arrivée : Marcq-en-Barœul');
+  const pts = await loadGpx();
+  if (pts) {
+    const line = L.polyline(pts.map(p => [p.la, p.lo]), { color: '#C23B22', weight: 4 }).addTo(map);
+    map.fitBounds(line.getBounds(), { padding: [20, 20] });
+    drawProfile(pts);
+    const a = document.getElementById('gpx-dl'); a.href = './parcours.gpx'; a.setAttribute('download', 'tour-des-flandres-cyclo.gpx'); a.removeAttribute('target');
+    note.textContent = 'Tracé GPX complet. Active la molette avec Ctrl ou deux doigts pour zoomer.';
+  } else {
+    note.textContent = 'Le tracé détaillé est disponible sur Strava, au format GPX.';
+  }
+}
+new IntersectionObserver((es, o) => { if (es[0].isIntersecting && !mapDone) { mapDone = true; o.disconnect(); initMap(); } }, { rootMargin: '300px' }).observe(document.getElementById('map'));
+ 
+/* ===== Météo : vent, direction, état des pavés ===== */
+const WDIR = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
+const wdir = d => WDIR[Math.round((((d % 360) + 360) % 360) / 45) % 8];
+(async function () {
+  try {
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&current=temperature_2m,precipitation,weather_code,wind_speed_10m,wind_direction_10m&hourly=precipitation&past_days=1&forecast_days=1&timezone=auto`);
+    const j = await r.json(), c = j.current, h = j.hourly;
+    document.getElementById('meteo-temp').textContent = Math.round(c.temperature_2m) + '°C';
+    document.getElementById('meteo-vent').textContent = Math.round(c.wind_speed_10m) + ' km/h ' + wdir(c.wind_direction_10m);
+    document.getElementById('meteo-pluie').textContent = c.precipitation + ' mm';
+    document.getElementById('meteo-condition').textContent = wlabel(c.weather_code);
+    const n = h.time.filter(t => t <= c.time).length;
+    let sum = 0; for (let i = Math.max(0, n - 24); i < n; i++) sum += h.precipitation[i] || 0;
+    const p = document.getElementById('meteo-paves');
+    p.textContent = (c.precipitation > 0.1 || sum >= 1) ? '🔴 Glissants' : sum > 0.2 ? '🟠 Humides' : '🟢 Secs';
+    p.title = 'Estimé d\'après la pluie des dernières 24 h, aujourd\'hui (pas le jour J)';
+  } catch (e) { document.getElementById('meteo-condition').textContent = 'Météo indisponible'; }
+  try {
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CFG.lat}&longitude=${CFG.lon}&daily=temperature_2m_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant&timezone=auto&start_date=${CFG.eventDate}&end_date=${CFG.eventDate}`);
+    if (!r.ok) throw 0;
+    const d = (await r.json()).daily, mm = d.precipitation_sum[0];
+    document.getElementById('meteo-jour').textContent = `Prévision du jour J : ${wlabel(d.weather_code[0])} · max ${Math.round(d.temperature_2m_max[0])}°C · ${mm} mm · vent ${Math.round(d.wind_speed_10m_max[0])} km/h ${wdir(d.wind_direction_10m_dominant[0])} · pavés ${mm >= 1 ? 'probablement glissants' : mm > 0.2 ? 'peut-être humides' : 'probablement secs'}`;
+  } catch (e) {
+    document.getElementById('meteo-jour').textContent = 'La prévision du 3 avril apparaîtra ici environ deux semaines avant le départ.';
+  }
+})();
+ 
+/* ===== Groupe WhatsApp, covoiturage, lieu de rendez-vous ===== */
+if (CFG.groupe) {
+  const g = document.getElementById('wa-group'); g.href = CFG.groupe; g.hidden = false;
+}
+if (CFG.rdv) document.getElementById('rdv-txt').textContent = CFG.rdv;
+document.querySelectorAll('[data-carpool]').forEach(b => b.addEventListener('click', () => {
+  const m = b.dataset.carpool === 'cherche'
+    ? 'Salut, je cherche une place en covoiturage pour le Tour des Flandres cyclo du 3 avril 2027. Je pars de : '
+    : 'Salut, je propose des places en covoiturage pour le Tour des Flandres cyclo du 3 avril 2027. Je pars de : ';
+  window.open(waUrl(m), '_blank', 'noopener');
+}));
+ 
+/* ===== Photos ===== */
+(function () {
+  if (!CFG.photos || !CFG.photos.length) return;
+  document.getElementById('photos').hidden = false;
+  const nl = document.getElementById('nav-photos'); if (nl) nl.hidden = false;
+  const grid = document.getElementById('photo-grid'), dlg2 = document.getElementById('photoDlg');
+  grid.innerHTML = CFG.photos.map((p, i) => '<button type="button" data-i="' + i + '" aria-label="Agrandir : ' + (p.alt || '').replace(/"/g, '&quot;') + '"><img loading="lazy" decoding="async" src="' + p.src + '" alt="' + (p.alt || '').replace(/"/g, '&quot;') + '"></button>').join('');
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const p = CFG.photos[+b.dataset.i];
+    document.getElementById('photo-img').src = p.src; document.getElementById('photo-img').alt = p.alt || '';
+    document.getElementById('photo-cap').textContent = p.caption || p.alt || '';
+    dlg2.showModal();
+  });
+  document.getElementById('photo-x').addEventListener('click', () => dlg2.close());
+  dlg2.addEventListener('click', e => { if (e.target === dlg2) dlg2.close(); });
+})();
+ 
+/* ===== Calculateur de ravitaillement ===== */
+(function () {
+  const out = document.getElementById('calc-out'); if (!out) return;
+  const ids = ['calc-niveau', 'calc-meteo', 'calc-glu'];
+  function run() {
+    const vit = +document.getElementById('calc-niveau').value, liq = +document.getElementById('calc-meteo').value, glu = +document.getElementById('calc-glu').value;
+    const roule = TOTAL_KM / vit, total = roule + 1;
+    const tot = Math.round(glu * roule), gels = Math.ceil(tot / 2 / 25), barres = Math.ceil(tot / 2 / 35);
+    const ml = Math.round(liq * roule / 100) * 100, bidons = Math.ceil(ml / 750);
+    const hm = x => Math.floor(x) + ' h ' + String(Math.round((x % 1) * 60)).padStart(2, '0');
+    const t = [[hm(roule), 'En selle'], [hm(total), 'Avec la pause'], [tot + ' g', 'Glucides à emporter'], [gels + ' gels', '≈ 25 g chacun'], [barres + ' barres', '≈ 35 g chacune'], [(ml / 1000).toFixed(1).replace('.', ',') + ' L', 'Liquide, ' + bidons + ' bidons de 75 cl']];
+    out.innerHTML = t.map(x => '<div class="terr-fact"><b>' + x[0] + '</b><span>' + x[1] + '</span></div>').join('');
+  }
+  ids.forEach(i => document.getElementById(i).addEventListener('change', run)); run();
+})();
+ 
+/* ===== Quiz du Flandrien ===== */
+(function () {
+  const box = document.getElementById('quiz-box'); if (!box) return;
+  const Q = [
+    { q: 'En quelle année a eu lieu la première édition du Tour des Flandres ?', o: ['1905', '1913', '1919', '1927'], a: 1, e: 'Le journal Sportwereld lance la course en 1913.' },
+    { q: 'Qui a remporté cette première édition ?', o: ['Paul Deman', 'Briek Schotte', 'Tom Boonen', 'Johan Museeuw'], a: 0, e: 'Paul Deman a gagné en 1913.' },
+    { q: 'Quelle est la pente maximale du Koppenberg ?', o: ['12 %', '17 %', '22 %', '30 %'], a: 2, e: 'Le Koppenberg culmine à 22 %, sur 600 mètres.' },
+    { q: 'Avant 1986, le Paterberg était…', o: ['Une voie ferrée', 'Un chemin non revêtu pour tracteurs', 'Une route nationale asphaltée', 'Un canal comblé'], a: 1, e: 'Un agriculteur fan de la course a proposé de garder les pavés.' },
+    { q: 'Dans quelle ville le Ronde arrive-t-il depuis 2012 ?', o: ['Gand', 'Bruges', 'Audenarde', 'Anvers'], a: 2, e: 'Depuis 2012, l\'arrivée est à Audenarde (Oudenaarde).' },
+    { q: 'Quel champion a dû poser le pied sur le Koppenberg en 1976 ?', o: ['Eddy Merckx', 'Tom Boonen', 'Fabian Cancellara', 'Peter Sagan'], a: 0, e: 'Même Eddy Merckx a dû marcher dans la partie la plus raide.' },
+    { q: 'Combien de coureurs ont franchi le Koppenberg en selle en 1976 ?', o: ['Un seul', 'Cinq', 'Vingt', 'Tous'], a: 1, e: 'Seuls cinq coureurs l\'ont gravi sans poser le pied.' },
+    { q: 'Quel est le plus long des trois monts emblématiques ?', o: ['Oude Kwaremont', 'Paterberg', 'Koppenberg', 'Muziekberg'], a: 0, e: 'L\'Oude Kwaremont mesure 2,2 km, contre 360 m pour le Paterberg.' }
+  ];
+  let i = 0, score = 0;
+  function show() {
+    if (i >= Q.length) {
+      const msg = score >= 7 ? 'Digne d\'un Flandrien !' : score >= 4 ? 'Belle sortie, il reste quelques bergs à reconnaître.' : 'Reviens relire l\'histoire du Ronde, tu y es presque.';
+      box.innerHTML = '<div class="qn">Résultat</div><h3>' + score + ' / ' + Q.length + '</h3><p class="qexp">' + msg + '</p><div class="cta-row"><button class="btn btn-red" type="button" id="q-again">Rejouer</button><button class="btn btn-ink" type="button" id="q-share">Partager mon score</button></div>';
+      document.getElementById('q-again').onclick = () => { i = 0; score = 0; show(); };
+      document.getElementById('q-share').onclick = async () => {
+        const txt = 'J\'ai fait ' + score + '/' + Q.length + ' au quiz du Flandrien ! ' + location.href;
+        try { if (navigator.share) await navigator.share({ text: txt }); else { await navigator.clipboard.writeText(txt); toast('Score copié'); } } catch (e) {}
+      };
+      return;
+    }
+    const q = Q[i];
+    box.innerHTML = '<div class="qbar"><i style="width:' + (i / Q.length * 100) + '%"></i></div><div class="qn">Question ' + (i + 1) + ' / ' + Q.length + '</div><h3>' + q.q + '</h3>' +
+      q.o.map((o, k) => '<button class="qopt" type="button" data-k="' + k + '">' + o + '</button>').join('') + '<p class="qexp" id="qexp"></p><div id="qnext"></div>';
+    box.querySelectorAll('.qopt').forEach(b => b.addEventListener('click', () => {
+      const k = +b.dataset.k; if (k === q.a) score++;
+      box.querySelectorAll('.qopt').forEach((x, n) => { x.disabled = true; if (n === q.a) x.classList.add('ok'); else if (n === k) x.classList.add('ko'); });
+      document.getElementById('qexp').textContent = (k === q.a ? 'Bravo ! ' : 'Raté. ') + q.e;
+      document.getElementById('qnext').innerHTML = '<button class="btn btn-ink" type="button" id="q-next">' + (i === Q.length - 1 ? 'Voir mon score' : 'Question suivante') + '</button>';
+      const nx = document.getElementById('q-next'); nx.focus(); nx.onclick = () => { i++; show(); };
+    }));
+  }
+  show();
+})();
+ 
+/* ===== Hors-ligne (PWA) ===== */
+if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+  addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
 </script>
 </body>
 </html>
